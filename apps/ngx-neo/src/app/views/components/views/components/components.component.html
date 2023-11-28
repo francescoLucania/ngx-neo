@@ -1,0 +1,16 @@
+<div class="view-container">
+  <div class="container">
+    <div class="components">
+      <h1 class="heading-h1 mb-32">Components</h1>
+      <div class="components__grid">
+        <div class="components__navigate-col">
+          <h3 class="heading-h3 mb-16">Forms</h3>
+          <neo-ui-navigate-list [navigate]="formsMenu" [type]="'vertical'"></neo-ui-navigate-list>
+        </div>
+        <div class="components__content-col">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+
+.login-container {
+  margin: 0 auto;
+  padding: 0 16px;
+  min-width: 320px;
+  max-width: 416px;
+}
+
+.login-form {
+  position: relative;
+  padding: 32px;
+  border-radius: 12px;
+  background: #fff;
+  z-index: 0;
+
+  &__logo,
+  &__captcha-code {
+    margin-bottom: 32px;
+    text-align: center;
+
+    &::after {
+      content: 'LOGOTYPE';
+      font-size: 48px;
+      line-height: 48px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+  }
+
+  &__captcha-code {
+    &::after {
+      content: '1 Q 3 B';
+    }
+  }
+
+  &__input-box {
+
+  }
+
+  &__inline-button {
+    color: var(--colorBrand);
+    cursor: pointer;
+  }
+
+}

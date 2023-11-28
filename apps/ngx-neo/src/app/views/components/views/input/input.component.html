@@ -1,0 +1,86 @@
+<section>
+  <h2 class="heading-h3 color-brand">InputComponent</h2>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">Import</h4>
+    <div class="mt-16">
+      <base-code>
+        <code> {{ "import { InputModule } from 'ngx-neo-ui';" }} </code>
+      </base-code>
+    </div>
+  </section>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">State</h4>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Basic</h4>
+      <div class="mt-16">
+        <neo-ui-input [placeholder]="'Input Placeholder'"></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Invalid</h4>
+      <div class="mt-16">
+        <neo-ui-input [placeholder]="'Input Placeholder'" [invalid]="true"></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Disabled</h4>
+      <div class="mt-16">
+        <neo-ui-input [placeholder]="'Input Placeholder'" [disabled]="true"></neo-ui-input>
+      </div>
+    </article>
+  </section>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">Sizes</h4>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Small</h4>
+      <div class="mt-16">
+        <neo-ui-input [size]="'small'" [placeholder]="'Small Size (--fontSizeSmall)'"></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Basic</h4>
+      <div class="mt-16">
+        <neo-ui-input [placeholder]="'Base Size (--fontSizeBase)'"></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Large</h4>
+      <div class="mt-16">
+        <neo-ui-input [size]="'large'" [placeholder]="'Large Size (--fontSizeLarge)'"></neo-ui-input>
+      </div>
+    </article>
+  </section>
+
+  <form [formGroup]="form" (submit)="submit()" class="mt-48" style="max-height: 420px">
+    <h4 class="heading-h5">Example</h4>
+    <div class="mt-16">
+      <div>
+        <neo-ui-input
+          formControlName="login"
+          [size]="'large'"
+          [placeholder]="'login'"
+          [invalid]="!login.pristine && login.invalid"></neo-ui-input>
+      </div>
+      <div class="mt-16">
+        <neo-ui-input
+          formControlName="password"
+          [type]="'password'"
+          [size]="'large'"
+          [placeholder]="'Password'"
+          [invalid]="!password.pristine && password.invalid"></neo-ui-input>
+      </div>
+      <div class="mt-24">
+        <neo-ui-button [buttonType]="'submit'" [disabled]="form.invalid"> Submit </neo-ui-button>
+      </div>
+    </div>
+  </form>
+</section>

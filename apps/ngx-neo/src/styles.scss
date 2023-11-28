@@ -1,0 +1,60 @@
+@forward 'node_modules/normalize.css/normalize';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/variables/variables';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/fonts/fonts';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/styles';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/accessibility/accessibility';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
+@forward './assets/styles/view/view';
+
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.app {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+}
+
+neo-ui-header {
+  grid-area: header;
+  height: content-box;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  width: 100%;
+
+  > *:not(router-outlet) {
+    flex-grow: 1;
+  }
+}
+
+neo-ui-footer {
+  grid-area: footer;
+  height: content-box;
+}
+
+//.outline-none {
+//  outline: none;
+//}
+
+.text-center {
+  text-align: center;
+}
+
+.outline-base,
+.outline-none {
+  &:focus {
+    outline: 3px dotted var(--accessibilityBorder, #9b3be5)!important;
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "name": "ngx-neo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "neo",
+  "sourceRoot": "apps/ngx-neo/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ngx-neo/browser",
+        "index": "apps/ngx-neo/src/index.html",
+        "main": "apps/ngx-neo/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/ngx-neo/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/ngx-neo/src/favicon.ico", "apps/ngx-neo/src/assets"],
+        "styles": ["apps/ngx-neo/src/styles.scss"],
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["node_modules"]
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "ngx-neo:build:production"
+        },
+        "development": {
+          "buildTarget": "ngx-neo:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "ngx-neo:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ngx-neo/**/*.ts", "apps/ngx-neo/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/ngx-neojest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "ngx-neo:build"
+      }
+    },
+    "server": {
+      "dependsOn": ["build"],
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/apps/ngx-neo/server",
+        "main": "apps/ngx-neo/server.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/ngx-neo/tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false,
+          "vendorChunk": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "ngx-neo:build:development",
+          "serverTarget": "ngx-neo:server:development"
+        },
+        "production": {
+          "browserTarget": "ngx-neo:build:production",
+          "serverTarget": "ngx-neo:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@angular-devkit/build-angular:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "ngx-neo:build:development",
+          "serverTarget": "ngx-neo:server:development"
+        },
+        "production": {
+          "browserTarget": "ngx-neo:build:production",
+          "serverTarget": "ngx-neo:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

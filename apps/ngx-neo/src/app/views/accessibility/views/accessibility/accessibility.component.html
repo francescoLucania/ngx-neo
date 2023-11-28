@@ -1,0 +1,16 @@
+<div class="view-container">
+  <div class="container">
+    <div class="accessibility">
+      <h1 class="heading-h1 mb-32">Accessibility</h1>
+      <div class="accessibility__grid">
+        <div class="accessibility__navigate-col">
+          <h3 class="heading-h3 mb-16">Forms</h3>
+          <neo-ui-navigate-list [navigate]="formsMenu" [type]="'vertical'"></neo-ui-navigate-list>
+        </div>
+        <div class="accessibility__content-col">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

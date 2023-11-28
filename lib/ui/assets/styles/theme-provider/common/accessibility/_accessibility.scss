@@ -1,0 +1,16 @@
+@use '../../theme_provider' as theme;
+@use 'mixins/link' as link;
+
+a {
+  &:not([class]) {
+    @include link.accessibilityLinkStyles;
+  }
+}
+
+.focus-visible-none {
+  outline: none;
+}
+
+.focus-visible {
+  @include link.accessibilityLinkStyles;
+}

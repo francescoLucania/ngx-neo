@@ -1,0 +1,122 @@
+@forward 'common/common';
+@forward 'shadow/shadow';
+@forward 'palette/palette';
+@forward 'fonts/fonts';
+@use 'palette/palette.scss' as palette;
+
+$borderRadiusSmall: 0;
+$borderRadiusBase: 2px;
+$borderRadiusLarge: 4px;
+
+$transitionSmall: .2s;
+$transitionBase: .4s;
+$transitionLarge: .8s;
+
+// neo-ui-input
+$inputBorderWidth: 1px;
+$inputBorderRadius: 0;
+$inputBackgroundBase: #fff;
+$inputColorBase: #fff;
+
+$inputPaddingTopSmall: 8px;
+$inputPaddingBottomSmall: 8px;
+$inputPaddingLeftSmall: 8px;
+$inputPaddingRightSmall: 8px;
+
+$inputPaddingTopBase: 8px;
+$inputPaddingBottomBase: 8px;
+$inputPaddingLeftBase: 8px;
+$inputPaddingRightBase: 8px;
+
+$inputPaddingTopLarge: 8px;
+$inputPaddingBottomLarge: 8px;
+$inputPaddingLeftLarge: 8px;
+$inputPaddingRightLarge: 8px;
+
+$inputHeightSmall: auto;
+$inputHeightBase: auto;
+$inputHeightLarge: auto;
+
+
+// neo-ui-button
+$buttonBorderWidth: 3px;
+$buttonBorderRadius: 0;
+$buttonBackgroundBase: palette.$colorBase;
+$buttonColorBase: #fff;
+
+$buttonPaddingTopSmall: 10px;
+$buttonPaddingBottomSmall: 10px;
+$buttonPaddingLeftSmall: 24px;
+$buttonPaddingRightSmall: 24px;
+
+$buttonPaddingTopBase: 14px;
+$buttonPaddingBottomBase: 14px;
+$buttonPaddingLeftBase: 30px;
+$buttonPaddingRightBase: 30px;
+
+$buttonPaddingTopLarge: 14px;
+$buttonPaddingBottomLarge: 14px;
+$buttonPaddingLeftLarge: 30px;
+$buttonPaddingRightLarge: 30px;
+
+
+
+
+
+:root {
+  --borderRadiusSmall: #{$borderRadiusSmall};
+  --borderRadiusBase: #{$borderRadiusBase};
+  --borderRadiusLarge: #{$borderRadiusLarge};
+
+  --transitionSmall: #{$transitionSmall};
+  --transitionBase: #{$transitionBase};
+  --transitionLarge: #{$transitionLarge};
+
+  // neo-ui-input
+  --inputBorderWidth: #{$inputBorderWidth};
+  --inputBorderRadius: #{$inputBorderRadius};
+  --inputBackgroundBase: #{$inputBackgroundBase};
+  --inputColorBase: #{$inputColorBase};
+  --inputTransition: #{$transitionSmall};
+
+  --inputPaddingTopSmall: #{$inputPaddingTopSmall};
+  --inputPaddingBottomSmall: #{$inputPaddingBottomSmall};
+  --inputPaddingLeftSmall: #{$inputPaddingLeftSmall};
+  --inputPaddingRightSmall: #{$inputPaddingRightSmall};
+
+  --inputPaddingTopBase: #{$inputPaddingTopBase};
+  --inputPaddingBottomBase: #{$inputPaddingBottomBase};
+  --inputPaddingLeftBase: #{$inputPaddingLeftBase};
+  --inputPaddingRightBase: #{$inputPaddingRightBase};
+
+  --inputPaddingTopLarge: #{$inputPaddingTopLarge};
+  --inputPaddingBottomLarge: #{$inputPaddingBottomLarge};
+  --inputPaddingLeftLarge: #{$inputPaddingLeftLarge};
+  --inputPaddingRightLarge: #{$inputPaddingRightLarge};
+
+  --inputHeightSmall: #{$inputHeightSmall};
+  --inputHeightBase: #{$inputHeightBase};
+  --inputHeightLarge: #{$inputHeightLarge};
+
+
+  // neo-ui-button
+  --buttonBorderWidth: #{$buttonBorderWidth};
+  --buttonBorderRadius: #{$buttonBorderRadius};
+  --buttonBackgroundBase: #{$buttonBackgroundBase};
+  --buttonTransition: #{$transitionSmall};
+
+  --buttonPaddingTopSmall: #{$buttonPaddingTopSmall};
+  --buttonPaddingBottomSmall: #{$buttonPaddingBottomSmall};
+  --buttonPaddingLeftSmall: #{$buttonPaddingLeftSmall};
+  --buttonPaddingRightSmall: #{$buttonPaddingRightSmall};
+
+  --buttonPaddingTopBase: #{$buttonPaddingTopBase};
+  --buttonPaddingBottomBase: #{$buttonPaddingBottomBase};
+  --buttonPaddingLeftBase: #{$buttonPaddingLeftBase};
+  --buttonPaddingRightBase: #{$buttonPaddingRightBase};
+
+  --buttonPaddingTopLarge: #{$buttonPaddingTopLarge};
+  --buttonPaddingBottomLarge: #{$buttonPaddingBottomLarge};
+  --buttonPaddingLeftLarge: #{$buttonPaddingLeftLarge};
+  --buttonPaddingRightLarge: #{$buttonPaddingRightLarge};
+}

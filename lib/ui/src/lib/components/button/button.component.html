@@ -1,0 +1,36 @@
+<ng-container *ngIf="!link; else linkTemplate">
+  <button
+    class="neo-ui-button"
+    [class.neo-ui-button--theme-secondary]="theme === 'secondary'"
+    [class.neo-ui-button--theme-brand]="theme === 'brand'"
+    [class.neo-ui-button--size-small]="size === 'small'"
+    [class.neo-ui-button--size-large]="size === 'large'"
+    [class.neo-ui-button--full-width]="fullWidth"
+    [type]="buttonType"
+    [disabled]="disabled"
+    [attr.aria-label]="ariaLabel"
+    [attr.tabindex]="tabIndex">
+    <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
+  </button>
+</ng-container>
+
+<ng-template #linkTemplate>
+  <a
+    class="neo-ui-button"
+    [href]="link"
+    [target]="target"
+    [class.neo-ui-button--theme-secondary]="theme === 'secondary'"
+    [class.neo-ui-button--theme-brand]="theme === 'brand'"
+    [class.neo-ui-button--size-small]="size === 'small'"
+    [class.neo-ui-button--size-large]="size === 'large'"
+    [class.neo-ui-button--full-width]="fullWidth"
+    [type]="buttonType"
+    [attr.aria-label]="ariaLabel"
+    [attr.tabindex]="tabIndex">
+    <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
+  </a>
+</ng-template>
+
+<ng-template #contentRef>
+  <ng-content></ng-content>
+</ng-template>

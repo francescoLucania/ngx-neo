@@ -1,0 +1,34 @@
+$colorBase: #121314 !default;
+$colorLight: rgba(#121314, 0.8) !default;
+$colorLighter: rgba(#121314, 0.6) !default;
+$colorLightest: rgba(#121314, 0.4) !default;
+
+$colorBrand: #5409ff !default;
+$colorSound: #9280bc !default;
+$colorSoundLight: rgba(#9280bc, 0.6) !default;
+$colorSound: #9280bc !default;
+$bgColorMode: #F9F8F3 !default;
+
+$colorError: red !default;
+
+$accessibilityBorder: #9b3be5 !default;
+$accessibilityBackground: #fef0cc !default;
+$accessibilityColor: $accessibilityBorder !default;
+
+:root {
+  --colorBase: #{$colorBase};
+  --colorLight: #{$colorLight};
+  --colorLighter: #{$colorLighter};
+  --colorLightest: #{$colorLightest};
+
+  --colorBrand: #{$colorBrand};
+  --colorSound: #{$colorSound};
+  --colorSoundLight: #{$colorSoundLight};
+  --bgColorMode: #{$bgColorMode};
+
+  --accessibilityBorder: #{$accessibilityBorder};
+  --accessibilityBackground: #{$accessibilityBackground};
+  --accessibilityColor: #{$accessibilityColor};
+
+  --colorError: #{$colorError};
+}

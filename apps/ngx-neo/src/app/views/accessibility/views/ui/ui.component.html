@@ -1,0 +1,113 @@
+<div class="ui">
+  <div class="ui__item">
+    <h3 class="ui__item-title heading-h3">
+      Components
+    </h3>
+
+    <div class="ui__item-content">
+      <ul class="blog-list">
+        <li class="blog-list__item">
+          <div class="mt-24">
+            <neo-ui-input
+              [formControlName]="'name'"
+              [size]="'large'"
+              [placeholder]="'Имя'"
+              #nameInput
+            ></neo-ui-input>
+          </div>
+          <div class="mt-24">
+            <neo-ui-input
+              [formControlName]="'family'"
+              [size]="'large'"
+              [placeholder]="'Фамилия'"
+              #familyInput
+            ></neo-ui-input>
+          </div>
+          <div class="mt-24">
+            <neo-ui-input
+              [formControlName]="'Отчество'"
+              [size]="'large'"
+              [placeholder]="'Имя'"
+              #surnameInput
+            ></neo-ui-input>
+          </div>
+          <div class="mt-24">
+            <neo-ui-input
+              [formControlName]="'snils'"
+              [size]="'large'"
+              [placeholder]="'СНИЛС'"
+              #snilsInput
+            ></neo-ui-input>
+          </div>
+        </li>
+        <li>
+          <div></div>
+          <div class="mt-24">
+            <neo-ui-input
+              [formControlName]="'name'"
+              [size]="'large'"
+              [placeholder]="'Гражданство'"
+              #citizenshipInput
+            ></neo-ui-input>
+          </div>
+          <div class="mt-24">
+            <neo-ui-input
+              [formControlName]="'family'"
+              [size]="'large'"
+              [placeholder]="'Серия и номер паспорта'"
+              #docNumberInput
+            ></neo-ui-input>
+          </div>
+        </li>
+      </ul>
+      <ul class="blog-list mt-24">
+        <li class="blog-list__item">
+          <div class="mt-24">
+            <neo-ui-checkbox
+              [formControlName]="'checkbox1'"
+              [value]="'Женат / Замужем'"
+              [label]="'Женат / Замужем'"
+            ></neo-ui-checkbox>
+          </div>
+          <div class="mt-24">
+            <neo-ui-checkbox
+              [formControlName]="'checkbox2'"
+              [value]="'Есть дети'"
+              [label]="'Есть дети'"
+            ></neo-ui-checkbox>
+          </div>
+        </li>
+      </ul>
+      <div class="mt-64">
+        <neo-ui-checkbox
+          [formControlName]="'checkbox3'"
+          [value]="'Согласен'"
+          [label]="'Согласны ли вы с политикой обработки персональных данных'"
+        ></neo-ui-checkbox>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui mt-64">
+  <div class="ui__item">
+    <h3 class="ui__item-title heading-h3">
+      Blog
+    </h3>
+
+    <div class="ui__item-content">
+      <ul class="blog-list">
+        <li class='blog-list__item' *ngFor="let item of news">
+          <base-f-article-item
+            [title]="item.title"
+            [image]="item.image"
+            [uri]="item.uri"
+            [topics]="item.topics"
+          ></base-f-article-item>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+</div>

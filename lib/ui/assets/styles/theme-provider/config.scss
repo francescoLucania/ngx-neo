@@ -1,0 +1,32 @@
+$font-family: 'Roboto Mono', monospace;
+
+// Responsive (for example: sm, md, lg, xl)
+$mq-breakpoints: (
+  'sm': 767px,
+  'md': 768px,
+  'lg': 1140px,
+);
+
+$mq-indents: (
+  'sm': 24px,
+  'md': 32px,
+  'lg': 32px,
+);
+
+$mq-container-widths: (
+  'sm': 100%,
+  'md': 100%,
+  'lg': 1420px,
+);
+
+$mq-container-indents: (
+  'sm': 16px,
+  'md': 32px,
+  'lg': 64px,
+);
+
+$mq-grid-gutters: (
+  'sm': map-get($mq-indents, 'sm'),
+  'md': map-get($mq-indents, 'md'),
+  'lg': map-get($mq-indents, 'lg'),
+);

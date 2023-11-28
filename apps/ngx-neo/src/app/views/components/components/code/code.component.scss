@@ -1,0 +1,17 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+.code {
+  padding: 16px;
+  background: var(--colorBase);
+  color: #fff;
+
+  @include theme.mq(md) {
+    padding: 16px 24px;
+  }
+
+  pre {
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+  }
+}

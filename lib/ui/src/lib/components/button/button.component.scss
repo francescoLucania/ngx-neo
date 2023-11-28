@@ -1,0 +1,89 @@
+@use '../../../../assets/styles/theme-provider/core/resets/button' as button;
+@use '../../../../assets/styles/theme-provider/theme_provider' as theme;
+
+.neo-ui-button {
+  @include button.reset-buttons-styles;
+  padding: var(--buttonPaddingTopBase) var(--buttonPaddingRightBase) var(--buttonPaddingBottomBase) var(--buttonPaddingLeftBase);
+  font-size: 16px;
+  line-height: 1;
+  border-radius: var(--baseBorderRadius);
+  text-align: center;
+  border-style: solid;
+  border-width: var(--buttonBorderWidth);
+  border-color: var(--colorBase);
+  background-color: var(--buttonBackgroundBase);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--buttonTransition);
+
+  &:focus-visible {
+    position: relative;
+    z-index: 2;
+    color: var(--colorBase);
+    outline: none;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: calc(100% + 5px);
+      width: calc(100% + 5px);
+      transform: translate(-50%, -50%);
+      border: var(--buttonBorderWidth) solid var(--accessibilityBorder);
+      background: var(--accessibilityBackground);
+    }
+  }
+
+  &:hover {
+    border-color: var(--colorBrand);
+    background: var(--colorBrand);
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  &--strong {
+    font-weight: 700;
+  }
+
+  &--theme-secondary {
+    background-color: transparent;
+    color: var(--colorBase);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &--theme-brand {
+    border-color: var(--colorBrand);
+    background-color: var(--colorBrand);
+    color: #fff;
+
+    &:hover {
+      background-color: transparent;
+      color: var(--colorBrand);
+    }
+  }
+
+  &--size-small {
+    padding: var(--buttonPaddingTopSmall) var(--buttonPaddingRightSmall) var(--buttonPaddingBottomSmall) var(--buttonPaddingLeftSmall);
+    font-size: var(--fontSizeSmall);
+  }
+
+  &--size-large {
+    padding: var(--buttonPaddingTopLarge) var(--buttonPaddingRightLarge) var(--buttonPaddingBottomLarge) var(--buttonPaddingLeftLarge);
+    font-size: var(--fontSizeLarge);
+  }
+
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+}

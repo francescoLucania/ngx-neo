@@ -1,0 +1,9 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+.view-container {
+  padding: 32px 0;
+
+  @include theme.mq(md) {
+    padding: 64px 0;
+  }
+}

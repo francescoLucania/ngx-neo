@@ -8,6 +8,7 @@ import {
   MEDIA_QUERY_CONFIG,
   TMediaQueriesBreakpoint,
 } from './models/media-queries.interface';
+import { BrowserService } from '../browser/browser.service';
 
 export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesParams = {
   enable: {
@@ -35,13 +36,17 @@ export class MediaQueriesService {
   private _mq: { [key: string]: IMediaQueriesBreakpoint } = {};
   private _mqParams = {};
 
-  constructor(@Optional() @Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesParams) {
+  constructor(@Optional() @Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesParams, private browserService: BrowserService) {
     if (!this.config) {
       this.config = MEDIA_QUERY_CONFIG_BASE;
     }
-    this._windowResize$ = fromEvent(window, 'resize');
+
+    if (browserService.isBrowser) {
+      this._windowResize$ = fromEvent(window, 'resize');
+    }
+
     this.init();
-    this._windowResize$.pipe(debounceTime(800)).subscribe(() => this.init());
+    this._windowResize$?.pipe(debounceTime(800)).subscribe(() => this.init());
   }
 
   private init(): void {
@@ -69,9 +74,11 @@ export class MediaQueriesService {
     this.createMq(this.config.mqBreakpoints);
     let displayWidthType = '';
 
-    for (const item in this._mq) {
-      if (window.matchMedia(this._mq[item].str).matches) {
-        displayWidthType = item;
+    if (this.browserService.isBrowser) {
+      for (const item in this._mq) {
+        if (window.matchMedia(this._mq[item].str).matches) {
+          displayWidthType = item;
+        }
       }
     }
     return displayWidthType;
@@ -82,19 +89,21 @@ export class MediaQueriesService {
 
     let resultSize = '';
 
-    Object.keys(this._mq).forEach(key => {
-      // @ts-ignore
-      this._mqParams[key] = window.matchMedia(this._mq[key].str).matches;
-      // @ts-ignore
-      if (this._mqParams[key]) {
-        resultSize = key;
-      }
-    });
+    if (this.browserService.isBrowser) {
+      Object.keys(this._mq).forEach(key => {
+        // @ts-ignore
+        this._mqParams[key] = window.matchMedia(this._mq[key].str).matches;
+        // @ts-ignore
+        if (this._mqParams[key]) {
+          resultSize = key;
+        }
+      });
+    }
 
     return {
       size: resultSize,
       mq: this._mqParams,
-      width: (window as any).innerWidth,
+      width: this.browserService.isBrowser ? (window as any).innerWidth : null,
     };
   }
 

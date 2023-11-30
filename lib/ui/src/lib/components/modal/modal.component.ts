@@ -66,7 +66,6 @@ export class ModalComponent implements OnInit {
         });
       }
 
-
       this.closeButton = this.modalContext.instance.closable;
       this.backgroundClick = this.modalContext.instance.backgroundClick;
 

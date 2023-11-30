@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-monorepo/lib/ui": ["lib/ui/src/index.ts"],
-      "@angular-monorepo/ui": ["ui/src/index.ts"],
-      "ngx-neo-ui": ["lib/ui/src/index.ts"]
+      "@lib/ngx-neo-ui": ["lib/ui/src/public-api.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

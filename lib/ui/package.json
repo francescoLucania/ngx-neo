@@ -1,6 +1,8 @@
 {
-  "name": "@lib/ui",
-  "version": "0.0.1",
+  "name": "ngx-neo-ui",
+  "homepage": "https://francescolucania.com/",
+  "author": "<francescolucania@gmail.com> (https://francescolucania.com/)",
+  "version": "3.0.2",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"

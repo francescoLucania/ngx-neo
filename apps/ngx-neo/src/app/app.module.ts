@@ -1,5 +1,5 @@
-import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, isDevMode, APP_INITIALIZER } from '@angular/core';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,14 +10,23 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import {
   ButtonModule,
+  HeaderModule,
   FooterModule,
   IMediaQueriesParams,
   MEDIA_QUERY_CONFIG,
-  HeaderModule,
   ModalModule
 } from 'ngx-neo-ui';
 import { HomeComponent } from './views/home/views/home/home.component';
 import { CounterComponent } from './views/counter/views/counter/counter.component';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideRouter, withEnabledBlockingInitialNavigation } from '@angular/router';
+import { appRoutes } from './app.routes';
+import { UserService } from './services/user/user.service';
+import { authInterceptor } from './interceptors';
+
+export function initializerFactory(userService: UserService) {
+  return () => userService.getUser().subscribe();
+}
 
 const mediaQueriesConfig: IMediaQueriesParams = {
   enable: {
@@ -43,7 +52,6 @@ const mediaQueriesConfig: IMediaQueriesParams = {
     EffectsModule.forRoot([AppEffects]),
     HeaderModule,
     FooterModule,
-    ButtonModule,
     ModalModule,
     ButtonModule,
   ],
@@ -52,6 +60,18 @@ const mediaQueriesConfig: IMediaQueriesParams = {
       provide: MEDIA_QUERY_CONFIG,
       useValue: mediaQueriesConfig,
     },
+    provideHttpClient(
+      withInterceptors([ authInterceptor ]),
+    ),
+    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
+    provideHttpClient(),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializerFactory,
+      deps: [UserService],
+      multi: true
+    },
+    provideClientHydration()
   ],
   bootstrap: [AppComponent],
 })

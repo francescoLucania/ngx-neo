@@ -24,13 +24,8 @@ export class NavigateListActiveRouteDisableDirective implements OnInit {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
       setTimeout(() => {
         if (this.elementRef.nativeElement.classList.contains(this.className)) {
-
-          console.log(this.elementRef.nativeElement.innerText)
-          console.log('bingo!')
           this.tabindex = '-1';
         } else {
-          console.log(this.elementRef.nativeElement.innerText)
-          console.log('no bingo!')
           this.tabindex = '';
         }
         this.cdr.detectChanges();

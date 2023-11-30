@@ -2,11 +2,12 @@
   <neo-ui-header [logoPath]="'./assets/img/logo.jpg'" [navigate]="navigate"></neo-ui-header>
   <main>
     <section
-      *ngIf="message$ | async as alertMessage"
+      *ngIf="message() as alertMessage"
       role="alert"
       aria-live="assertive"
       style="position: fixed; top: -5000px; left: -5000px">
-      <span *ngIf="alertMessage">{{ alertMessage }}</span>
+>
+      <span>{{ alertMessage }}</span>
     </section>
     <router-outlet></router-outlet>
   </main>

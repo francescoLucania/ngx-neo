@@ -18,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/ngx-neo",
+            "outputPath": "dist/apps/ngx-neo/browser",
             "index": "apps/ngx-neo/src/index.html",
             "main": "apps/ngx-neo/src/main.ts",
             "polyfills": ["zone.js"],
@@ -40,8 +40,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 }
               ],
               "outputHashing": "all"
@@ -90,6 +90,65 @@
             "jestConfig": "apps/ngx-neo/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/ngx-neo/server",
+            "main": "apps/ngx-neo/server.ts",
+            "tsConfig": "apps/ngx-neo/tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "ngx-neo:build:development",
+              "serverTarget": "ngx-neo:server:development"
+            },
+            "production": {
+              "browserTarget": "ngx-neo:build:production",
+              "serverTarget": "ngx-neo:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-neo:build:production",
+              "serverTarget": "ngx-neo:server:production"
+            },
+            "development": {
+              "browserTarget": "ngx-neo:build:development",
+              "serverTarget": "ngx-neo:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

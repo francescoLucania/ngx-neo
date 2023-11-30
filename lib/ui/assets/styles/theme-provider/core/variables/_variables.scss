@@ -12,6 +12,16 @@ $transitionSmall: .2s;
 $transitionBase: .4s;
 $transitionLarge: .8s;
 
+:root {
+  --borderRadiusSmall: #{$borderRadiusSmall};
+  --borderRadiusBase: #{$borderRadiusBase};
+  --borderRadiusLarge: #{$borderRadiusLarge};
+
+  --transitionSmall: #{$transitionSmall};
+  --transitionBase: #{$transitionBase};
+  --transitionLarge: #{$transitionLarge};
+}
+
 // neo-ui-input
 $inputBorderWidth: 1px;
 $inputBorderRadius: 0;
@@ -37,41 +47,7 @@ $inputHeightSmall: auto;
 $inputHeightBase: auto;
 $inputHeightLarge: auto;
 
-
-// neo-ui-button
-$buttonBorderWidth: 3px;
-$buttonBorderRadius: 0;
-$buttonBackgroundBase: palette.$colorBase;
-$buttonColorBase: #fff;
-
-$buttonPaddingTopSmall: 10px;
-$buttonPaddingBottomSmall: 10px;
-$buttonPaddingLeftSmall: 24px;
-$buttonPaddingRightSmall: 24px;
-
-$buttonPaddingTopBase: 14px;
-$buttonPaddingBottomBase: 14px;
-$buttonPaddingLeftBase: 30px;
-$buttonPaddingRightBase: 30px;
-
-$buttonPaddingTopLarge: 14px;
-$buttonPaddingBottomLarge: 14px;
-$buttonPaddingLeftLarge: 30px;
-$buttonPaddingRightLarge: 30px;
-
-
-
-
-
 :root {
-  --borderRadiusSmall: #{$borderRadiusSmall};
-  --borderRadiusBase: #{$borderRadiusBase};
-  --borderRadiusLarge: #{$borderRadiusLarge};
-
-  --transitionSmall: #{$transitionSmall};
-  --transitionBase: #{$transitionBase};
-  --transitionLarge: #{$transitionLarge};
-
   // neo-ui-input
   --inputBorderWidth: #{$inputBorderWidth};
   --inputBorderRadius: #{$inputBorderRadius};
@@ -97,7 +73,38 @@ $buttonPaddingRightLarge: 30px;
   --inputHeightSmall: #{$inputHeightSmall};
   --inputHeightBase: #{$inputHeightBase};
   --inputHeightLarge: #{$inputHeightLarge};
+}
 
+// neo-ui-button
+$buttonBorderWidth: 3px;
+$buttonBorderRadius: 0;
+$buttonBackgroundBase: palette.$colorBase;
+$buttonColorBase: #fff;
+
+$buttonPaddingTopSmall: 10px;
+$buttonPaddingBottomSmall: 10px;
+$buttonPaddingLeftSmall: 24px;
+$buttonPaddingRightSmall: 24px;
+
+$buttonPaddingTopBase: 14px;
+$buttonPaddingBottomBase: 14px;
+$buttonPaddingLeftBase: 30px;
+$buttonPaddingRightBase: 30px;
+
+$buttonPaddingTopLarge: 14px;
+$buttonPaddingBottomLarge: 14px;
+$buttonPaddingLeftLarge: 30px;
+$buttonPaddingRightLarge: 30px;
+
+
+:root {
+  --borderRadiusSmall: #{$borderRadiusSmall};
+  --borderRadiusBase: #{$borderRadiusBase};
+  --borderRadiusLarge: #{$borderRadiusLarge};
+
+  --transitionSmall: #{$transitionSmall};
+  --transitionBase: #{$transitionBase};
+  --transitionLarge: #{$transitionLarge};
 
   // neo-ui-button
   --buttonBorderWidth: #{$buttonBorderWidth};

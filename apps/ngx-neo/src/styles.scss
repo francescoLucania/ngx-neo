@@ -10,10 +10,6 @@
 
 @use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
 
-:root {
-  --colorSound: var(--colorSoundLight)
-}
-
 
 *,
 *::before,

@@ -13,6 +13,11 @@ const routes: Routes = [
     component: CounterComponent,
   },
   {
+    path: 'styles',
+    loadComponent: () => import('./views/styles/views/styles/styles.component').then(mod => mod.StylesComponent),
+    loadChildren: () => import('./views/styles/styles-routing.module').then(mod => mod.ROUTES)
+  },
+  {
     path: 'components',
     loadChildren: () => import('./views/components/components.module').then(mod => mod.ComponentsModule),
   },

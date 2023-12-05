@@ -1,8 +1,9 @@
-@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+@use '../../../../../../node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
 
 .code {
+  display: block;
   padding: 16px;
-  background: var(--colorBase);
+  background: var(--colorBrand);
   color: #fff;
 
   @include theme.mq(md) {
@@ -15,3 +16,4 @@
     white-space: normal;
   }
 }
+

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'base-ui',
+  selector: 'neo-ui',
   templateUrl: './ui.component.html',
   styleUrls: ['./ui.component.scss']
 })

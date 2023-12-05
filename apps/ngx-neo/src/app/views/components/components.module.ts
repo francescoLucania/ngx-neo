@@ -4,18 +4,17 @@ import { ComponentsRoutingModule } from './components-routing.module';
 import { ComponentsComponent } from './views/components/components.component';
 import { ButtonComponent } from './views/button/button.component';
 import { InputComponent } from './views/input/input.component';
-import { CodeComponent } from './components/code/code.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxComponent } from './views/checkbox/checkbox.component';
 import { RadioComponent } from './views/radio/radio.component';
 import {ButtonModule, CheckboxModule, InputModule, NavigateListModule, RadioModule} from "ngx-neo-ui";
+import { CodeModule } from '../../components/code/code.module';
 
 @NgModule({
   declarations: [
     ComponentsComponent,
     ButtonComponent,
     InputComponent,
-    CodeComponent,
     RadioComponent,
     CheckboxComponent
   ],
@@ -24,6 +23,7 @@ import {ButtonModule, CheckboxModule, InputModule, NavigateListModule, RadioModu
     FormsModule,
     ReactiveFormsModule,
     ComponentsRoutingModule,
+    CodeModule,
     NavigateListModule,
     ButtonModule,
     InputModule,
@@ -32,7 +32,7 @@ import {ButtonModule, CheckboxModule, InputModule, NavigateListModule, RadioModu
     RadioModule,
     RadioModule,
     InputModule,
-    InputModule
+    InputModule,
   ]
 })
 export class ComponentsModule {}

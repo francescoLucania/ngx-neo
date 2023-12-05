@@ -3,7 +3,7 @@ import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/na
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'base-components',
+  selector: 'neo-components',
   templateUrl: './components.component.html',
   styleUrls: ['./components.component.scss'],
 })

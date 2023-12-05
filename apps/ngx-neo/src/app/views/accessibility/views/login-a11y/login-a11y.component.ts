@@ -14,7 +14,7 @@ interface CaptchaForm {
 }
 
 @Component({
-  selector: 'base-login-a11y',
+  selector: 'neo-login-a11y',
   templateUrl: './login-a11y.component.html',
   styleUrls: ['./login-a11y.component.scss']
 })

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'base-radio',
+  selector: 'neo-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss'],
 })

@@ -4,7 +4,7 @@ import { map } from 'rxjs';
 import { countSelector, updatedAtSelector, decrease, increase } from '../../../../reducers/counter';
 
 @Component({
-  selector: 'base-counter',
+  selector: 'neo-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss'],
 })

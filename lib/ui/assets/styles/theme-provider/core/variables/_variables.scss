@@ -1,9 +1,4 @@
-@forward 'common/common';
-@forward 'shadow/shadow';
-@forward 'palette/palette';
-@forward 'fonts/fonts';
-@use 'palette/palette.scss' as palette;
-
+// common variables
 $borderRadiusSmall: 0;
 $borderRadiusBase: 2px;
 $borderRadiusLarge: 4px;
@@ -20,6 +15,70 @@ $transitionLarge: .8s;
   --transitionSmall: #{$transitionSmall};
   --transitionBase: #{$transitionBase};
   --transitionLarge: #{$transitionLarge};
+}
+
+
+// font & headings variables
+
+$baseFont: 'Roboto Mono', Arial, Helvetica, sans-serif !default;
+
+$fontSizeSmall: 14px !default;
+$lineHeightSmall: 20px !default;
+
+$fontSizeBase: 16px !default;
+$lineHeightBase: 24px !default;
+
+$fontSizeLarge: 18px !default;
+$lineHeightLarge: 32px !default;
+
+:root {
+  --baseFont: #{$baseFont};
+
+  --fontSizeSmall: #{$fontSizeSmall};
+  --lineHeightSmall: #{$lineHeightSmall};
+
+  --fontSizeBase: #{$fontSizeBase};
+  --lineHeightBase: #{$lineHeightBase};
+
+  --fontSizeLarge: #{$fontSizeLarge};
+  --lineHeightLarge: #{$lineHeightLarge};
+}
+
+
+// palette variables
+$colorBase: #121314 !default;
+$colorLight: rgba(#121314, 0.8) !default;
+$colorLighter: rgba(#121314, 0.6) !default;
+$colorLightest: rgba(#121314, 0.4) !default;
+
+$colorBrand: #5409ff !default;
+$colorSound: #9280bc !default;
+$colorSoundLight: rgba(#9280bc, 0.6) !default;
+$colorSound: #9280bc !default;
+$bgColorMode: #e7e7e7;
+
+$colorError: red !default;
+
+$accessibilityBorder: #9b3be5 !default;
+$accessibilityBackground: #fef0cc !default;
+$accessibilityColor: $accessibilityBorder !default;
+
+:root {
+  --colorBase: #{$colorBase};
+  --colorLight: #{$colorLight};
+  --colorLighter: #{$colorLighter};
+  --colorLightest: #{$colorLightest};
+
+  --colorBrand: #{$colorBrand};
+  --colorSound: #{$colorSound};
+  --colorSoundLight: #{$colorSoundLight};
+  --bgColorMode: #{$bgColorMode};
+
+  --accessibilityBorder: #{$accessibilityBorder};
+  --accessibilityBackground: #{$accessibilityBackground};
+  --accessibilityColor: #{$accessibilityColor};
+
+  --colorError: #{$colorError};
 }
 
 // neo-ui-input
@@ -78,7 +137,7 @@ $inputHeightLarge: auto;
 // neo-ui-button
 $buttonBorderWidth: 3px;
 $buttonBorderRadius: 0;
-$buttonBackgroundBase: palette.$colorBase;
+$buttonBackgroundBase: $colorBase;
 $buttonColorBase: #fff;
 
 $buttonPaddingTopSmall: 10px;

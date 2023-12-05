@@ -1,0 +1,91 @@
+<section>
+  <h2 class="heading-h3 color-brand">Global Styles</h2>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">Import in styles.scss</h4>
+    <div class="mt-16">
+      <neo-code>
+        <div class='mt-8'><code> {{"@forward 'node_modules/normalize.css/normalize';"}} </code></div>
+        <div class='mt-8'><code> {{"@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/fonts/fonts';"}} </code></div>
+        <div class='mt-8'><code> {{"@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/styles';"}} </code></div>
+        <div class='mt-8'><code> {{"@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/accessibility/accessibility';"}} </code></div>
+        <div class='mt-8'><code> {{"@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';"}} </code></div>
+        <div class='mt-8'><code> {{"@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';"}} </code></div>
+        <div class='mt-8'><code> {{"@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';"}} </code></div>
+      </neo-code>
+    </div>
+  </section>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">And add variables</h4>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Common SCSS variables</h4>
+      <div class="mt-16">
+        <neo-code>
+          <div class='mt-8'><code> {{"$borderRadiusSmall: 0;"}} </code></div>
+          <div class='mt-8'><code> {{"$borderRadiusBase: 2px;"}} </code></div>
+          <div class='mt-8'><code> {{"$borderRadiusLarge: 4px;"}} </code></div>
+          <div class='mt-8'><code> {{"$transitionSmall: .2s;"}} </code></div>
+          <div class='mt-8'><code> {{"$transitionBase: .4s;"}} </code></div>
+          <div class='mt-8'><code> {{"$transitionLarge: .8s;"}} </code></div>
+        </neo-code>
+      </div>
+
+      <h4 class="heading-h5 mt-24">Common CSS variables</h4>
+      <div class="mt-16">
+        <neo-code>
+          <div class='mt-8'><code> {{":root {"}} </code></div>
+          <div class='mt-8'><code> {{"--borderRadiusSmall: #{$borderRadiusSmall};"}} </code></div>
+          <div class='mt-8'><code> {{"--borderRadiusBase: #{$borderRadiusBase};"}} </code></div>
+          <div class='mt-8'><code> {{"--borderRadiusLarge: #{$borderRadiusLarge};"}} </code></div>
+          <div class='mt-8'><code> {{"--transitionSmall: #{$transitionSmall};"}} </code></div>
+          <div class='mt-8'><code> {{"--transitionBase: #{$transitionBase};"}} </code></div>
+          <div class='mt-8'><code> {{"--transitionLarge: #{$transitionLarge};"}} </code></div>
+          <div class='mt-8'><code> {{"}"}} </code></div>
+        </neo-code>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Palette SCSS variables</h4>
+      <div class="mt-16">
+        <neo-code>
+          <div class='mt-8'><code> {{"$colorBase: #121314 !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorLight: rgba(#121314, 0.8) !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorLighter: rgba(#121314, 0.6) !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorLightest: rgba(#121314, 0.4) !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorBrand: #5409ff !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorSound: #9280bc !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorSoundLight: rgba(#9280bc, 0.6) !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorSound: #9280bc !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$bgColorMode: #F9F8F3 !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$accessibilityBorder: #9b3be5 !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$accessibilityBackground: #fef0cc !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$accessibilityColor: $accessibilityBorder !default;"}} </code></div>
+          <div class='mt-8'><code> {{"$colorError: red !default;"}} </code></div>
+        </neo-code>
+      </div>
+
+      <h4 class="heading-h5 mt-24">Palette CSS variables</h4>
+      <div class="mt-16">
+        <neo-code>
+          <div class='mt-8'><code> {{":root {"}} </code></div>
+          <div class='mt-8'><code> {{"--colorBase: #{$colorBase};"}} </code></div>
+          <div class='mt-8'><code> {{"--colorLight: #{$colorLight};"}} </code></div>
+          <div class='mt-8'><code> {{"--colorLighter: #{$colorLighter};"}} </code></div>
+          <div class='mt-8'><code> {{"--colorLightest: #{$colorLightest};"}} </code></div>
+          <div class='mt-8'><code> {{"--colorBrand: #{$colorBrand};"}} </code></div>
+          <div class='mt-8'><code> {{"--colorSound: #{$colorSound};"}} </code></div>
+          <div class='mt-8'><code> {{"--colorSoundLight: #{$colorSoundLight};"}} </code></div>
+          <div class='mt-8'><code> {{"--bgColorMode: #{$bgColorMode};"}} </code></div>
+          <div class='mt-8'><code> {{"--accessibilityBorder: #{$accessibilityBorder};"}} </code></div>
+          <div class='mt-8'><code> {{"--accessibilityBackground: #{$accessibilityBackground};"}} </code></div>
+          <div class='mt-8'><code> {{"--accessibilityColor: #{$accessibilityColor};"}} </code></div>
+          <div class='mt-8'><code> {{"--colorError: #{$colorError};"}} </code></div>
+          <div class='mt-8'><code> {{"}"}} </code></div>
+        </neo-code>
+      </div>
+    </article>
+  </section>
+</section>

@@ -7,7 +7,7 @@ interface DemoCheckboxForm {
 }
 
 @Component({
-  selector: 'base-checkbox',
+  selector: 'neo-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss']
 })

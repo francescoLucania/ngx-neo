@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'base-f-article-item',
+  selector: 'neo-f-article-item',
   templateUrl: './f-article-item.component.html',
   styleUrls: ['./f-article-item.component.scss']
 })

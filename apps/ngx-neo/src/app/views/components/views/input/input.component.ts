@@ -7,7 +7,7 @@ interface DemoLoginForm {
 }
 
 @Component({
-  selector: 'base-input',
+  selector: 'neo-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })

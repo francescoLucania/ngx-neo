@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
 
 @Component({
-  selector: 'base-accessibility',
+  selector: 'neo-accessibility',
   templateUrl: './accessibility.component.html',
   styleUrls: ['./accessibility.component.scss']
 })

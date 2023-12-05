@@ -19,47 +19,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  @include typography.text-base;
-
-  padding-top: 80px;
-  background-color: #fff;
-  color: var(--colorBase);
-  font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
-  transition: background-color 0.6s, padding-top 0.6s;
-  will-change: padding-top;
-
-  @include theme.mq(md) {
-    padding-top: 128px;
-  }
-
-  .app {
-    min-height: calc(100vh - 80px);
-
-    @include theme.mq(md) {
-      min-height: calc(100vh - 128px);
-    }
-  }
-
-  &.scrolled {
-    background-color: var(--bgColorMode);
-
-    @include theme.mq(md) {
-      padding-top: 88px;
-    }
-
-    .app {
-      @include theme.mq(md) {
-        min-height: calc(100vh - 88px);
-      }
-    }
-  }
-}
-
-base-root {
-  display: block;
-}
-
 h1,
 h2,
 h3,

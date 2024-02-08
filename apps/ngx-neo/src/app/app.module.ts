@@ -23,6 +23,7 @@ import { provideRouter, withEnabledBlockingInitialNavigation } from '@angular/ro
 import { appRoutes } from './app.routes';
 import { UserService } from './services/user/user.service';
 import { authInterceptor } from './interceptors';
+import { CodeModule } from './components/code/code.module';
 
 export function initializerFactory(userService: UserService) {
   console.log('run initializer')
@@ -47,7 +48,7 @@ const mediaQueriesConfig: IMediaQueriesParams = {
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
-      metaReducers,
+      metaReducers
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([AppEffects]),
@@ -55,6 +56,7 @@ const mediaQueriesConfig: IMediaQueriesParams = {
     FooterModule,
     ModalModule,
     ButtonModule,
+    CodeModule
   ],
   providers: [
     {

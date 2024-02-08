@@ -25,6 +25,14 @@
     }
   }
 
+  &__navigate-col-sticky-md {
+    @include theme.mq(md) {
+      position: sticky;
+      top: 104px; // 104px header + gutter
+      max-height: calc(100vh - 104px); // 104px header + gutter
+    }
+  }
+
   &__content-col {
     @include theme.mq(md) {
       padding-left: 64px;

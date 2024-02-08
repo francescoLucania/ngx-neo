@@ -1,13 +1,15 @@
 <div class="view-container">
   <div class="container">
-    <div class="components">
-      <h1 class="heading-h1 mb-32">Components</h1>
-      <div class="components__grid">
-        <div class="components__navigate-col">
-          <h3 class="heading-h3 mb-16">Forms</h3>
-          <neo-ui-navigate-list [navigate]="formsMenu" [type]="'vertical'"></neo-ui-navigate-list>
+    <div class="lib-view">
+      <h1 class="heading-h1 mb-32">Styles</h1>
+      <div class="lib-view__grid">
+        <div class="lib-view__navigate-col">
+          <div class='lib-view__navigate-col-sticky-md'>
+            <h3 class="heading-h3 mb-16">Forms</h3>
+            <neo-ui-navigate-list [navigate]="formsMenu" [type]="'vertical'"></neo-ui-navigate-list>
+          </div>
         </div>
-        <div class="components__content-col">
+        <div class="lib-view__content-col">
           <router-outlet></router-outlet>
         </div>
       </div>

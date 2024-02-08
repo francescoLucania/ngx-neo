@@ -40,6 +40,11 @@ p {
 
 a {
   text-decoration: none;
+  color: var(--colorBrand);
+
+  &:visited {
+    color: var(--accessibilityColor);
+  }
 }
 
 button {

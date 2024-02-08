@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { ModalService } from './services/modal.service';
 import { IModalDataInterface } from './services/models';
-import { MediaQueriesService } from '../../services/media-query/media-queries.service';
+import { MediaQueriesService } from '../../services';
 
 @Component({
   selector: 'neo-ui-modal',

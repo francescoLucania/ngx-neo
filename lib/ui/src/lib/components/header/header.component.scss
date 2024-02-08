@@ -1,5 +1,6 @@
 @use '../../../../assets/styles/theme-provider/theme_provider' as theme;
 @use '../../../../assets/styles/theme-provider/base-styles/typography/typography' as typography;
+@use '../../../../assets/styles/theme-provider/common/accessibility/mixins/actions' as actions;
 
 @keyframes mobileMenuFadeOpen {
   from {
@@ -98,7 +99,7 @@
         width: calc(100% + 5px);
         transform: translate(-50%, -50%);
         padding: 0 8px;
-        border: 3px solid var(--accessibilityBorder);
+        border: 3px dashed var(--accessibilityBorder);
         border-radius: var(--baseBorderRadius);
         background: var(--accessibilityBackground);
       }
@@ -192,52 +193,77 @@
 }
 
 .menu-button {
+  @include actions.accessibilityLinkStyles;
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 48px;
+  height: 48px;
+  background: var(--colorBrand);
+  border-radius: 50%;
   cursor: pointer;
+
+  &:focus-visible {
+    span {
+      background: var(--colorBrand);
+
+      &::before,
+      &::after {
+        background: var(--colorBrand);
+      }
+    }
+  }
 
   @include theme.mq(md) {
     display: none;
   }
 
-  span {
-    background: var(--colorBase);
-    height: 4px;
-    margin: 4px 0;
-    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-
-    &:nth-of-type(1) {
-      width: 50%;
+  &.menu-button--is-active {
+    span {
+      background: transparent;
     }
 
-    &:nth-of-type(2) {
-      width: 100%;
+    span::before,
+    span::after {
+      //top: 0;
     }
 
-    &:nth-of-type(3) {
-      width: 75%;
+    span::before {
+      transform: translatey(6px) rotate(45deg);
+    }
+
+    span::after {
+      transform: translatey(-6px) rotate(-45deg);
     }
   }
 
-  input[type='checkbox'] {
-    display: none;
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background: #fff;
+    height: 2px;
 
-    &:checked ~ span:nth-of-type(1) {
-      transform-origin: bottom;
-      transform: rotatez(45deg) translate(4px, 0px);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
     }
 
-    &:checked ~ span:nth-of-type(2) {
-      transform-origin: top;
-      transform: rotatez(-45deg);
+    &::before {
+      top: -6px;
     }
 
-    &:checked ~ span:nth-of-type(3) {
-      transform-origin: bottom;
-      width: 50%;
-      transform: translate(19px, -5px) rotatez(45deg);
+    &::after {
+      top: 6px;
     }
+
   }
 }
 
@@ -274,9 +300,9 @@
   left: 0;
   z-index: 100;
   transform: translateY(100%);
+  display: none;
   width: 100%;
   height: auto;
-  border: 0 solid;
   border-top: 7px var(--colorBase);
   background: #fff;
   transition: all 0.6s;
@@ -286,6 +312,7 @@
   }
 
   &.is-active {
+    display: block;
     animation: mobileMenuOpen 0.3s linear 0.5s 1 alternate forwards;
   }
 

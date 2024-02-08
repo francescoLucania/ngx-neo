@@ -1,5 +1,5 @@
 <div class='login-container'>
-  <div [ngSwitch]="state" class='login-form' [neoElementFocus]='state'>
+  <div [ngSwitch]="state" class='login-form' [neoElementFocus]='state' [neoElementFocusContextClass]="'outline-base'">
   <form *ngSwitchCase="'login'" [formGroup]="form" (submit)="submit()" >
     <ng-container *ngSwitchCase="'login'">
       <div class='login-form__logo'></div>

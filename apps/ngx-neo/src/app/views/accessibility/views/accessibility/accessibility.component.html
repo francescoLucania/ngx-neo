@@ -1,13 +1,15 @@
 <div class="view-container">
   <div class="container">
-    <div class="accessibility">
-      <h1 class="heading-h1 mb-32">Accessibility</h1>
-      <div class="accessibility__grid">
-        <div class="accessibility__navigate-col">
-          <h3 class="heading-h3 mb-16">Forms</h3>
+    <div class="lib-view">
+      <h1 class="heading-h1 mb-32">a11y</h1>
+      <div class="lib-view__grid">
+        <div class="lib-view__navigate-col">
+          <h3 class="heading-h3 mb-16">Demo</h3>
+          <neo-ui-navigate-list [navigate]="formsMenu" [type]="'vertical'"></neo-ui-navigate-list>
+          <h3 class="heading-h3 mt-24 mb-16">Directives</h3>
           <neo-ui-navigate-list [navigate]="formsMenu" [type]="'vertical'"></neo-ui-navigate-list>
         </div>
-        <div class="accessibility__content-col">
+        <div class="lib-view__content-col">
           <router-outlet></router-outlet>
         </div>
       </div>

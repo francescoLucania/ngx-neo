@@ -3,7 +3,11 @@
     class="modal__fade"
     [ngClass]="{ modal__fade_close: closeButton && backgroundClick }"
     (click)="close()"></div>
-  <div class="modal-body" neoUiTrapFocus tabindex="-1" #modalBody>
+  <div class="modal-body"
+       tabindex="-1"
+       [neoElementFocus]="isOpen"
+       [neoTrapFocus]="isOpen"
+       #modalBody>
     <div #modalContent></div>
     <button
       type="button"

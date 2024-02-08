@@ -7,3 +7,46 @@
     padding: 64px 0;
   }
 }
+
+.lib-view {
+  &__grid {
+    @include theme.mq(md) {
+      display: flex;
+    }
+  }
+
+  &__navigate-col {
+    @include theme.mq(sm) {
+      margin-bottom: 32px;
+    }
+
+    @include theme.mq(md) {
+      width: 260px;
+    }
+  }
+
+  &__content-col {
+    @include theme.mq(md) {
+      padding-left: 64px;
+      width: calc(100% - 260px);
+    }
+  }
+
+  &__navigate {
+    list-style-type: none;
+  }
+
+  &__navigate-item {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    > a,
+    button {
+      display: block;
+      color: var(--colorBase);
+    }
+  }
+}

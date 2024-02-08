@@ -2,10 +2,8 @@
  * Public API Surface of ui
  */
 
-export const t = true;
-
-export * from './lib/directives/trap-focus';
-export * from './lib/directives/element-focus';
+export * from './lib/a11y/directives/trap-focus';
+export * from './lib/a11y/directives/element-focus';
 
 export * from './lib/components/input';
 export * from './lib/components/radio';

@@ -1,5 +1,6 @@
 @use '../../../../assets/styles/theme-provider/core/resets/button' as button;
 @use '../../../../assets/styles/theme-provider/theme_provider' as theme;
+@use '../../../../assets/styles/theme-provider/common/accessibility/mixins/actions' as actions;
 
 .neo-ui-button {
   @include button.reset-buttons-styles;
@@ -18,23 +19,12 @@
   transition: all var(--buttonTransition);
 
   &:focus-visible {
+    @include actions.accessibilityLinkStyles;
+
     position: relative;
     z-index: 2;
     color: var(--colorBase);
     outline: none;
-
-    &::before {
-      content: '';
-      z-index: -1;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      height: calc(100% + 5px);
-      width: calc(100% + 5px);
-      transform: translate(-50%, -50%);
-      border: var(--buttonBorderWidth) solid var(--accessibilityBorder);
-      background: var(--accessibilityBackground);
-    }
   }
 
   &:hover {

@@ -11,12 +11,9 @@
         <ng-container [ngTemplateOutlet]="menu"></ng-container>
       </nav>
 
-      <label for="check" class="menu-button">
-        <input type="checkbox" id="check" [checked]="mobileMenuState" (change)="changeMenu()" />
+      <button (click)="changeMenu()" type="button" aria-label="Меню" class="menu-button" [class.menu-button--is-active]="mobileMenuState">
         <span></span>
-        <span></span>
-        <span></span>
-      </label>
+      </button>
     </div>
   </div>
 
@@ -26,7 +23,12 @@
     [class.is-close]="mobileMenuStateClose"
     (click)="changeMenu()"></div>
 
-  <div class="mobile-menu" [class.is-active]="mobileMenuState" [class.is-close]="mobileMenuStateClose">
+  <div class="mobile-menu"
+       [class.is-active]="mobileMenuState"
+       [class.is-close]="mobileMenuStateClose"
+       [neoElementFocus]="mobileMenuState"
+       [neoTrapFocus]="mobileMenuState"
+  >
     <div class="mobile-menu__box">
       <ng-container [ngTemplateOutlet]="menu"></ng-container>
     </div>

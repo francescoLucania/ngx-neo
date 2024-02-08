@@ -13,7 +13,7 @@ import {
   RadioModule,
   ElementFocusModule,
   CheckboxModule
-} from 'ngx-neo-ui';
+} from 'ngx-neo-ui'; // from '@lib/ngx-neo-ui'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -38,6 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RadioModule,
     InputModule,
     CheckboxModule,
-  ],
+    ElementFocusModule
+  ]
 })
 export class AccessibilityModule { }

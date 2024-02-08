@@ -8,9 +8,13 @@ import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/na
 })
 export class AccessibilityComponent {
   public formsMenu: INavigateList[] = [
-    { name: 'UI', uri: 'ui' },
-    { name: 'Login', uri: 'login' },
-    { name: 'Login a11y', uri: 'login-a11y' },
+    { name: 'UI demo', uri: 'ui' },
+    { name: 'Login a11y demo', uri: 'login-a11y' },
+  ];
+
+  public directivesMenu: INavigateList[] = [
+    { name: 'ElementFocus', uri: 'element-focus' },
+    { name: 'FocusTrap', uri: 'focus-trap' },
   ];
 
 }

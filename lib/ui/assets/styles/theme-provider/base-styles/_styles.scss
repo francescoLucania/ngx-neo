@@ -19,6 +19,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  font-family: var(--baseFont);
+  font-size: var(--fontSizeBase);
+  line-height: var(--lineHeightBase);
+}
+
 h1,
 h2,
 h3,

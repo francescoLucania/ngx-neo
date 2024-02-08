@@ -1,9 +1,9 @@
 @use '../../theme_provider' as theme;
-@use 'mixins/link' as link;
+@use 'mixins/actions' as actions;
 
 a {
   &:not([class]) {
-    @include link.accessibilityLinkStyles;
+    @include actions.accessibilityLinkStyles;
   }
 }
 
@@ -12,5 +12,5 @@ a {
 }
 
 .focus-visible {
-  @include link.accessibilityLinkStyles;
+  @include actions.accessibilityLinkStyles;
 }

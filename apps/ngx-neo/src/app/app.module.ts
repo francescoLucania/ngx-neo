@@ -15,7 +15,7 @@ import {
   IMediaQueriesParams,
   MEDIA_QUERY_CONFIG,
   ModalModule
-} from 'ngx-neo-ui';
+} from 'ngx-neo-ui'; // from '@lib/ngx-neo-ui'
 import { HomeComponent } from './views/home/views/home/home.component';
 import { CounterComponent } from './views/counter/views/counter/counter.component';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
@@ -25,6 +25,7 @@ import { UserService } from './services/user/user.service';
 import { authInterceptor } from './interceptors';
 
 export function initializerFactory(userService: UserService) {
+  console.log('run initializer')
   return () => userService.getUser().subscribe();
 }
 

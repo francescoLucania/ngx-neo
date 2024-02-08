@@ -1,9 +1,13 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
 
 .login-container {
-  margin: 0 auto;
-  padding: 0 16px;
   min-width: 320px;
   max-width: 416px;
+
+  @include theme.mq(md) {
+    margin: 0 auto;
+  }
+
 }
 
 .login-form {

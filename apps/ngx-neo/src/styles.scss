@@ -85,16 +85,11 @@ neo-ui-footer {
   height: content-box;
 }
 
-//.outline-none {
-//  outline: none;
-//}
-
 .text-center {
   text-align: center;
 }
 
-.outline-base,
-.outline-none {
+.outline-base {
   &:focus {
     outline: 3px dotted var(--accessibilityBorder, #9b3be5)!important;
     outline-offset: 2px;

@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, UntypedFormGroup, Validators } from '@angular/forms';
 
+interface DemoRadioForm {
+  radio: FormControl<string | null>;
+}
+
 @Component({
   selector: 'neo-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss'],
 })
 export class RadioComponent implements OnInit {
-  // @ts-ignore
-  public form: FormGroup<UntypedFormGroup>;
+  public form: FormGroup<DemoRadioForm>;
 
   public ngOnInit(): void {
-    // @ts-ignore
-    this.form = new FormGroup<UntypedFormGroup>({
-      radio: new FormControl('', {
-        validators: Validators.required,
-      }),
+    this.form = new FormGroup<DemoRadioForm>({
+      radio: new FormControl('')
     });
   }
 

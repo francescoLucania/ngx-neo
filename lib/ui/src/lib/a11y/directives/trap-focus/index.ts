@@ -1,2 +1,2 @@
-export * from './trap-focus.module';
 export * from './trap-focus.directive';
+export * from './trap-focus.module';

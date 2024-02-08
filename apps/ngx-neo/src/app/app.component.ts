@@ -15,7 +15,7 @@ export class AppComponent {
     { name: 'Home', uri: '' },
     { name: 'Styles', uri: 'styles/global' },
     { name: 'Components', uri: 'components' },
-    { name: 'Accessibility', uri: 'accessibility' },
+    { name: 'A11y', uri: 'accessibility' },
     { name: 'Contacts', uri: 'Contacts' },
   ];
 

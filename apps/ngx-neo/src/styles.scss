@@ -1,6 +1,58 @@
+
+// Для кастомизации инструментов шаблона
+
+//@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/config' as config with (
+//
+//  $mq-breakpoints: (
+//    'sm': 500px,
+//    'md': 501px,
+//    'lg': 1140px,
+//    'xl': 1440px,
+//    'xxl': 1920px,
+//    'xxxl': 2220px,
+//  ),
+//
+//  $mq-indents: (
+//    'sm': 24px,
+//    'md': 32px,
+//    'lg': 32px,
+//    'xl': 32px,
+//    'xxl': 48px,
+//    'xxxl': 48px,
+//  ),
+//
+//  $mq-container-widths: (
+//    'sm': 100%,
+//    'md': 100%,
+//    'lg': 1420px,
+//    'xl': 1420px,
+//    'xxl': 1420px,
+//    'xxxl': 1420px,
+//  ),
+//
+//  $mq-container-indents: (
+//    'sm': 16px,
+//    'md': 32px,
+//    'lg': 64px,
+//    'xl': 64px,
+//    'xxl': 64px,
+//    'xxxl': 64px,
+//  ),
+//
+//  $mq-grid-gutters: (
+//    'sm': 24px,
+//    'md': 32px,
+//    'lg': 32px,
+//    'xl': 32px,
+//    'xxl': 48px,
+//    'xxxl': 48px,
+//  )
+//);
+
+
 @forward 'node_modules/normalize.css/normalize';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/variables/variables';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/fonts/fonts';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/variables/variables';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/fonts/fonts';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/styles';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/accessibility/accessibility';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';

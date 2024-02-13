@@ -4,13 +4,12 @@ import {
   HostBinding,
   Input,
   OnDestroy,
-  OnInit,
 } from '@angular/core';
 
 @Directive({
   selector: '[neoElementFocus]',
 })
-export class ElementFocusDirective implements OnInit, OnDestroy {
+export class ElementFocusDirective implements OnDestroy {
   @Input('neoElementFocusContextClass') public contextClass =
     'outline-base';
 
@@ -39,12 +38,6 @@ export class ElementFocusDirective implements OnInit, OnDestroy {
   private prevElement: HTMLElement;
 
   constructor(private elementRef: ElementRef) {}
-
-  public ngOnInit(): void {
-    setTimeout(() => {
-      this.onFocus = null;
-    });
-  }
 
   private toPrevElement(): void {
     if (this.prevElement) {

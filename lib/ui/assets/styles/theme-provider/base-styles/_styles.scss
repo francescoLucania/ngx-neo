@@ -3,7 +3,7 @@
 @use 'sass:meta';
 @use '../theme_provider' as theme;
 @use 'typography/typography' as typography;
-@use '../../../styles/theme-provider/core/resets/button' as button;
+@use 'resets/button' as button;
 
 *,
 *::before,

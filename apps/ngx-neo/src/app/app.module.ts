@@ -1,5 +1,8 @@
 import { NgModule, isDevMode, APP_INITIALIZER } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,19 +17,22 @@ import {
   FooterModule,
   IMediaQueriesParams,
   MEDIA_QUERY_CONFIG,
-  ModalModule
+  ModalModule,
 } from 'ngx-neo-ui'; // from '@lib/ngx-neo-ui'
 import { HomeComponent } from './views/home/views/home/home.component';
 import { CounterComponent } from './views/counter/views/counter/counter.component';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { provideRouter, withEnabledBlockingInitialNavigation } from '@angular/router';
+import {
+  provideRouter,
+  withEnabledBlockingInitialNavigation,
+} from '@angular/router';
 import { appRoutes } from './app.routes';
 import { UserService } from './services/user/user.service';
 import { authInterceptor } from './interceptors';
 import { CodeModule } from './components/code/code.module';
 
 export function initializerFactory(userService: UserService) {
-  console.log('run initializer')
+  console.log('run initializer');
   return () => userService.getUser().subscribe();
 }
 
@@ -48,7 +54,7 @@ const mediaQueriesConfig: IMediaQueriesParams = {
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
-      metaReducers
+      metaReducers,
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([AppEffects]),
@@ -56,25 +62,23 @@ const mediaQueriesConfig: IMediaQueriesParams = {
     FooterModule,
     ModalModule,
     ButtonModule,
-    CodeModule
+    CodeModule,
   ],
   providers: [
     {
       provide: MEDIA_QUERY_CONFIG,
       useValue: mediaQueriesConfig,
     },
-    provideHttpClient(
-      withInterceptors([ authInterceptor ]),
-    ),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     provideHttpClient(),
     {
       provide: APP_INITIALIZER,
       useFactory: initializerFactory,
       deps: [UserService],
-      multi: true
+      multi: true,
     },
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent],
 })

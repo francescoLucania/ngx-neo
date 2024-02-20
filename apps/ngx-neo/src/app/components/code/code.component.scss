@@ -1,4 +1,5 @@
-@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as
+  theme;
 
 .code {
   display: block;
@@ -18,7 +19,6 @@
   }
 
   &__container {
-
   }
 
   pre {
@@ -27,4 +27,3 @@
     white-space: normal;
   }
 }
-

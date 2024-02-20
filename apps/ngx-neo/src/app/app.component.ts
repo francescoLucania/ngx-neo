@@ -10,7 +10,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public message = toSignal(this.alertService.message$, {initialValue: null})
+  public message = toSignal(this.alertService.message$, { initialValue: null });
   public navigate: INavigateList[] = [
     { name: 'Home', uri: '' },
     { name: 'Styles', uri: 'styles/global' },
@@ -19,6 +19,5 @@ export class AppComponent {
     { name: 'Contacts', uri: 'Contacts' },
   ];
 
-  constructor(private alertService: AlertService,) {
-  }
+  constructor(private alertService: AlertService) {}
 }

@@ -26,7 +26,9 @@ export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesParams = {
   providedIn: 'root',
 })
 export class MediaQueriesService {
-  private _deviceType$ = new BehaviorSubject<IMediaQueriesDeviceInfo | null>(null);
+  private _deviceType$ = new BehaviorSubject<IMediaQueriesDeviceInfo | null>(
+    null
+  );
   public deviceType$ = this._deviceType$.asObservable();
 
   private _deviceTypeParams: any;
@@ -36,7 +38,10 @@ export class MediaQueriesService {
   private _mq: { [key: string]: IMediaQueriesBreakpoint } = {};
   private _mqParams = {};
 
-  constructor(@Optional() @Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesParams, private browserService: BrowserService) {
+  constructor(
+    @Optional() @Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesParams,
+    private browserService: BrowserService
+  ) {
     if (!this.config) {
       this.config = MEDIA_QUERY_CONFIG_BASE;
     }
@@ -90,7 +95,7 @@ export class MediaQueriesService {
     let resultSize = '';
 
     if (this.browserService.isBrowser) {
-      Object.keys(this._mq).forEach(key => {
+      Object.keys(this._mq).forEach((key) => {
         // @ts-ignore
         this._mqParams[key] = window.matchMedia(this._mq[key].str).matches;
         // @ts-ignore

@@ -38,7 +38,7 @@ export class ModalComponent implements OnInit {
   constructor(
     private readonly modalService: ModalService,
     private changeDetector: ChangeDetectorRef,
-    private mediaQueriesService: MediaQueriesService,
+    private mediaQueriesService: MediaQueriesService
   ) {}
 
   @HostListener('window:keyup', ['$event.keyCode'])
@@ -61,7 +61,7 @@ export class ModalComponent implements OnInit {
 
       this.modalContext = this.modal.createComponent(modalData.component);
       if (modalData.context) {
-        Object.keys(modalData.context).forEach(key => {
+        Object.keys(modalData.context).forEach((key) => {
           this.modalContext.instance[key] = modalData.context[key];
         });
       }
@@ -73,8 +73,9 @@ export class ModalComponent implements OnInit {
       setTimeout(() => {
         this.changeDetector.detectChanges();
         this.settingView();
-        (document as any).querySelector('body').setAttribute('aria-hidden', 'true');
-
+        (document as any)
+          .querySelector('body')
+          .setAttribute('aria-hidden', 'true');
 
         this.modalBody.nativeElement.focus();
       });
@@ -103,7 +104,7 @@ export class ModalComponent implements OnInit {
     }
 
     this.checkHeightModalBody(this.mediaQueriesService.getType());
-    this.mediaQueriesService.deviceType$.subscribe(data => {
+    this.mediaQueriesService.deviceType$.subscribe((data) => {
       this.checkHeightModalBody(data?.deviceType);
       this.changeDetector.markForCheck();
     });

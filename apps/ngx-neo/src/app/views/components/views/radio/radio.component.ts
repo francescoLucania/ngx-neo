@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, UntypedFormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+} from '@angular/forms';
 
 interface DemoRadioForm {
   radio: FormControl<string | null>;
@@ -15,7 +18,7 @@ export class RadioComponent implements OnInit {
 
   public ngOnInit(): void {
     this.form = new FormGroup<DemoRadioForm>({
-      radio: new FormControl('')
+      radio: new FormControl(''),
     });
   }
 

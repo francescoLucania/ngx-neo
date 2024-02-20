@@ -9,7 +9,8 @@
     [type]="buttonType"
     [disabled]="disabled"
     [attr.aria-label]="ariaLabel"
-    [attr.tabindex]="tabIndex">
+    [attr.tabindex]="tabIndex"
+  >
     <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
   </button>
 </ng-container>
@@ -26,7 +27,8 @@
     [class.neo-ui-button--full-width]="fullWidth"
     [type]="buttonType"
     [attr.aria-label]="ariaLabel"
-    [attr.tabindex]="tabIndex">
+    [attr.tabindex]="tabIndex"
+  >
     <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
   </a>
 </ng-template>

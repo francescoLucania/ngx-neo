@@ -1,5 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Injectable } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,9 +7,17 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class HelperService {
-  constructor(private router: Router, private titleService: Title, private meta: Meta) {}
+  constructor(
+    private router: Router,
+    private titleService: Title,
+    private meta: Meta
+  ) {}
 
-  public static createEvent(eventType: string, bubbles: boolean, cancelable: boolean) {
+  public static createEvent(
+    eventType: string,
+    bubbles: boolean,
+    cancelable: boolean
+  ) {
     return new Event(eventType, { bubbles, cancelable });
   }
 
@@ -40,7 +47,10 @@ export class HelperService {
     if (strict) {
       return typeof something[Symbol.iterator] === 'function';
     } else {
-      return typeof something[Symbol.iterator] === 'function' || HelperService.isObject(something);
+      return (
+        typeof something[Symbol.iterator] === 'function' ||
+        HelperService.isObject(something)
+      );
     }
   }
 
@@ -70,7 +80,8 @@ export class HelperService {
       if (obj instanceof Date) {
         return new Date(obj.getTime()); // даты клонируем, т.к. они mutable
       }
-      newObj = Object.prototype.toString.call(obj) === '[object Array]' ? [] : {};
+      newObj =
+        Object.prototype.toString.call(obj) === '[object Array]' ? [] : {};
       for (const i of Object.keys(obj)) {
         newObj[i] = this.deepCopy(obj[i]);
       }
@@ -97,7 +108,9 @@ export class HelperService {
     const splitted = str ? str.split(/[\s_\-]+/) : [];
     return splitted
       .map((word, index) =>
-        index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
+        index === 0
+          ? word.toLowerCase()
+          : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
       )
       .join('');
   }
@@ -113,12 +126,18 @@ export class HelperService {
   public static pluralize(quanity: number, pluralizeNouns: string[]): string {
     const cases = [2, 0, 1, 1, 1, 2];
     return pluralizeNouns[
-      quanity % 100 > 4 && quanity % 100 < 20 ? 2 : cases[quanity % 10 < 5 ? quanity % 10 : 5]
+      quanity % 100 > 4 && quanity % 100 < 20
+        ? 2
+        : cases[quanity % 10 < 5 ? quanity % 10 : 5]
     ];
   }
 
   // определяет затрагивает ли позиция курсора в пользовательском тексте верстку
-  public static isTextPosition(html: string, positionFrom: number, positionTo: number) {
+  public static isTextPosition(
+    html: string,
+    positionFrom: number,
+    positionTo: number
+  ) {
     let isText = true;
     for (let i = 0; i < positionTo; i++) {
       if (html[i] === '<') {
@@ -153,13 +172,25 @@ export class HelperService {
   }
 
   // ставит курсор ввода на конец текста в текстовом элементе, при этом убирает выделение
-  public static resetSelection(inputElement: HTMLInputElement, mask: any = null, startPosition?: number) {
-    if (!inputElement || !(inputElement.type === 'text' || inputElement.type === 'password')) {
+  public static resetSelection(
+    inputElement: HTMLInputElement,
+    mask: any = null,
+    startPosition?: number
+  ) {
+    if (
+      !inputElement ||
+      !(inputElement.type === 'text' || inputElement.type === 'password')
+    ) {
       return;
     }
-    const lastCharacterPosition = HelperService.findMatchEnd(inputElement.value, mask);
+    const lastCharacterPosition = HelperService.findMatchEnd(
+      inputElement.value,
+      mask
+    );
     const indexOfCaret =
-      startPosition && startPosition > lastCharacterPosition ? startPosition : lastCharacterPosition;
+      startPosition && startPosition > lastCharacterPosition
+        ? startPosition
+        : lastCharacterPosition;
     inputElement.setSelectionRange(indexOfCaret, indexOfCaret);
   }
 
@@ -183,8 +214,12 @@ export class HelperService {
     for (const key of keys1) {
       const val1 = object1[key];
       const val2 = object2[key];
-      const areObjects = HelperService.isObject(val1) && HelperService.isObject(val2);
-      if ((areObjects && !HelperService.deepEqual(val1, val2)) || (!areObjects && val1 !== val2)) {
+      const areObjects =
+        HelperService.isObject(val1) && HelperService.isObject(val2);
+      if (
+        (areObjects && !HelperService.deepEqual(val1, val2)) ||
+        (!areObjects && val1 !== val2)
+      ) {
         return false;
       }
     }

@@ -12,18 +12,16 @@ import {
   ModalModule,
   RadioModule,
   ElementFocusModule,
-  CheckboxModule
+  CheckboxModule,
 } from 'ngx-neo-ui'; // from '@lib/ngx-neo-ui'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
     AccessibilityComponent,
     UiComponent,
     FArticleItemComponent,
-    LoginA11yComponent
+    LoginA11yComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RadioModule,
     InputModule,
     CheckboxModule,
-    ElementFocusModule
-  ]
+    ElementFocusModule,
+  ],
 })
-export class AccessibilityModule { }
+export class AccessibilityModule {}

@@ -60,7 +60,9 @@
     }
 
     &:focus-visible {
-      + .neo-ui-radio__view + .neo-ui-radio__label + .neo-ui-radio__focus-visible {
+      + .neo-ui-radio__view
+        + .neo-ui-radio__label
+        + .neo-ui-radio__focus-visible {
         &::before {
           content: '';
           z-index: -1;
@@ -85,6 +87,5 @@
   }
 
   &__focus-visible {
-
   }
 }

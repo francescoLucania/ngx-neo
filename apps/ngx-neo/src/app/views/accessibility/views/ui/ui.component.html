@@ -1,8 +1,6 @@
 <div class="ui">
   <div class="ui__item">
-    <h3 class="ui__item-title heading-h3">
-      Components
-    </h3>
+    <h3 class="ui__item-title heading-h3">Components</h3>
 
     <div class="ui__item-content">
       <ul class="blog-list">
@@ -91,13 +89,11 @@
 
 <div class="ui mt-64">
   <div class="ui__item">
-    <h3 class="ui__item-title heading-h3">
-      Blog
-    </h3>
+    <h3 class="ui__item-title heading-h3">Blog</h3>
 
     <div class="ui__item-content">
       <ul class="blog-list">
-        <li class='blog-list__item' *ngFor="let item of news">
+        <li class="blog-list__item" *ngFor="let item of news">
           <neo-f-article-item
             [title]="item.title"
             [image]="item.image"
@@ -105,9 +101,7 @@
             [topics]="item.topics"
           ></neo-f-article-item>
         </li>
-
       </ul>
     </div>
   </div>
-
 </div>

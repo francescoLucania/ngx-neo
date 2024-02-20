@@ -1,12 +1,16 @@
 <div class="app">
-  <neo-ui-header [logoPath]="'./assets/img/logo.jpg'" [navigate]="navigate"></neo-ui-header>
+  <neo-ui-header
+    [logoPath]="'./assets/img/logo.jpg'"
+    [navigate]="navigate"
+  ></neo-ui-header>
   <main>
     <section
       *ngIf="message() as alertMessage"
       role="alert"
       aria-live="assertive"
-      style="position: fixed; top: -5000px; left: -5000px">
->
+      style="position: fixed; top: -5000px; left: -5000px"
+    >
+      >
       <span>{{ alertMessage }}</span>
     </section>
     <router-outlet></router-outlet>

@@ -1,5 +1,6 @@
 @use '../../../../assets/styles/theme-provider/theme_provider' as theme;
-@use '../../../../assets/styles/theme-provider/base-styles/typography/typography' as typography;
+@use '../../../../assets/styles/theme-provider/base-styles/typography/typography'
+  as typography;
 
 .navigate-list {
   list-style: none;

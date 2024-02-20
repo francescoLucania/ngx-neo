@@ -1,13 +1,20 @@
-<div class="modal" [ngClass]="{ modal_open: isOpen, modal_scroll: scrollState }" #modalContainer>
+<div
+  class="modal"
+  [ngClass]="{ modal_open: isOpen, modal_scroll: scrollState }"
+  #modalContainer
+>
   <div
     class="modal__fade"
     [ngClass]="{ modal__fade_close: closeButton && backgroundClick }"
-    (click)="close()"></div>
-  <div class="modal-body"
-       tabindex="-1"
-       [neoElementFocus]="isOpen"
-       [neoTrapFocus]="isOpen"
-       #modalBody>
+    (click)="close()"
+  ></div>
+  <div
+    class="modal-body"
+    tabindex="-1"
+    [neoElementFocus]="isOpen"
+    [neoTrapFocus]="isOpen"
+    #modalBody
+  >
     <div #modalContent></div>
     <button
       type="button"
@@ -15,6 +22,7 @@
       tabindex="0"
       aria-label="Закрыть модальное окно"
       *ngIf="closeButton"
-      (click)="close()"></button>
+      (click)="close()"
+    ></button>
   </div>
 </div>

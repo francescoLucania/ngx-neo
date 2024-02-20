@@ -7,8 +7,5 @@ import { ModalService } from 'ngx-neo-ui';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-
-  constructor(public readonly modalService: ModalService) {
-  }
-
+  constructor(public readonly modalService: ModalService) {}
 }

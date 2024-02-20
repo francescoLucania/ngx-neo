@@ -4,7 +4,8 @@
     'neo-ui-input--multiline': multiline,
     'neo-ui-input--invalid': invalid,
     'neo-ui-input--disable': disabled
-  }">
+  }"
+>
   <ng-container *ngTemplateOutlet="passwordButton"></ng-container>
   <input
     class="neo-ui-input__tag"
@@ -30,7 +31,8 @@
     (input)="handleInput($event)"
     (blur)="notifyBlurEvent($event)"
     (focus)="notifyFocusEvent($event)"
-    (keyup.enter)="forceChange()" />
+    (keyup.enter)="forceChange()"
+  />
   <ng-container *ngTemplateOutlet="passwordButton"></ng-container>
   <ng-template #passwordButton>
     <button
@@ -41,15 +43,12 @@
       [class.show]="showPassword"
       [class.invalid]="invalid"
       (keydown.enter)="showButtonKeypress($event)"
-      (click)="switchPasswordMode()">
+      (click)="switchPasswordMode()"
+    >
       {{
-      showPassword
-        ? 'Введен пароль' +
-        ' ' +
-        value +
-        ' ' +
-        'Скрыть пароль'
-        : 'Поле пароль заполнено. Нажмите, чтобы посмотреть пароль'
+        showPassword
+          ? 'Введен пароль' + ' ' + value + ' ' + 'Скрыть пароль'
+          : 'Поле пароль заполнено. Нажмите, чтобы посмотреть пароль'
       }}
     </button>
   </ng-template>

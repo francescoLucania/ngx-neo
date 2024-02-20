@@ -8,9 +8,8 @@ describe('AccessibilityComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AccessibilityComponent ]
-    })
-    .compileComponents();
+      declarations: [AccessibilityComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AccessibilityComponent);
     component = fixture.componentInstance;

@@ -1,11 +1,13 @@
+@use 'sass:color';
+
 // common variables
 $borderRadiusSmall: 0;
 $borderRadiusBase: 2px;
 $borderRadiusLarge: 4px;
 
-$transitionSmall: .2s;
-$transitionBase: .4s;
-$transitionLarge: .8s;
+$transitionSmall: 0.2s;
+$transitionBase: 0.4s;
+$transitionLarge: 0.8s;
 
 :root {
   --borderRadiusSmall: #{$borderRadiusSmall};
@@ -16,7 +18,6 @@ $transitionLarge: .8s;
   --transitionBase: #{$transitionBase};
   --transitionLarge: #{$transitionLarge};
 }
-
 
 // font & headings variables
 
@@ -44,7 +45,6 @@ $lineHeightLarge: 32px !default;
   --lineHeightLarge: #{$lineHeightLarge};
 }
 
-
 // palette variables
 $colorBase: #121314 !default;
 $colorLight: rgba(#121314, 0.8) !default;
@@ -55,6 +55,7 @@ $colorBrand: #5409ff !default;
 $colorSound: #9280bc !default;
 $colorSoundLight: rgba(#9280bc, 0.6) !default;
 $colorSound: #9280bc !default;
+$bgColor: #fff !default;
 $bgColorMode: #e7e7e7;
 
 $colorError: red !default;
@@ -62,6 +63,25 @@ $colorError: red !default;
 $accessibilityBorder: #9b3be5 !default;
 $accessibilityBackground: #fef0cc !default;
 $accessibilityColor: $accessibilityBorder !default;
+
+// Dark
+$colorBaseDark: #fff !default;
+$colorLightDark: rgba($colorBaseDark, 0.7) !default;
+$colorLighterDark: rgba($colorBaseDark, 0.6) !default;
+$colorLightestDark: rgba($colorBaseDark, 0.4) !default;
+
+$colorBrandDark: #5409ff !default;
+$colorSoundDark: #9280bc !default;
+$colorSoundLightDark: rgba(#9280bc, 0.6) !default;
+$colorSoundDark: #9280bc !default;
+$bgColorDark: $colorBase !default;
+$bgColorModeDark: rgba($colorBase, 0.8);
+
+$colorErrorDark: red !default;
+
+$accessibilityBorderDark: #9b3be5 !default;
+$accessibilityBackgroundDark: #fef0cc !default;
+$accessibilityColorDark: $accessibilityBorder !default;
 
 :root {
   --colorBase: #{$colorBase};
@@ -72,6 +92,7 @@ $accessibilityColor: $accessibilityBorder !default;
   --colorBrand: #{$colorBrand};
   --colorSound: #{$colorSound};
   --colorSoundLight: #{$colorSoundLight};
+  --bgColor: #{$bgColor};
   --bgColorMode: #{$bgColorMode};
 
   --accessibilityBorder: #{$accessibilityBorder};
@@ -79,6 +100,46 @@ $accessibilityColor: $accessibilityBorder !default;
   --accessibilityColor: #{$accessibilityColor};
 
   --colorError: #{$colorError};
+}
+
+html[data-theme='dark'] {
+  --colorBase: #{$colorBaseDark};
+  --colorLight: #{$colorLightDark};
+  --colorLighter: #{$colorLighterDark};
+  --colorLightest: #{$colorLightestDark};
+
+  --colorBrand: #{$colorBrandDark};
+  --colorSound: #{$colorSoundDark};
+  --colorSoundLight: #{$colorSoundLightDark};
+  --bgColor: #{$bgColorDark};
+  --bgColorMode: #{$bgColorModeDark};
+
+  --accessibilityBorder: #{$accessibilityBorderDark};
+  --accessibilityBackground: #{$accessibilityBackgroundDark};
+  --accessibilityColor: #{$accessibilityColorDark};
+
+  --colorError: #{$colorErrorDark};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorBase: #{$colorBaseDark};
+    --colorLight: #{$colorLightDark};
+    --colorLighter: #{$colorLighterDark};
+    --colorLightest: #{$colorLightestDark};
+
+    --colorBrand: #{$colorBrandDark};
+    --colorSound: #{$colorSoundDark};
+    --colorSoundLight: #{$colorSoundLightDark};
+    --bgColor: #{$bgColorDark};
+    --bgColorMode: #{$bgColorModeDark};
+
+    --accessibilityBorder: #{$accessibilityBorderDark};
+    --accessibilityBackground: #{$accessibilityBackgroundDark};
+    --accessibilityColor: #{$accessibilityColorDark};
+
+    --colorError: #{$colorErrorDark};
+  }
 }
 
 // neo-ui-input
@@ -154,7 +215,6 @@ $buttonPaddingTopLarge: 14px;
 $buttonPaddingBottomLarge: 14px;
 $buttonPaddingLeftLarge: 30px;
 $buttonPaddingRightLarge: 30px;
-
 
 :root {
   --borderRadiusSmall: #{$borderRadiusSmall};

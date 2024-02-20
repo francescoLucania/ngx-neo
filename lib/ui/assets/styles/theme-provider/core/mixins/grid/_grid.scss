@@ -1,7 +1,12 @@
 @use '../../../config' as config;
 @use '../media/media' as media;
 
-@mixin grid($main-axis: x, $justify-content: flex-start, $align-items: flex-start, $multiplier: 1) {
+@mixin grid(
+  $main-axis: x,
+  $justify-content: flex-start,
+  $align-items: flex-start,
+  $multiplier: 1
+) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;

@@ -2,7 +2,7 @@
 
 .site-footer {
   padding: 16px;
-  background: #fff;
+  background: var();
 
   @include theme.mq(md) {
     padding: 24px;

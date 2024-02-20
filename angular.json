@@ -23,7 +23,10 @@
             "main": "apps/ngx-neo/src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "apps/ngx-neo/tsconfig.app.json",
-            "assets": ["apps/ngx-neo/src/favicon.ico", "apps/ngx-neo/src/assets"],
+            "assets": [
+              "apps/ngx-neo/src/favicon.ico",
+              "apps/ngx-neo/src/assets"
+            ],
             "styles": ["apps/ngx-neo/src/styles.scss"],
             "aot": true,
             "stylePreprocessorOptions": {
@@ -79,8 +82,7 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/cabinet/src/**/*.ts",
-              "apps/cabinet/src/**/*.html"
+
             ]
           }
         },
@@ -98,9 +100,7 @@
             "main": "apps/ngx-neo/server.ts",
             "tsConfig": "apps/ngx-neo/tsconfig.server.json",
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules"
-              ]
+              "includePaths": ["node_modules"]
             }
           },
           "configurations": {
@@ -134,9 +134,7 @@
         "prerender": {
           "builder": "@angular-devkit/build-angular:prerender",
           "options": {
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {

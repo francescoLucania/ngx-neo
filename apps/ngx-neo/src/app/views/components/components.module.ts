@@ -7,7 +7,13 @@ import { InputComponent } from './views/input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxComponent } from './views/checkbox/checkbox.component';
 import { RadioComponent } from './views/radio/radio.component';
-import {ButtonModule, CheckboxModule, InputModule, NavigateListModule, RadioModule} from "ngx-neo-ui";
+import {
+  ButtonModule,
+  CheckboxModule,
+  InputModule,
+  NavigateListModule,
+  RadioModule,
+} from 'ngx-neo-ui';
 import { CodeModule } from '../../components/code/code.module';
 
 @NgModule({
@@ -16,7 +22,7 @@ import { CodeModule } from '../../components/code/code.module';
     ButtonComponent,
     InputComponent,
     RadioComponent,
-    CheckboxComponent
+    CheckboxComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +39,6 @@ import { CodeModule } from '../../components/code/code.module';
     RadioModule,
     InputModule,
     InputModule,
-  ]
+  ],
 })
 export class ComponentsModule {}

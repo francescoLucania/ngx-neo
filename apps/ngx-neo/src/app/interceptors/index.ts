@@ -1,1 +1,1 @@
-export * from './auth/authorized-request.interceptor'
+export * from './auth/authorized-request.interceptor';

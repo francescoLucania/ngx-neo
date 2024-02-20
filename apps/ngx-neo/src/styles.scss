@@ -1,4 +1,3 @@
-
 // Для кастомизации инструментов шаблона
 
 //@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/config' as config with (
@@ -49,7 +48,6 @@
 //  )
 //);
 
-
 @forward 'node_modules/normalize.css/normalize';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/variables/variables';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/fonts/fonts';
@@ -60,8 +58,8 @@
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
 @forward './assets/styles/view/view';
 
-@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
-
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as
+  theme;
 
 *,
 *::before,
@@ -71,7 +69,7 @@
 
 body {
   padding-top: 80px;
-  background-color: #fff;
+  background-color: var(--bgColor);
   color: var(--colorBase);
   font-family: var(--baseFont);
   transition: background-color 0.6s, padding-top 0.6s;
@@ -143,11 +141,10 @@ neo-ui-footer {
 
 .outline-base {
   &:focus {
-    outline: 3px dotted var(--accessibilityBorder, #9b3be5)!important;
+    outline: 3px dotted var(--accessibilityBorder, #9b3be5) !important;
     outline-offset: 2px;
   }
 }
-
 
 .components {
   &__grid {

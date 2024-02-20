@@ -7,7 +7,13 @@ import { ElementFocusModule, TrapFocusModule } from '../../a11y';
 
 @NgModule({
   declarations: [HeaderComponent],
-  imports: [CommonModule, RouterModule, NavigateListModule, TrapFocusModule, ElementFocusModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    NavigateListModule,
+    TrapFocusModule,
+    ElementFocusModule,
+  ],
   exports: [HeaderComponent],
 })
 export class HeaderModule {}

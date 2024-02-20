@@ -1,5 +1,5 @@
-import {Injectable, OnDestroy} from '@angular/core';
-import {ReplaySubject} from 'rxjs';
+import { Injectable, OnDestroy } from '@angular/core';
+import { ReplaySubject } from 'rxjs';
 
 /**
  * @note:
@@ -18,6 +18,6 @@ export class DestroyService extends ReplaySubject<void> implements OnDestroy {
   ngOnDestroy(): void {
     this.next();
     this.complete();
-    console.log('unsubscribe')
+    console.log('unsubscribe');
   }
 }

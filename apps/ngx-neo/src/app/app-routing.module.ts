@@ -14,16 +14,22 @@ const routes: Routes = [
   },
   {
     path: 'styles',
-    loadComponent: () => import('./views/styles/views/styles/styles.component').then(mod => mod.StylesComponent),
-    loadChildren: () => import('./views/styles/styles-routing.module').then(mod => mod.ROUTES)
+    loadComponent: async () =>
+      (await import('./views/styles/views/styles/styles.component'))
+        .StylesComponent,
+    loadChildren: async () =>
+      (await import('./views/styles/styles-routing.module')).ROUTES,
   },
   {
     path: 'components',
-    loadChildren: () => import('./views/components/components.module').then(mod => mod.ComponentsModule),
+    loadChildren: async () =>
+      (await import('./views/components/components.module')).ComponentsModule,
   },
   {
     path: 'accessibility',
-    loadChildren: () => import('./views/accessibility/accessibility.module').then(mod => mod.AccessibilityModule),
+    loadChildren: async () =>
+      (await import('./views/accessibility/accessibility.module'))
+        .AccessibilityModule,
   },
 ];
 

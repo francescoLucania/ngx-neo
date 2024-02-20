@@ -1,96 +1,135 @@
-<div class='login-container'>
-  <div [ngSwitch]="state" class='login-form' [neoElementFocus]='state' [neoElementFocusContextClass]="'outline-base'">
-  <form *ngSwitchCase="'login'" [formGroup]="form" (submit)="submit()" >
-    <ng-container *ngSwitchCase="'login'">
-      <div class='login-form__logo'></div>
-      <div class="mt-16" >
-        <neo-ui-input
-          [formControlName]="'login'"
-          [size]="'large'"
-          [placeholder]="'Телефон / Email / CНИЛС'"
-          [ariaLabel]="'Введите телефон, Email или СНИЛС'"
-          #loginInput
-        ></neo-ui-input>
-      </div>
-      <div class="mt-16">
-        <neo-ui-input
-          [formControlName]="'password'"
-          [type]="'password'"
-          [size]="'large'"
-          [placeholder]="'Пароль'"
-          [ariaLabel]="'Пароль'"
-          #passwordInput
-        ></neo-ui-input>
-      </div>
-      <div *ngIf="!loginControl?.pristine && loginControl?.errors"
-           class="mt-8 text-base-small color-error"
-           [attr.aria-hidden]="!(!loginControl?.pristine && loginControl?.errors)">
-        Неверный логин или пароль
-      </div>
-      <div class="mt-12">
-        <button class="login-form__inline-button focus-visible">Восстановить</button>
-      </div>
-      <div class="mt-12">
-        <neo-ui-button [buttonType]="'submit'" [fullWidth]="true" [disabled]="form.invalid">Войти</neo-ui-button>
-      </div>
-
-      <div class="mt-24">
-        <div>
-          <neo-ui-radio
-            [formControlName]="'scenario'"
-            [value]="'captcha'"
-            [label]="'Captcha'"
-            [name]="'scenario'"></neo-ui-radio>
+<div class="login-container">
+  <div
+    [ngSwitch]="state"
+    class="login-form"
+    [neoElementFocus]="state"
+    [neoElementFocusContextClass]="'outline-base'"
+  >
+    <form *ngSwitchCase="'login'" [formGroup]="form" (submit)="submit()">
+      <ng-container *ngSwitchCase="'login'">
+        <div class="login-form__logo"></div>
+        <div class="mt-16">
+          <neo-ui-input
+            [formControlName]="'login'"
+            [size]="'large'"
+            [placeholder]="'Телефон / Email / CНИЛС'"
+            [ariaLabel]="'Введите телефон, Email или СНИЛС'"
+            #loginInput
+          ></neo-ui-input>
         </div>
         <div class="mt-16">
-          <neo-ui-radio
-            [formControlName]="'scenario'"
-            [value]="'login-error'"
-            [label]="'Ошибка входа'"
-            [name]="'scenario'"></neo-ui-radio>
+          <neo-ui-input
+            [formControlName]="'password'"
+            [type]="'password'"
+            [size]="'large'"
+            [placeholder]="'Пароль'"
+            [ariaLabel]="'Пароль'"
+            #passwordInput
+          ></neo-ui-input>
         </div>
-      </div>
+        <div
+          *ngIf="!loginControl?.pristine && loginControl?.errors"
+          class="mt-8 text-base-small color-error"
+          [attr.aria-hidden]="
+            !(!loginControl?.pristine && loginControl?.errors)
+          "
+        >
+          Неверный логин или пароль
+        </div>
+        <div class="mt-12">
+          <button class="login-form__inline-button focus-visible">
+            Восстановить
+          </button>
+        </div>
+        <div class="mt-12">
+          <neo-ui-button
+            [buttonType]="'submit'"
+            [fullWidth]="true"
+            [disabled]="form.invalid"
+            >Войти</neo-ui-button
+          >
+        </div>
 
-      <div class="mt-24 text-center">
-        <button class="login-form__inline-button focus-visible" aria-haspopup="true"
-                [openModalFromTemplate]="faqTemplate">Не удается войти?</button>
-      </div>
-    </ng-container>
-  </form>
+        <div class="mt-24">
+          <div>
+            <neo-ui-radio
+              [formControlName]="'scenario'"
+              [value]="'captcha'"
+              [label]="'Captcha'"
+              [name]="'scenario'"
+            ></neo-ui-radio>
+          </div>
+          <div class="mt-16">
+            <neo-ui-radio
+              [formControlName]="'scenario'"
+              [value]="'login-error'"
+              [label]="'Ошибка входа'"
+              [name]="'scenario'"
+            ></neo-ui-radio>
+          </div>
+        </div>
 
-  <form *ngSwitchCase="'captcha'" [formGroup]="captchaForm">
-    <h3 class="text-center heading-h3">
-      Введите код с картинки:
-    </h3>
-    <div class="login-form__captcha-code mt-16">
+        <div class="mt-24 text-center">
+          <button
+            class="login-form__inline-button focus-visible"
+            aria-haspopup="true"
+            [openModalFromTemplate]="faqTemplate"
+          >
+            Не удается войти?
+          </button>
+        </div>
+      </ng-container>
+    </form>
+
+    <form *ngSwitchCase="'captcha'" [formGroup]="captchaForm">
+      <h3 class="text-center heading-h3">Введите код с картинки:</h3>
+      <div class="login-form__captcha-code mt-16"></div>
+      <div class="mt-24">
+        <neo-ui-input
+          [formControlName]="'code'"
+          [type]="'text'"
+          [size]="'large'"
+          [placeholder]="'Код'"
+          [ariaLabel]="'Код'"
+          #captchaInput
+        ></neo-ui-input>
+      </div>
+      <div class="mt-12">
+        <neo-ui-button
+          [buttonType]="'submit'"
+          [fullWidth]="true"
+          [disabled]="captchaForm.invalid"
+          >Отправить</neo-ui-button
+        >
+      </div>
+    </form>
+  </div>
+
+  <ng-template #faqTemplate>
+    <h4 class="heading-h3">Что делать если не удается войти?</h4>
+
+    <ul class="mt-24">
+      <li>
+        Проверьте корректность вводимых данных – без тире и пробела, язык ввода,
+        клавишу «Caps Lock»
+      </li>
+      <li class="mt-8">
+        Воспользуйтесь функцией
+        <button class="login-form__inline-button focus-visible">
+          восстановления пароля
+        </button>
+      </li>
+    </ul>
+    <div class="mt-24">
+      Если указанные способы не помогают, обратитесь в службу поддержки
     </div>
     <div class="mt-24">
-      <neo-ui-input
-        [formControlName]="'code'"
-        [type]="'text'"
-        [size]="'large'"
-        [placeholder]="'Код'"
-        [ariaLabel]="'Код'"
-        #captchaInput
-      ></neo-ui-input>
+      Ещё один способ восстановления пароля – личное обращение в
+      <button class="login-form__inline-button focus-visible">
+        любой центр
+      </button>
+      обслуживания. При себе необходимо иметь документ, удостоверяющий личность,
+      и СНИЛС
     </div>
-    <div class="mt-12">
-      <neo-ui-button [buttonType]="'submit'" [fullWidth]="true" [disabled]="captchaForm.invalid">Отправить</neo-ui-button>
-    </div>
-  </form>
+  </ng-template>
 </div>
-
-<ng-template #faqTemplate>
-  <h4 class="heading-h3">Что делать если не удается войти?</h4>
-
-  <ul class="mt-24">
-    <li>Проверьте корректность вводимых данных – без тире и пробела, язык ввода, клавишу «Caps Lock»</li>
-    <li class="mt-8">Воспользуйтесь функцией <button class="login-form__inline-button focus-visible">восстановления пароля</button></li>
-  </ul>
-  <div class="mt-24">
-    Если указанные способы не помогают, обратитесь в службу поддержки
-  </div>
-  <div class="mt-24">
-    Ещё один способ восстановления пароля – личное обращение в <button class="login-form__inline-button focus-visible">любой центр</button> обслуживания. При себе необходимо иметь документ, удостоверяющий личность, и СНИЛС
-  </div>
-</ng-template>

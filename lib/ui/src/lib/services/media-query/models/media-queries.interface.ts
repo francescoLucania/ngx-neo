@@ -1,6 +1,8 @@
 import { InjectionToken } from '@angular/core';
 
-export const MEDIA_QUERY_CONFIG = new InjectionToken<IMediaQueriesParams>('mediaQueriesConfig');
+export const MEDIA_QUERY_CONFIG = new InjectionToken<IMediaQueriesParams>(
+  'mediaQueriesConfig'
+);
 
 export interface IMediaQueriesParams {
   enable: {

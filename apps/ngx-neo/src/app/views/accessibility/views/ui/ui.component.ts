@@ -3,39 +3,43 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'neo-ui',
   templateUrl: './ui.component.html',
-  styleUrls: ['./ui.component.scss']
+  styleUrls: ['./ui.component.scss'],
 })
 export class UiComponent {
   public news = [
     {
-      title: '«Арт резонирует с болевыми точками человечества»: Анастасия Постригай — о взгляде художников на социальные проблемы',
+      title:
+        '«Арт резонирует с болевыми точками человечества»: Анастасия Постригай — о взгляде художников на социальные проблемы',
       uri: 'https://www.buro247.ru/',
-      image: 'https://www.buro247.ru/thumb/300x300_5/images/Sasha-06-23/600-20-jun-2023-modern-art-social-problems.png',
+      image:
+        'https://www.buro247.ru/thumb/300x300_5/images/Sasha-06-23/600-20-jun-2023-modern-art-social-problems.png',
       topics: [
         {
           value: 'Культура',
-          uri: 'https://www.buro247.ru/culture'
+          uri: 'https://www.buro247.ru/culture',
         },
         {
           value: 'Искуство',
-          uri: 'https://www.buro247.ru/culture/arts'
-        }
-      ]
+          uri: 'https://www.buro247.ru/culture/arts',
+        },
+      ],
     },
     {
-      title: 'Что покупать на летней распродаже? Выбор админов телеграм-каналов',
+      title:
+        'Что покупать на летней распродаже? Выбор админов телеграм-каналов',
       uri: 'https://www.buro247.ru/',
-      image: 'https://www.buro247.ru/thumb/205x205_5/images/Sasha007/600-4-jul-2023-summer-sale-telegram-channels.png',
+      image:
+        'https://www.buro247.ru/thumb/205x205_5/images/Sasha007/600-4-jul-2023-summer-sale-telegram-channels.png',
       topics: [
         {
           value: 'Мода',
-          uri: 'https://www.buro247.ru/fashion'
+          uri: 'https://www.buro247.ru/fashion',
         },
         {
           value: 'Вещи',
-          uri: 'https://www.buro247.ru/fashion/things'
-        }
-      ]
+          uri: 'https://www.buro247.ru/fashion/things',
+        },
+      ],
     },
-  ]
+  ];
 }

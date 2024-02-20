@@ -23,14 +23,20 @@
     <article class="mt-24">
       <h4 class="heading-h5">Invalid</h4>
       <div class="mt-16">
-        <neo-ui-input [placeholder]="'Input Placeholder'" [invalid]="true"></neo-ui-input>
+        <neo-ui-input
+          [placeholder]="'Input Placeholder'"
+          [invalid]="true"
+        ></neo-ui-input>
       </div>
     </article>
 
     <article class="mt-24">
       <h4 class="heading-h5">Disabled</h4>
       <div class="mt-16">
-        <neo-ui-input [placeholder]="'Input Placeholder'" [disabled]="true"></neo-ui-input>
+        <neo-ui-input
+          [placeholder]="'Input Placeholder'"
+          [disabled]="true"
+        ></neo-ui-input>
       </div>
     </article>
   </section>
@@ -41,26 +47,39 @@
     <article class="mt-24">
       <h4 class="heading-h5">Small</h4>
       <div class="mt-16">
-        <neo-ui-input [size]="'small'" [placeholder]="'Small Size (--fontSizeSmall)'"></neo-ui-input>
+        <neo-ui-input
+          [size]="'small'"
+          [placeholder]="'Small Size (--fontSizeSmall)'"
+        ></neo-ui-input>
       </div>
     </article>
 
     <article class="mt-24">
       <h4 class="heading-h5">Basic</h4>
       <div class="mt-16">
-        <neo-ui-input [placeholder]="'Base Size (--fontSizeBase)'"></neo-ui-input>
+        <neo-ui-input
+          [placeholder]="'Base Size (--fontSizeBase)'"
+        ></neo-ui-input>
       </div>
     </article>
 
     <article class="mt-24">
       <h4 class="heading-h5">Large</h4>
       <div class="mt-16">
-        <neo-ui-input [size]="'large'" [placeholder]="'Large Size (--fontSizeLarge)'"></neo-ui-input>
+        <neo-ui-input
+          [size]="'large'"
+          [placeholder]="'Large Size (--fontSizeLarge)'"
+        ></neo-ui-input>
       </div>
     </article>
   </section>
 
-  <form [formGroup]="form" (submit)="submit()" class="mt-48" style="max-height: 420px">
+  <form
+    [formGroup]="form"
+    (submit)="submit()"
+    class="mt-48"
+    style="max-height: 420px"
+  >
     <h4 class="heading-h5">Example</h4>
     <div class="mt-16">
       <div>
@@ -68,7 +87,8 @@
           formControlName="login"
           [size]="'large'"
           [placeholder]="'login'"
-          [invalid]="!login.pristine && login.invalid"></neo-ui-input>
+          [invalid]="!login.pristine && login.invalid"
+        ></neo-ui-input>
       </div>
       <div class="mt-16">
         <neo-ui-input
@@ -76,10 +96,13 @@
           [type]="'password'"
           [size]="'large'"
           [placeholder]="'Password'"
-          [invalid]="!password.pristine && password.invalid"></neo-ui-input>
+          [invalid]="!password.pristine && password.invalid"
+        ></neo-ui-input>
       </div>
       <div class="mt-24">
-        <neo-ui-button [buttonType]="'submit'" [disabled]="form.invalid"> Submit </neo-ui-button>
+        <neo-ui-button [buttonType]="'submit'" [disabled]="form.invalid">
+          Submit
+        </neo-ui-button>
       </div>
     </div>
   </form>

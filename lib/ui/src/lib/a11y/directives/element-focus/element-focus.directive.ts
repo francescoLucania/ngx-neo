@@ -10,8 +10,7 @@ import {
   selector: '[neoElementFocus]',
 })
 export class ElementFocusDirective implements OnDestroy {
-  @Input('neoElementFocusContextClass') public contextClass =
-    'outline-base';
+  @Input('neoElementFocusContextClass') public contextClass = 'outline-base';
 
   @HostBinding('class') private cssClass = this.contextClass;
   @HostBinding('tabindex') private tabIndex =

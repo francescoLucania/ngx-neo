@@ -5,7 +5,7 @@ import {
   HostListener,
   Input,
   OnInit,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 import { INavigateList } from '../navigate-list/models/navigate';
 import { BrowserService } from '../../services/browser/browser.service';
@@ -16,9 +16,9 @@ import { filter } from 'rxjs';
   selector: 'neo-ui-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   @Input() public navigate: INavigateList[] = [];
   @Input() public logoPath = '../../assets/img/logo.jpg';
 
@@ -39,20 +39,26 @@ export class HeaderComponent implements OnInit{
       this.scrolled = (window as any)?.scrollY > 0;
 
       if (this.scrolled) {
-        this.renderer.addClass((document as any)?.querySelector('body'), 'scrolled');
+        this.renderer.addClass(
+          (document as any)?.querySelector('body'),
+          'scrolled'
+        );
       } else {
-        this.renderer.removeClass((document as any)?.querySelector('body'), 'scrolled');
+        this.renderer.removeClass(
+          (document as any)?.querySelector('body'),
+          'scrolled'
+        );
       }
     }
   }
 
   public ngOnInit(): void {
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => this.changeMenu(false));
   }
 
   public changeMenu(userEvent = true): void {
-
     if (!userEvent) {
       this.mobileMenuState = false;
       this.cdr.detectChanges();

@@ -36,10 +36,10 @@ export class TrapFocusDirective implements AfterViewInit {
     this.cdr.detectChanges();
     const focusableEls1 = element.querySelectorAll(
       'a[href], button, textarea, input[type="text"],' +
-        'input[type="radio"], input[type="checkbox"], select',
+        'input[type="radio"], input[type="checkbox"], select'
     );
     const focusableEls = Array.from(focusableEls1).filter(
-      (el: any) => !el.disabled,
+      (el: any) => !el.disabled
     );
 
     this.firstFocusableElement = element;

@@ -1,12 +1,18 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators, ɵFormGroupRawValue, ɵGetProperty, ɵTypedOrUntyped } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { InputComponent } from 'ngx-neo-ui';
 import { AlertService } from '../../../../services/alert.service';
 
 interface DemoLoginForm {
   login: FormControl<string>;
   password: FormControl<string>;
-  scenario: FormControl<null | 'captcha' | 'sms' | 'login-error' | 'password-error'>;
+  scenario: FormControl<
+    null | 'captcha' | 'sms' | 'login-error' | 'password-error'
+  >;
 }
 
 interface CaptchaForm {
@@ -16,12 +22,12 @@ interface CaptchaForm {
 @Component({
   selector: 'neo-login-a11y',
   templateUrl: './login-a11y.component.html',
-  styleUrls: ['./login-a11y.component.scss']
+  styleUrls: ['./login-a11y.component.scss'],
 })
 export class LoginA11yComponent implements OnInit {
-  @ViewChild('loginInput', {static: false})
+  @ViewChild('loginInput', { static: false })
   private loginInput: InputComponent;
-  @ViewChild('passwordInput', {static: false})
+  @ViewChild('passwordInput', { static: false })
   private passwordInput: InputComponent;
 
   public get loginControl() {
@@ -32,8 +38,7 @@ export class LoginA11yComponent implements OnInit {
   public form: FormGroup<DemoLoginForm>;
   public captchaForm: FormGroup<CaptchaForm>;
 
-  constructor(private alertService: AlertService) {
-  }
+  constructor(private alertService: AlertService) {}
 
   public ngOnInit(): void {
     this.form = new FormGroup<DemoLoginForm>({
@@ -55,29 +60,29 @@ export class LoginA11yComponent implements OnInit {
       if (this.form.errors) {
         this.form.setErrors(null);
       }
-    })
+    });
 
     this.captchaForm = new FormGroup<CaptchaForm>({
       code: new FormControl('', {
         nonNullable: true,
         validators: Validators.required,
-      })
+      }),
     });
   }
 
   public submit(): void {
     if (this.form.invalid) {
-      return
+      return;
     }
     switch (this.form.get('scenario')?.value) {
       case 'login-error':
         this.alertService.setAlert = 'Неверный логин или пароль';
-        this.loginControl?.setErrors({error: true})
-        this.loginInput.returnFocus()
-        break
+        this.loginControl?.setErrors({ error: true });
+        this.loginInput.returnFocus();
+        break;
       case 'captcha':
         this.state = 'captcha';
-        break
+        break;
     }
   }
 }

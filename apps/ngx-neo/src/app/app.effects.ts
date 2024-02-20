@@ -8,8 +8,8 @@ export class AppEffects {
   public updatedAt = createEffect(() =>
     this.actions$.pipe(
       ofType(increase, decrease, clear),
-      map(() => changeUpdatedAt({ updatedAt: Date.now() })),
-    ),
+      map(() => changeUpdatedAt({ updatedAt: Date.now() }))
+    )
   );
 
   constructor(private actions$: Actions) {}

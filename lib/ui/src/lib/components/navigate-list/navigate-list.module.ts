@@ -5,7 +5,10 @@ import { NavigateListComponent } from './navigate-list.component';
 import { NavigateListActiveRouteDisableDirective } from './directives/navigate-list-active-route-disable.directive';
 
 @NgModule({
-  declarations: [NavigateListComponent, NavigateListActiveRouteDisableDirective],
+  declarations: [
+    NavigateListComponent,
+    NavigateListActiveRouteDisableDirective,
+  ],
   imports: [CommonModule, RouterModule],
   exports: [NavigateListComponent],
 })

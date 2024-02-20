@@ -19,7 +19,12 @@ import {
   SkipSelf,
   ViewChild,
 } from '@angular/core';
-import { AbstractControl, ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  AbstractControl,
+  ControlContainer,
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import { Suggest, SuggestItem } from './models/suggest';
 import { HelperService } from '../../services/helper';
 
@@ -37,7 +42,13 @@ import { HelperService } from '../../services/helper';
   ],
 })
 export class InputComponent
-  implements OnInit, OnChanges, AfterViewInit, DoCheck, OnDestroy, ControlValueAccessor
+  implements
+    OnInit,
+    OnChanges,
+    AfterViewInit,
+    DoCheck,
+    OnDestroy,
+    ControlValueAccessor
 {
   @ViewChild('input') protected inputElement: ElementRef<HTMLInputElement>;
 
@@ -95,7 +106,7 @@ export class InputComponent
 
   constructor(
     private changeDetection: ChangeDetectorRef,
-    @Optional() @Host() @SkipSelf() private controlContainer: ControlContainer,
+    @Optional() @Host() @SkipSelf() private controlContainer: ControlContainer
   ) {}
 
   public ngOnInit(): void {
@@ -219,7 +230,6 @@ export class InputComponent
     this.focus.emit(event);
   }
 
-  public check() {
-  }
+  public check() {}
   protected commit(value: string): void {}
 }

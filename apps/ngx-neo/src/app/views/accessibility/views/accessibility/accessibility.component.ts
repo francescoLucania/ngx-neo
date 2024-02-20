@@ -4,7 +4,7 @@ import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/na
 @Component({
   selector: 'neo-accessibility',
   templateUrl: './accessibility.component.html',
-  styleUrls: ['./accessibility.component.scss']
+  styleUrls: ['./accessibility.component.scss'],
 })
 export class AccessibilityComponent {
   public formsMenu: INavigateList[] = [
@@ -16,5 +16,4 @@ export class AccessibilityComponent {
     { name: 'ElementFocus', uri: 'element-focus' },
     { name: 'FocusTrap', uri: 'focus-trap' },
   ];
-
 }

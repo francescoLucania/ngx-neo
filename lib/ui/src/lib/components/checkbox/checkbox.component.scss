@@ -58,7 +58,9 @@
     }
 
     &:focus-visible {
-      + .neo-ui-checkbox__view + .neo-ui-checkbox__label + .neo-ui-checkbox__focus-visible {
+      + .neo-ui-checkbox__view
+        + .neo-ui-checkbox__label
+        + .neo-ui-checkbox__focus-visible {
         &::before {
           content: '';
           z-index: -1;
@@ -83,6 +85,5 @@
   }
 
   &__focus-visible {
-
   }
 }

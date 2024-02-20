@@ -9,7 +9,12 @@
   </div>
 </section>
 
-<form [formGroup]="form" (submit)="submit()" class="mt-48" style="max-height: 420px">
+<form
+  [formGroup]="form"
+  (submit)="submit()"
+  class="mt-48"
+  style="max-height: 420px"
+>
   <h4 class="heading-h5">Example</h4>
   <div class="mt-16">
     <div>
@@ -17,14 +22,16 @@
         [formControlName]="'radio'"
         [value]="'Value 1'"
         [label]="'Value 1'"
-        [name]="'RadioGroup'"></neo-ui-radio>
+        [name]="'RadioGroup'"
+      ></neo-ui-radio>
     </div>
     <div class="mt-16">
       <neo-ui-radio
         [formControlName]="'radio'"
         [value]="'Value 2'"
         [label]="'Value 2'"
-        [name]="'RadioGroup'"></neo-ui-radio>
+        [name]="'RadioGroup'"
+      ></neo-ui-radio>
     </div>
 
     <div class="mt-24">Value: {{ form.get('radio')?.value }}</div>

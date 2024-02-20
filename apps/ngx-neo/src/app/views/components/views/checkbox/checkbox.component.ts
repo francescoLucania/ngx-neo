@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 interface DemoCheckboxForm {
   checkbox1?: FormControl<string | null>;
@@ -9,13 +9,12 @@ interface DemoCheckboxForm {
 @Component({
   selector: 'neo-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss']
+  styleUrls: ['./checkbox.component.scss'],
 })
-export class CheckboxComponent implements OnInit{
+export class CheckboxComponent implements OnInit {
   public form: FormGroup<DemoCheckboxForm>;
 
-  constructor() {
-  }
+  constructor() {}
 
   public ngOnInit(): void {
     this.form = new FormGroup<DemoCheckboxForm>({

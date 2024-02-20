@@ -1,7 +1,7 @@
-@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as
+  theme;
 
 .ui {
-
   &__item {
     &:not(:last-child) {
       margin-bottom: 32px;
@@ -15,7 +15,6 @@
   &__item-title {
     margin-bottom: 32px;
   }
-
 }
 
 .blog-list {

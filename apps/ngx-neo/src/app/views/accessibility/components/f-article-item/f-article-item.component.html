@@ -1,20 +1,16 @@
 <article class="f-article-item">
-
   <div class="f-article-item__image">
-    <img [src]="image"
-         [alt]="title"
-         loading="lazy"
-    >
+    <img [src]="image" [alt]="title" loading="lazy" />
   </div>
 
   <header class="f-article-item__header">
     <h3 class="f-article-item__header-title heading-h5">
-      <a href="#">{{title}}</a>
+      <a href="#">{{ title }}</a>
     </h3>
     <ul class="f-article-item__topics" *ngIf="topics?.length">
       <li class="f-article-item__topics-item" *ngFor="let item of topics">
         <a [href]="item.uri">
-          {{item.value}}
+          {{ item.value }}
         </a>
       </li>
     </ul>

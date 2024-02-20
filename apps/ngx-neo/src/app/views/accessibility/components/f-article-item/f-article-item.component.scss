@@ -1,4 +1,3 @@
-
 .f-article-item {
   position: relative;
 
@@ -19,7 +18,7 @@
       }
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         right: 0;
@@ -47,7 +46,7 @@
       margin-right: 16px;
 
       &::after {
-        content: "|";
+        content: '|';
         position: absolute;
         top: -1px;
         right: -12px;

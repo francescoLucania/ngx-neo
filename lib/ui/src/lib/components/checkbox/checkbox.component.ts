@@ -2,7 +2,8 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  EventEmitter, forwardRef,
+  EventEmitter,
+  forwardRef,
   Input,
   OnInit,
   Output,
@@ -22,7 +23,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class CheckboxComponent implements OnInit{
+export class CheckboxComponent implements OnInit {
   public static idCounter = 1;
 
   @Input() public radioId: string; // input ID: если не указан, генерируется уникальный ID

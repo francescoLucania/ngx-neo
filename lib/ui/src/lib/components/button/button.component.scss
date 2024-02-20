@@ -1,10 +1,13 @@
-@use '../../../../assets/styles/theme-provider/base-styles/resets/button' as button;
+@use '../../../../assets/styles/theme-provider/base-styles/resets/button' as
+  button;
 @use '../../../../assets/styles/theme-provider/theme_provider' as theme;
-@use '../../../../assets/styles/theme-provider/common/accessibility/mixins/actions' as actions;
+@use '../../../../assets/styles/theme-provider/common/accessibility/mixins/actions'
+  as actions;
 
 .neo-ui-button {
   @include button.reset-buttons-styles;
-  padding: var(--buttonPaddingTopBase) var(--buttonPaddingRightBase) var(--buttonPaddingBottomBase) var(--buttonPaddingLeftBase);
+  padding: var(--buttonPaddingTopBase) var(--buttonPaddingRightBase)
+    var(--buttonPaddingBottomBase) var(--buttonPaddingLeftBase);
   font-size: 16px;
   line-height: 1;
   border-radius: var(--baseBorderRadius);
@@ -63,12 +66,14 @@
   }
 
   &--size-small {
-    padding: var(--buttonPaddingTopSmall) var(--buttonPaddingRightSmall) var(--buttonPaddingBottomSmall) var(--buttonPaddingLeftSmall);
+    padding: var(--buttonPaddingTopSmall) var(--buttonPaddingRightSmall)
+      var(--buttonPaddingBottomSmall) var(--buttonPaddingLeftSmall);
     font-size: var(--fontSizeSmall);
   }
 
   &--size-large {
-    padding: var(--buttonPaddingTopLarge) var(--buttonPaddingRightLarge) var(--buttonPaddingBottomLarge) var(--buttonPaddingLeftLarge);
+    padding: var(--buttonPaddingTopLarge) var(--buttonPaddingRightLarge)
+      var(--buttonPaddingBottomLarge) var(--buttonPaddingLeftLarge);
     font-size: var(--fontSizeLarge);
   }
 

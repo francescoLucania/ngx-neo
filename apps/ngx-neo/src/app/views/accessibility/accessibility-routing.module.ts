@@ -4,7 +4,6 @@ import { AccessibilityComponent } from './views/accessibility/accessibility.comp
 import { UiComponent } from './views/ui/ui.component';
 import { LoginA11yComponent } from './views/login-a11y/login-a11y.component';
 
-
 const routes: Routes = [
   {
     path: '',

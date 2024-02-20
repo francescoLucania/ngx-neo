@@ -1,4 +1,7 @@
-<ol class="navigate-list" [ngClass]="{ 'navigate-list--vertical': type === 'vertical' }">
+<ol
+  class="navigate-list"
+  [ngClass]="{ 'navigate-list--vertical': type === 'vertical' }"
+>
   <li *ngFor="let item of navigate" class="navigate-list__item">
     <a
       class="focus-visible"

@@ -1,4 +1,5 @@
-@use '../../../../assets/styles/theme-provider/common/accessibility/mixins/actions' as link;
+@use '../../../../assets/styles/theme-provider/common/accessibility/mixins/actions'
+  as link;
 
 input {
   &[type='tel'] {
@@ -23,7 +24,8 @@ input {
   }
 
   &__tag {
-    padding: var(--inputPaddingTopBase) var(--inputPaddingRightBase) var(--inputPaddingBottomBase) var(--inputPaddingLeftBase);
+    padding: var(--inputPaddingTopBase) var(--inputPaddingRightBase)
+      var(--inputPaddingBottomBase) var(--inputPaddingLeftBase);
     width: 100%;
     height: var(--inputHeightBase);
     border-radius: var(--inputBorderRadius);
@@ -40,13 +42,15 @@ input {
     }
 
     &--size-small {
-      padding: var(--inputPaddingTopSmall) var(--inputPaddingRightSmall) var(--inputPaddingBottomSmall) var(--inputPaddingLeftSmall);
+      padding: var(--inputPaddingTopSmall) var(--inputPaddingRightSmall)
+        var(--inputPaddingBottomSmall) var(--inputPaddingLeftSmall);
       height: var(--inputHeightSmall);
       font-size: var(--fontSizeSmall);
     }
 
     &--size-large {
-      padding: var(--inputPaddingTopLarge) var(--inputPaddingRightLarge) var(--inputPaddingBottomLarge) var(--inputPaddingLeftLarge);
+      padding: var(--inputPaddingTopLarge) var(--inputPaddingRightLarge)
+        var(--inputPaddingBottomLarge) var(--inputPaddingLeftLarge);
       height: var(--inputHeightLarge);
       font-size: var(--fontSizeLarge);
     }
@@ -60,15 +64,14 @@ input {
     width: 24px;
     height: 24px;
     cursor: pointer;
-    background: url(img/password-hidden.svg) no-repeat
-    center;
+    background: url(img/password-hidden.svg) no-repeat center;
     font-size: 0;
 
     &:focus-visible {
       position: absolute;
-      display:block;
-      background: url(img/password-hidden.svg) no-repeat
-      center var(--accessibilityBackground);
+      display: block;
+      background: url(img/password-hidden.svg) no-repeat center
+        var(--accessibilityBackground);
 
       &::before {
         background: none;
@@ -76,19 +79,15 @@ input {
     }
 
     &.invalid {
-      background: url(img/password-hidden-error.svg)
-      no-repeat center;
+      background: url(img/password-hidden-error.svg) no-repeat center;
     }
 
     &.show {
-      background: url(img/password-shown.svg) no-repeat
-      center;
+      background: url(img/password-shown.svg) no-repeat center;
 
       &.invalid {
-        background: url(img/password-shown-error.svg)
-        no-repeat center;
+        background: url(img/password-shown-error.svg) no-repeat center;
       }
     }
-
   }
 }

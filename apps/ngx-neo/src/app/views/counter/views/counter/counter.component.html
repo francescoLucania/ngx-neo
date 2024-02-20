@@ -1,8 +1,15 @@
-<div>
-  <button type="button" (click)="increase()">+1</button>
-  <button [disabled]="disableCounter$ | async" type="button" (click)="decrease()">-1</button>
-  <div>Итого = {{ count$ | async }}</div>
-  <div *ngIf="updatedAt$ | async as updatedAt">
-    Последнее обновление = {{ updatedAt | date : 'HH:mm:ss dd/MM/yyyy' }}
+<div class="mt-40">
+  <div class="container">
+    <neo-ui-button (click)="increase()"> +1 </neo-ui-button>&nbsp;
+    <neo-ui-button
+      [disabled]="(disableCounter$ | async) || false"
+      (click)="decrease()"
+      >-1</neo-ui-button
+    >
+
+    <div class="mt-32">Итого = {{ count$ | async }}</div>
+    <div class="mt-16" *ngIf="updatedAt$ | async as updatedAt">
+      Последнее обновление = {{ updatedAt | date : 'HH:mm:ss dd/MM/yyyy' }}
+    </div>
   </div>
 </div>

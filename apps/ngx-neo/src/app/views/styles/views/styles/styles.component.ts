@@ -9,10 +9,16 @@ import { GlobalComponent } from '../global/global.component';
 @Component({
   selector: 'neo-styles',
   standalone: true,
-  imports: [CommonModule, NavigateListModule, RouterModule, CodeModule, GlobalComponent],
+  imports: [
+    CommonModule,
+    NavigateListModule,
+    RouterModule,
+    CodeModule,
+    GlobalComponent,
+  ],
   templateUrl: './styles.component.html',
   styleUrl: './styles.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StylesComponent {
   public formsMenu: INavigateList[] = [

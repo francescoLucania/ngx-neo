@@ -16,7 +16,7 @@
       "prefix": "neo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/apps/ngx-neo/browser",
             "index": "apps/ngx-neo/src/index.html",
@@ -30,7 +30,7 @@
             "styles": ["apps/ngx-neo/src/styles.scss"],
             "aot": true,
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules"]
+              "includePaths": ["./"]
             }
           },
           "configurations": {
@@ -52,7 +52,6 @@
             "development": {
               "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -81,9 +80,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-
-            ]
+            "lintFilePatterns": []
           }
         },
         "test": {
@@ -100,7 +97,7 @@
             "main": "apps/ngx-neo/server.ts",
             "tsConfig": "apps/ngx-neo/tsconfig.server.json",
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules"]
+              "includePaths": ["./"]
             }
           },
           "configurations": {

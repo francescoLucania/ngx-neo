@@ -6,13 +6,9 @@ import { StylesComponent } from '../styles/styles.component';
 @Component({
   selector: 'neo-global',
   standalone: true,
-  imports: [
-    CommonModule, CodeModule, StylesComponent
-  ],
+  imports: [CommonModule, CodeModule, StylesComponent],
   templateUrl: './global.component.html',
   styleUrl: './global.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GlobalComponent {
-
-}
+export class GlobalComponent {}

@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'components',
     loadChildren: async () =>
-      (await import('./views/components/components.module')).ComponentsModule,
+      (await import('./views/components/components-routing.module')).ROUTES
   },
   {
     path: 'accessibility',

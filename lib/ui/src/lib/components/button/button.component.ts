@@ -1,18 +1,21 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
   Input,
-  Output,
 } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'neo-ui-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf
+  ]
 })
-export class ButtonComponent {
+export class ButtonStandaloneComponent {
   @Input() public label: string;
   @Input() public theme: 'base' | 'secondary' | 'brand' = 'base';
   @Input() public size: 'base' | 'small' | 'large' = 'base';

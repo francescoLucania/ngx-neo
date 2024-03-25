@@ -1,12 +1,11 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Routes } from '@angular/router';
 import { ComponentsComponent } from './views/components/components.component';
 import { ButtonComponent } from './views/button/button.component';
 import { InputComponent } from './views/input/input.component';
 import { RadioComponent } from './views/radio/radio.component';
 import { CheckboxComponent } from './views/checkbox/checkbox.component';
 
-const routes: Routes = [
+export const ROUTES: Routes = [
   {
     path: '',
     component: ComponentsComponent,
@@ -30,9 +29,3 @@ const routes: Routes = [
     ],
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-})
-export class ComponentsRoutingModule {}

@@ -2,19 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
-  FormGroup,
-  Validators,
+  FormGroup, ReactiveFormsModule,
+  Validators
 } from '@angular/forms';
+import { ButtonStandaloneComponent, InputStandaloneComponent } from '@lib/ngx-neo-ui';
+import { CodeModule } from '../../../../components/code/code.module';
+import { MaskitoDirective } from '@maskito/angular';
+import { maskitoPhoneOptionsGenerator } from '@maskito/phone';
+import { MASKITO_DEFAULT_OPTIONS } from '@maskito/core';
 
 interface DemoLoginForm {
   login: FormControl<string>;
   password?: FormControl<string>;
 }
 
+
 @Component({
   selector: 'neo-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
+  imports: [
+    ButtonStandaloneComponent,
+    InputStandaloneComponent,
+    ReactiveFormsModule,
+    CodeModule,
+    MaskitoDirective
+
+  ],
+  standalone: true
 })
 export class InputComponent implements OnInit {
   public get login(): AbstractControl<string> {
@@ -26,7 +41,9 @@ export class InputComponent implements OnInit {
 
   public form: FormGroup<DemoLoginForm>;
 
-  public ngOnInit(): void {
+  protected phoneMask = MASKITO_DEFAULT_OPTIONS;
+
+  public async ngOnInit(): Promise<void> {
     this.form = new FormGroup<DemoLoginForm>({
       login: new FormControl('', {
         nonNullable: true,
@@ -36,6 +53,11 @@ export class InputComponent implements OnInit {
         nonNullable: true,
         validators: Validators.required,
       }),
+    });
+
+    this.phoneMask = maskitoPhoneOptionsGenerator({
+      countryIsoCode: 'RU',
+      metadata: await import('libphonenumber-js/min/metadata').then(m => m.default),
     });
   }
 

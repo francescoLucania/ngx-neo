@@ -27,6 +27,7 @@
     [class.focused]="focused"
     [class.neo-ui-input__tag--size-small]="size === 'small'"
     [class.neo-ui-input__tag--size-large]="size === 'large'"
+    [maskito]="maskitoOptions"
     (change)="handleChange()"
     (input)="handleInput($event)"
     (blur)="notifyBlurEvent($event)"

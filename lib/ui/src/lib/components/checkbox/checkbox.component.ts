@@ -9,21 +9,24 @@ import {
   Output,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { EMPTY_FUNCTION } from '../../constants';
+import { TInputEvent } from '../../types';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'neo-ui-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
+  standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CheckboxComponent),
+      useExisting: forwardRef(() => CheckboxStandaloneComponent),
       multi: true,
     },
   ],
 })
-export class CheckboxComponent implements OnInit {
+export class CheckboxStandaloneComponent implements OnInit {
   public static idCounter = 1;
 
   @Input() public radioId: string; // input ID: если не указан, генерируется уникальный ID
@@ -36,24 +39,24 @@ export class CheckboxComponent implements OnInit {
   @Input() public checked: boolean;
 
   @Output() private changed = new EventEmitter<string>();
-  @Output() private focus = new EventEmitter<FocusEvent>();
-  @Output() private blur = new EventEmitter<FocusEvent>();
+  @Output() private focusEvent = new EventEmitter<FocusEvent>();
+  @Output() private blurEvent = new EventEmitter<FocusEvent>();
 
   /** The method to be called in order to update ngModel */
-  private controlValueAccessorChangeFn: (value: any) => void = () => {};
-  private onTouched: () => any = () => {};
-  private _controlValueAccessorChangeFn: (value: any) => void = () => {};
+  private controlValueAccessorChangeFn = EMPTY_FUNCTION;
+  private onTouched = EMPTY_FUNCTION;
+  private _controlValueAccessorChangeFn = EMPTY_FUNCTION;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
   public ngOnInit(): void {
     // генеририрует уникальный ID, если не указан radioId
     if (!this.radioId) {
-      this.radioId = 'app-radio-' + CheckboxComponent.idCounter++;
+      this.radioId = 'app-radio-' + CheckboxStandaloneComponent.idCounter++;
     }
   }
 
-  public onSelected(event: any): void {
+  public onSelected(event: TInputEvent): void {
     // всегда true, но вызывается только для активного
     this.checked = event.target.checked;
     // для остальных из данной группы синхронизация произойдет через модель
@@ -63,27 +66,27 @@ export class CheckboxComponent implements OnInit {
   }
 
   public notifyFocusEvent(event: FocusEvent): void {
-    this.focus.emit(event);
+    this.focusEvent.emit(event);
   }
 
   public notifyBlurEvent(event: FocusEvent): void {
-    this.blur.emit(event);
+    this.blurEvent.emit(event);
   }
 
   // Обязательные методы ControlValueAccessor:
 
-  public writeValue(value: any): void {
+  public writeValue(value: string): void {
     this.checked = value === this.value;
     this.cdr.detectChanges();
   }
 
-  public registerOnChange(fn: (value: any) => void): void {
+  public registerOnChange(fn: (value: unknown) => void): void {
     this.controlValueAccessorChangeFn = fn;
     this.cdr.detectChanges();
   }
 
-  public registerOnTouched(fn: any): void {
-    this.onTouched = fn;
+  public registerOnTouched(onTouched: () => void): void {
+    this.onTouched = onTouched;
     this.cdr.detectChanges();
   }
 

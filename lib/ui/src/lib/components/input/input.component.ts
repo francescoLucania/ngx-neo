@@ -1,47 +1,51 @@
 import {
   AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  DoCheck,
-  ElementRef,
+  ChangeDetectionStrategy, ChangeDetectorRef,
+  Component, DoCheck, ElementRef,
   EventEmitter,
   forwardRef,
   Host,
   HostBinding,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
+  Input, OnChanges, OnDestroy, OnInit,
   Optional,
-  Output,
-  SimpleChanges,
+  Output, SimpleChanges,
   SkipSelf,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import {
   AbstractControl,
   ControlContainer,
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
+  ControlValueAccessor, FormsModule,
+  NG_VALUE_ACCESSOR
 } from '@angular/forms';
 import { Suggest, SuggestItem } from './models/suggest';
-import { HelperService } from '../../services/helper';
+import { HelperService } from '../../services';
+import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { MaskitoDirective } from '@maskito/angular';
+import { MaskitoOptions } from '@maskito/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'neo-ui-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
+  standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true,
-    },
+      useExisting: forwardRef(() => InputStandaloneComponent),
+      multi: true
+    }
   ],
+  imports: [
+    NgIf,
+    NgClass,
+    FormsModule,
+    MaskitoDirective,
+    NgTemplateOutlet
+  ]
 })
-export class InputComponent
+export class InputStandaloneComponent
   implements
     OnInit,
     OnChanges,
@@ -57,8 +61,8 @@ export class InputComponent
 
   // focus и blur искусственные, одноименные с естественными, остальные события просто всплывают
   @Output() public cleared = new EventEmitter<void>();
-  @Output() public focus = new EventEmitter<FocusEvent>();
-  @Output() public blur = new EventEmitter<FocusEvent>();
+  @Output() public focusEvent = new EventEmitter<FocusEvent>();
+  @Output() public blurEvent = new EventEmitter<FocusEvent>();
   @Output() public selectSuggest = new EventEmitter<Suggest | SuggestItem>();
   // эти события не перехватываются и всплывают:
   // input, change, keydown, keyup, keypress, click, dblclick, touchstart, touchend,
@@ -80,6 +84,7 @@ export class InputComponent
   @Input() public commitOnInput = true; // коммитить по input или по change
   @Input() public invalid = false;
   @Input() public size: 'small' | 'base' | 'large' = 'base';
+  @Input() public maskitoOptions: MaskitoOptions;
 
   @Input()
   public set id(value: string) {
@@ -119,7 +124,7 @@ export class InputComponent
     }
   }
 
-  public registerOnChange(fn: any): void {
+  public registerOnChange(fn: (value: unknown) => void): void {
     this.commit = fn;
   }
 
@@ -170,7 +175,7 @@ export class InputComponent
     }
     this.check();
 
-    this.blur.emit();
+    this.blurEvent.emit();
     this.changeDetection.detectChanges();
   }
 
@@ -180,7 +185,7 @@ export class InputComponent
       this.onTouchedCallback();
     }
     this.check();
-    this.focus.emit();
+    this.focusEvent.emit();
   }
 
   public returnFocus(e?: Event) {
@@ -223,11 +228,11 @@ export class InputComponent
   }
 
   public notifyBlurEvent(event: FocusEvent) {
-    this.blur.emit(event);
+    this.blurEvent.emit(event);
   }
 
   public notifyFocusEvent(event: FocusEvent) {
-    this.focus.emit(event);
+    this.focusEvent.emit(event);
   }
 
   public check() {}

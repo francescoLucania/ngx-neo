@@ -6,10 +6,10 @@ import {
   Validators
 } from '@angular/forms';
 import { ButtonStandaloneComponent, InputStandaloneComponent } from '@lib/ngx-neo-ui';
-import { CodeModule } from '../../../../components/code/code.module';
 import { MaskitoDirective } from '@maskito/angular';
 import { maskitoPhoneOptionsGenerator } from '@maskito/phone';
 import { MASKITO_DEFAULT_OPTIONS } from '@maskito/core';
+import { CodeComponent } from '../../../../components/code/code.component';
 
 interface DemoLoginForm {
   login: FormControl<string>;
@@ -25,8 +25,8 @@ interface DemoLoginForm {
     ButtonStandaloneComponent,
     InputStandaloneComponent,
     ReactiveFormsModule,
-    CodeModule,
-    MaskitoDirective
+    MaskitoDirective,
+    CodeComponent
 
   ],
   standalone: true

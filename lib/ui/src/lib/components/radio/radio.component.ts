@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { EMPTY_FUNCTION } from '../../constants';
-import { TInputEvent } from '../../types';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,9 +20,10 @@ import { TInputEvent } from '../../types';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => RadioStandaloneComponent),
-      multi: true,
-    },
+      multi: true
+    }
   ],
+  standalone: true
 })
 export class RadioStandaloneComponent implements OnInit {
   public static idCounter = 1;
@@ -56,9 +56,13 @@ export class RadioStandaloneComponent implements OnInit {
     }
   }
 
-  public onSelected(event: TInputEvent): void {
+  public onChange(event: Event): void {
     // всегда true, но вызывается только для активного
-    this.checked = event.target.checked;
+    const { target } = event;
+    if (target instanceof HTMLInputElement) {
+      this.checked = target.checked;
+    }
+
     // для остальных из данной группы синхронизация произойдет через модель
     this.controlValueAccessorChangeFn(this.value);
     this.changedEvent.emit(this.value);

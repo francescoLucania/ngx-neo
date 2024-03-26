@@ -1,9 +1,21 @@
 import { Component } from '@angular/core';
+import { CheckboxStandaloneComponent, InputStandaloneComponent } from '@lib/ngx-neo-ui';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FArticleItemComponent } from '../../components/f-article-item/f-article-item.component';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'neo-ui',
   templateUrl: './ui.component.html',
   styleUrls: ['./ui.component.scss'],
+  standalone: true,
+  imports: [
+    InputStandaloneComponent,
+    CheckboxStandaloneComponent,
+    ReactiveFormsModule,
+    FArticleItemComponent,
+    NgForOf
+  ]
 })
 export class UiComponent {
   public news = [

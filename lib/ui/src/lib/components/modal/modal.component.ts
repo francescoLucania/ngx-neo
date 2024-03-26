@@ -11,14 +11,23 @@ import {
 import { ModalService } from './services/modal.service';
 import { IModalDataInterface } from './services/models';
 import { MediaQueriesService } from '../../services';
+import { NgClass, NgIf } from '@angular/common';
+import { ElementFocusModule, TrapFocusModule } from '../../a11y';
 
 @Component({
   selector: 'neo-ui-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgClass,
+    ElementFocusModule,
+    TrapFocusModule,
+    NgIf
+  ],
+  standalone: true
 })
-export class ModalComponent implements OnInit {
+export class ModalStandaloneComponent implements OnInit {
   @ViewChild('modalContent', { read: ViewContainerRef })
   public modal: ViewContainerRef;
   @ViewChild('modalContainer', { read: ElementRef })

@@ -1,10 +1,9 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Routes } from '@angular/router';
 import { AccessibilityComponent } from './views/accessibility/accessibility.component';
 import { UiComponent } from './views/ui/ui.component';
 import { LoginA11yComponent } from './views/login-a11y/login-a11y.component';
 
-const routes: Routes = [
+export const ROUTES: Routes = [
   {
     path: '',
     component: AccessibilityComponent,
@@ -20,9 +19,3 @@ const routes: Routes = [
     ],
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-})
-export class AccessibilityRoutingModule {}

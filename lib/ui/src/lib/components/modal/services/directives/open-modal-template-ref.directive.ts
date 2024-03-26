@@ -1,13 +1,13 @@
 import {
   Directive,
   NgModuleRef,
-  ElementRef,
   HostListener,
   Input,
   TemplateRef,
 } from '@angular/core';
 import { ModalService } from '../modal.service';
-import { BaseModalComponent } from '../../components/base-modal/base-modal.component';
+import { BaseModalStandaloneComponent } from '../../components/base-modal/base-modal.component';
+import { EMPTY_FUNCTION } from '../../../../constants';
 
 //  Пример использования openModalFromTemplate
 //  <button
@@ -26,11 +26,12 @@ import { BaseModalComponent } from '../../components/base-modal/base-modal.compo
 
 @Directive({
   selector: '[openModalFromTemplate]',
+  standalone: true
 })
 export class OpenModalTemplateRefDirective {
   @Input() public openModalFromTemplate: TemplateRef<any>;
   @Input() public modalTitle: string;
-  @Input() public closeHandler: () => {};
+  @Input() public closeHandler = EMPTY_FUNCTION;
 
   constructor(
     private modalService: ModalService,
@@ -44,6 +45,6 @@ export class OpenModalTemplateRefDirective {
       closeHandler: () => this?.closeHandler?.(),
     };
 
-    this.modalService.open(BaseModalComponent, this.moduleRef, context);
+    this.modalService.open(BaseModalStandaloneComponent, this.moduleRef, context);
   }
 }

@@ -3,22 +3,18 @@ import { CommonModule } from '@angular/common';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
 import { NavigateListModule } from 'ngx-neo-ui';
 import { RouterModule } from '@angular/router';
-import { CodeModule } from '../../../../components/code/code.module';
-import { GlobalComponent } from '../global/global.component';
 
 @Component({
   selector: 'neo-styles',
-  standalone: true,
   imports: [
     CommonModule,
     NavigateListModule,
     RouterModule,
-    CodeModule,
-    GlobalComponent,
   ],
   templateUrl: './styles.component.html',
   styleUrl: './styles.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class StylesComponent {
   public formsMenu: INavigateList[] = [

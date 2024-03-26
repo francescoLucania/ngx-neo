@@ -1,7 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { InputComponent } from 'ngx-neo-ui';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ElementFocusModule, InputComponent } from 'ngx-neo-ui';
 import { AlertService } from '../../../../services/alert.service';
+import { NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
+import {
+  ButtonStandaloneComponent,
+  InputStandaloneComponent,
+  OpenModalTemplateRefDirective,
+  RadioStandaloneComponent
+} from '@lib/ngx-neo-ui';
 
 interface DemoLoginForm {
   login: FormControl<string>;
@@ -19,6 +26,18 @@ interface CaptchaForm {
   selector: 'neo-login-a11y',
   templateUrl: './login-a11y.component.html',
   styleUrls: ['./login-a11y.component.scss'],
+  standalone: true,
+  imports: [
+    NgSwitch,
+    ElementFocusModule,
+    ReactiveFormsModule,
+    NgSwitchCase,
+    InputStandaloneComponent,
+    RadioStandaloneComponent,
+    ButtonStandaloneComponent,
+    OpenModalTemplateRefDirective,
+    NgIf
+  ]
 })
 export class LoginA11yComponent implements OnInit {
   @ViewChild('loginInput', { static: false })

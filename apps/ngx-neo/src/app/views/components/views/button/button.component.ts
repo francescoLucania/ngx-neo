@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ButtonStandaloneComponent } from '@lib/ngx-neo-ui';
-import { CodeModule } from '../../../../components/code/code.module';
+import { CodeComponent } from '../../../../components/code/code.component';
 
 @Component({
   selector: 'neo-button',
@@ -8,7 +8,7 @@ import { CodeModule } from '../../../../components/code/code.module';
   styleUrls: ['./button.component.scss'],
   imports: [
     ButtonStandaloneComponent,
-    CodeModule
+    CodeComponent
   ],
   standalone: true
 })

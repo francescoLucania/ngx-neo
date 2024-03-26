@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
+import { RouterOutlet } from '@angular/router';
+import { NavigateListModule } from '@lib/ngx-neo-ui';
 
 @Component({
   selector: 'neo-accessibility',
   templateUrl: './accessibility.component.html',
   styleUrls: ['./accessibility.component.scss'],
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    NavigateListModule
+  ]
 })
 export class AccessibilityComponent {
   public formsMenu: INavigateList[] = [

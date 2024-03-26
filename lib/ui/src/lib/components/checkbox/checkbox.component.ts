@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { EMPTY_FUNCTION } from '../../constants';
-import { TInputEvent } from '../../types';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -56,9 +55,12 @@ export class CheckboxStandaloneComponent implements OnInit {
     }
   }
 
-  public onSelected(event: TInputEvent): void {
+  public onSelected(event: Event): void {
     // всегда true, но вызывается только для активного
-    this.checked = event.target.checked;
+    const { target } = event;
+    if (target instanceof HTMLInputElement) {
+      this.checked = target.checked;
+    }
     // для остальных из данной группы синхронизация произойдет через модель
     console.log('this.value', this.value);
     this.controlValueAccessorChangeFn(this.value);

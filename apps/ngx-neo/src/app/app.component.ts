@@ -1,13 +1,25 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, } from '@angular/core';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
 import { AlertService } from './services/alert.service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { ButtonModule, FooterModule, HeaderModule, ModalModule } from 'ngx-neo-ui';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'neo-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    HeaderModule,
+    FooterModule,
+    ModalModule,
+    ButtonModule,
+    RouterOutlet
+  ]
 })
 export class AppComponent {
   public message = toSignal(this.alertService.message$, { initialValue: null });

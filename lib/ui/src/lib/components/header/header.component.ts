@@ -27,8 +27,8 @@ import { NavigateListComponent } from '../navigate-list/navigate-list.component'
     NgTemplateOutlet,
     ElementFocusDirective,
     TrapFocusDirective,
-    NavigateListComponent
-  ]
+    NavigateListComponent,
+  ],
 })
 export class HeaderStandaloneComponent implements OnInit {
   @Input() public navigate: INavigateList[] = [];

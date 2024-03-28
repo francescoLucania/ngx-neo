@@ -12,12 +12,8 @@ interface DemoCheckboxForm {
   selector: 'neo-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
-  imports: [
-    ReactiveFormsModule,
-    CheckboxStandaloneComponent,
-    CodeComponent
-  ],
-  standalone: true
+  imports: [ReactiveFormsModule, CheckboxStandaloneComponent, CodeComponent],
+  standalone: true,
 })
 export class CheckboxComponent implements OnInit {
   public form: FormGroup<DemoCheckboxForm>;

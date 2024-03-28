@@ -5,6 +5,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'neo-code',
   templateUrl: './code.component.html',
   styleUrls: ['./code.component.scss'],
-  standalone: true
+  standalone: true,
 })
 export class CodeComponent {}

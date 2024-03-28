@@ -26,7 +26,7 @@ import { EMPTY_FUNCTION } from '../../../../constants';
 
 @Directive({
   selector: '[openModalFromTemplate]',
-  standalone: true
+  standalone: true,
 })
 export class OpenModalTemplateRefDirective {
   @Input() public openModalFromTemplate: TemplateRef<any>;
@@ -45,6 +45,10 @@ export class OpenModalTemplateRefDirective {
       closeHandler: () => this?.closeHandler?.(),
     };
 
-    this.modalService.open(BaseModalStandaloneComponent, this.moduleRef, context);
+    this.modalService.open(
+      BaseModalStandaloneComponent,
+      this.moduleRef,
+      context
+    );
   }
 }

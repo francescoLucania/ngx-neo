@@ -6,10 +6,7 @@ import { CodeComponent } from '../../../../components/code/code.component';
   selector: 'neo-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
-  imports: [
-    ButtonStandaloneComponent,
-    CodeComponent
-  ],
-  standalone: true
+  imports: [ButtonStandaloneComponent, CodeComponent],
+  standalone: true,
 })
 export class ButtonComponent {}

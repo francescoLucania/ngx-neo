@@ -13,9 +13,9 @@ import { RouterLink } from '@angular/router';
     ButtonStandaloneComponent,
     CodeComponent,
     RouterLink,
-    OpenModalTemplateRefDirective
+    OpenModalTemplateRefDirective,
   ],
-  standalone: true
+  standalone: true,
 })
 export class HomeComponent {
   constructor(public readonly modalService: ModalService) {}

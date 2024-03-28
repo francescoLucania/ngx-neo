@@ -1,22 +1,30 @@
 import {
   AfterViewInit,
-  ChangeDetectionStrategy, ChangeDetectorRef,
-  Component, DoCheck, ElementRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  DoCheck,
+  ElementRef,
   EventEmitter,
   forwardRef,
   Host,
   HostBinding,
-  Input, OnChanges, OnDestroy, OnInit,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
   Optional,
-  Output, SimpleChanges,
+  Output,
+  SimpleChanges,
   SkipSelf,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import {
   AbstractControl,
   ControlContainer,
-  ControlValueAccessor, FormsModule,
-  NG_VALUE_ACCESSOR
+  ControlValueAccessor,
+  FormsModule,
+  NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 import { Suggest, SuggestItem } from './models/suggest';
 import { HelperService } from '../../services';
@@ -34,16 +42,10 @@ import { MaskitoOptions } from '@maskito/core';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => InputStandaloneComponent),
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  imports: [
-    NgIf,
-    NgClass,
-    FormsModule,
-    MaskitoDirective,
-    NgTemplateOutlet
-  ]
+  imports: [NgIf, NgClass, FormsModule, MaskitoDirective, NgTemplateOutlet],
 })
 export class InputStandaloneComponent
   implements

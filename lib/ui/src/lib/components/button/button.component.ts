@@ -1,8 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -11,9 +7,7 @@ import { NgIf } from '@angular/common';
   styleUrls: ['./button.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    NgIf
-  ]
+  imports: [NgIf],
 })
 export class ButtonStandaloneComponent {
   @Input() public label: string;

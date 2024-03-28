@@ -20,10 +20,10 @@ import { EMPTY_FUNCTION } from '../../constants';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => RadioStandaloneComponent),
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  standalone: true
+  standalone: true,
 })
 export class RadioStandaloneComponent implements OnInit {
   public static idCounter = 1;

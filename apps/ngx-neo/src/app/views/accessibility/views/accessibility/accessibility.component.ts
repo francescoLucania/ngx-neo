@@ -8,10 +8,7 @@ import { NavigateListComponent } from 'ngx-neo-ui';
   templateUrl: './accessibility.component.html',
   styleUrls: ['./accessibility.component.scss'],
   standalone: true,
-  imports: [
-    RouterOutlet,
-    NavigateListComponent
-  ]
+  imports: [RouterOutlet, NavigateListComponent],
 })
 export class AccessibilityComponent {
   public formsMenu: INavigateList[] = [

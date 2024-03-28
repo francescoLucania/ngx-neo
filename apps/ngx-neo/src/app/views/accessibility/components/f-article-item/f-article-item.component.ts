@@ -6,10 +6,7 @@ import { NgForOf, NgIf } from '@angular/common';
   templateUrl: './f-article-item.component.html',
   styleUrls: ['./f-article-item.component.scss'],
   standalone: true,
-  imports: [
-    NgIf,
-    NgForOf
-  ]
+  imports: [NgIf, NgForOf],
 })
 export class FArticleItemComponent {
   @Input() public title: string;

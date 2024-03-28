@@ -14,8 +14,8 @@ import { NgClass, NgForOf } from '@angular/common';
     RouterLinkActive,
     NavigateListActiveRouteDisableDirective,
     NgForOf,
-    NgClass
-  ]
+    NgClass,
+  ],
 })
 export class NavigateListComponent {
   @Input() public navigate: INavigateList[] = [];

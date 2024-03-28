@@ -15,12 +15,7 @@ import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss'],
   standalone: true,
-  imports: [
-    ButtonStandaloneComponent,
-    AsyncPipe,
-    DatePipe,
-    NgIf
-  ]
+  imports: [ButtonStandaloneComponent, AsyncPipe, DatePipe, NgIf],
 })
 export class CounterComponent {
   public count$ = this.store.select(countSelector);

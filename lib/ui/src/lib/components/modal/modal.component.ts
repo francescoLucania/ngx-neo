@@ -19,13 +19,8 @@ import { ElementFocusDirective, TrapFocusDirective } from '../../a11y';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    NgClass,
-    NgIf,
-    ElementFocusDirective,
-    TrapFocusDirective
-  ],
-  standalone: true
+  imports: [NgClass, NgIf, ElementFocusDirective, TrapFocusDirective],
+  standalone: true,
 })
 export class ModalStandaloneComponent implements OnInit {
   @ViewChild('modalContent', { read: ViewContainerRef })

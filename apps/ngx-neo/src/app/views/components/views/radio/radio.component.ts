@@ -11,12 +11,8 @@ interface DemoRadioForm {
   selector: 'neo-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss'],
-  imports: [
-    ReactiveFormsModule,
-    CodeComponent,
-    RadioStandaloneComponent
-  ],
-  standalone: true
+  imports: [ReactiveFormsModule, CodeComponent, RadioStandaloneComponent],
+  standalone: true,
 })
 export class RadioComponent implements OnInit {
   public form: FormGroup<DemoRadioForm>;

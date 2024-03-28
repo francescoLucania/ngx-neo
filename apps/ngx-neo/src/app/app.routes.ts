@@ -22,11 +22,12 @@ export const appRoutes: Route[] = [
   {
     path: 'components',
     loadChildren: async () =>
-      (await import('./views/components/components-routing.module')).ROUTES
+      (await import('./views/components/components-routing.module')).ROUTES,
   },
   {
     path: 'accessibility',
     loadChildren: async () =>
-      (await import('./views/accessibility/accessibility-routing.module')).ROUTES
+      (await import('./views/accessibility/accessibility-routing.module'))
+        .ROUTES,
   },
 ];

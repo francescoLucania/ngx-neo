@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { CheckboxStandaloneComponent, InputStandaloneComponent } from '@lib/ngx-neo-ui';
+import {
+  CheckboxStandaloneComponent,
+  InputStandaloneComponent,
+} from '@lib/ngx-neo-ui';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FArticleItemComponent } from '../../components/f-article-item/f-article-item.component';
 import { NgForOf } from '@angular/common';
@@ -14,8 +17,8 @@ import { NgForOf } from '@angular/common';
     CheckboxStandaloneComponent,
     ReactiveFormsModule,
     FArticleItemComponent,
-    NgForOf
-  ]
+    NgForOf,
+  ],
 })
 export class UiComponent {
   public news = [

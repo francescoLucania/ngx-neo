@@ -6,11 +6,7 @@ import { NavigateListComponent } from 'ngx-neo-ui';
 
 @Component({
   selector: 'neo-styles',
-  imports: [
-    CommonModule,
-    RouterModule,
-    NavigateListComponent
-  ],
+  imports: [CommonModule, RouterModule, NavigateListComponent],
   templateUrl: './styles.component.html',
   styleUrl: './styles.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

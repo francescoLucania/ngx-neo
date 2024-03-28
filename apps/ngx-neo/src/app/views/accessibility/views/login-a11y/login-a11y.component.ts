@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ElementFocusModule, InputComponent } from 'ngx-neo-ui';
 import { AlertService } from '../../../../services/alert.service';
 import { NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 import {
@@ -9,6 +8,7 @@ import {
   OpenModalTemplateRefDirective,
   RadioStandaloneComponent
 } from '@lib/ngx-neo-ui';
+import { ElementFocusDirective } from 'ngx-neo-ui';
 
 interface DemoLoginForm {
   login: FormControl<string>;
@@ -29,21 +29,21 @@ interface CaptchaForm {
   standalone: true,
   imports: [
     NgSwitch,
-    ElementFocusModule,
     ReactiveFormsModule,
     NgSwitchCase,
     InputStandaloneComponent,
     RadioStandaloneComponent,
     ButtonStandaloneComponent,
     OpenModalTemplateRefDirective,
-    NgIf
+    NgIf,
+    ElementFocusDirective
   ]
 })
 export class LoginA11yComponent implements OnInit {
   @ViewChild('loginInput', { static: false })
-  private loginInput: InputComponent;
+  private loginInput: InputStandaloneComponent;
   @ViewChild('passwordInput', { static: false })
-  private passwordInput: InputComponent;
+  private passwordInput: InputStandaloneComponent;
 
   public get loginControl() {
     return this.form.get('login');

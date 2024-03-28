@@ -12,7 +12,7 @@ import { ModalService } from './services/modal.service';
 import { IModalDataInterface } from './services/models';
 import { MediaQueriesService } from '../../services';
 import { NgClass, NgIf } from '@angular/common';
-import { ElementFocusModule, TrapFocusModule } from '../../a11y';
+import { ElementFocusDirective, TrapFocusDirective } from '../../a11y';
 
 @Component({
   selector: 'neo-ui-modal',
@@ -21,9 +21,9 @@ import { ElementFocusModule, TrapFocusModule } from '../../a11y';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NgClass,
-    ElementFocusModule,
-    TrapFocusModule,
-    NgIf
+    NgIf,
+    ElementFocusDirective,
+    TrapFocusDirective
   ],
   standalone: true
 })

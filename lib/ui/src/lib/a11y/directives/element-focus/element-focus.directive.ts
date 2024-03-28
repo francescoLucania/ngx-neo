@@ -8,6 +8,7 @@ import {
 
 @Directive({
   selector: '[neoElementFocus]',
+  standalone: true,
 })
 export class ElementFocusDirective implements OnDestroy {
   @Input('neoElementFocusContextClass') public contextClass = 'outline-base';

@@ -9,16 +9,28 @@ import {
 } from '@angular/core';
 import { INavigateList } from '../navigate-list/models/navigate';
 import { BrowserService } from '../../services/browser/browser.service';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
+import { NgOptimizedImage, NgTemplateOutlet } from '@angular/common';
+import { ElementFocusDirective, TrapFocusDirective } from '../../a11y';
+import { NavigateListComponent } from '../navigate-list/navigate-list.component';
 
 @Component({
   selector: 'neo-ui-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    RouterLink,
+    NgOptimizedImage,
+    NgTemplateOutlet,
+    ElementFocusDirective,
+    TrapFocusDirective,
+    NavigateListComponent
+  ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderStandaloneComponent implements OnInit {
   @Input() public navigate: INavigateList[] = [];
   @Input() public logoPath = '../../assets/img/logo.jpg';
 

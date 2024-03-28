@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RadioModule } from 'ngx-neo-ui';
+import { RadioStandaloneComponent } from 'ngx-neo-ui';
 import { CodeComponent } from '../../../../components/code/code.component';
 
 interface DemoRadioForm {
@@ -12,9 +12,9 @@ interface DemoRadioForm {
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss'],
   imports: [
-    RadioModule,
     ReactiveFormsModule,
-    CodeComponent
+    CodeComponent,
+    RadioStandaloneComponent
   ],
   standalone: true
 })

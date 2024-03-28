@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ModalModule, ModalService } from 'ngx-neo-ui';
+import { ModalService, OpenModalTemplateRefDirective } from 'ngx-neo-ui';
 import { ButtonStandaloneComponent } from '@lib/ngx-neo-ui';
 import { CodeComponent } from '../../../../components/code/code.component';
 import { RouterLink } from '@angular/router';
@@ -11,9 +11,9 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ButtonStandaloneComponent,
-    ModalModule,
     CodeComponent,
-    RouterLink
+    RouterLink,
+    OpenModalTemplateRefDirective
   ],
   standalone: true
 })

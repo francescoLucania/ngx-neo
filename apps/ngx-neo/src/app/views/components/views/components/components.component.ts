@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
-import { NavigateListModule } from 'ngx-neo-ui';
 import { RouterOutlet } from '@angular/router';
+import { NavigateListComponent } from 'ngx-neo-ui';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,8 +9,8 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './components.component.html',
   styleUrls: ['./components.component.scss'],
   imports: [
-    NavigateListModule,
-    RouterOutlet
+    RouterOutlet,
+    NavigateListComponent
   ],
   standalone: true
 })

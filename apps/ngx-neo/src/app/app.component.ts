@@ -2,7 +2,11 @@ import { ChangeDetectionStrategy, Component, } from '@angular/core';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
 import { AlertService } from './services/alert.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ButtonModule, FooterModule, HeaderModule, ModalModule } from 'ngx-neo-ui';
+import {
+  FooterStandaloneComponent,
+  HeaderStandaloneComponent,
+  ModalStandaloneComponent
+} from 'ngx-neo-ui';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -14,11 +18,10 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    HeaderModule,
-    FooterModule,
-    ModalModule,
-    ButtonModule,
-    RouterOutlet
+    RouterOutlet,
+    ModalStandaloneComponent,
+    HeaderStandaloneComponent,
+    FooterStandaloneComponent
   ]
 })
 export class AppComponent {

@@ -54,7 +54,7 @@
     "express": "^4.18.2",
     "libphonenumber-js": "^1.10.58",
     "lint-staged": "^15.2.2",
-    "ngx-neo-ui": "^3.4.1",
+    "ngx-neo-ui": "^4.0.1-beta",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

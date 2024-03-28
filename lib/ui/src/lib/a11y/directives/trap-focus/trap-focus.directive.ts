@@ -10,6 +10,7 @@ import { filter } from 'rxjs/operators';
 
 @Directive({
   selector: '[neoTrapFocus]',
+  standalone: true,
 })
 export class TrapFocusDirective implements AfterViewInit {
   // необязательно передавать значение в state

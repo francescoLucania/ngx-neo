@@ -6,6 +6,11 @@ import { IMediaQueriesParams, MEDIA_QUERY_CONFIG } from 'ngx-neo-ui';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './interceptors';
 import { UserService } from './services/user/user.service';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { reducers } from './reducers';
 
 export function initializerFactory(userService: UserService) {
   console.log('run initializer');
@@ -24,6 +29,10 @@ const mediaQueriesConfig: IMediaQueriesParams = {
   ],
 };
 
+function provideRouterStore() {
+  return undefined;
+}
+
 export const appConfig: ApplicationConfig = {
   providers: [
     {
@@ -40,5 +49,9 @@ export const appConfig: ApplicationConfig = {
       multi: true,
     },
     provideClientHydration(),
+    //ngrx
+    provideStore(reducers),
+    provideEffects([AppEffects]),
+    provideStoreDevtools({ maxAge: 25, logOnly: false }),
   ],
 };

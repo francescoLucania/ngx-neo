@@ -11,6 +11,7 @@ import { filter } from 'rxjs';
 
 @Directive({
   selector: '[neoUiNavigateListActiveRouteDisable]',
+  standalone: true,
 })
 export class NavigateListActiveRouteDisableDirective implements OnInit {
   @HostBinding('tabindex') public tabindex: string;

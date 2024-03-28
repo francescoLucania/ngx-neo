@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
-import { NavigateListModule } from 'ngx-neo-ui';
 import { RouterModule } from '@angular/router';
+import { NavigateListComponent } from 'ngx-neo-ui';
 
 @Component({
   selector: 'neo-styles',
   imports: [
     CommonModule,
-    NavigateListModule,
     RouterModule,
+    NavigateListComponent
   ],
   templateUrl: './styles.component.html',
   styleUrl: './styles.component.scss',

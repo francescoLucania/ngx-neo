@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
 import { RouterOutlet } from '@angular/router';
-import { NavigateListModule } from '@lib/ngx-neo-ui';
+import { NavigateListComponent } from 'ngx-neo-ui';
 
 @Component({
   selector: 'neo-accessibility',
@@ -10,7 +10,7 @@ import { NavigateListModule } from '@lib/ngx-neo-ui';
   standalone: true,
   imports: [
     RouterOutlet,
-    NavigateListModule
+    NavigateListComponent
   ]
 })
 export class AccessibilityComponent {

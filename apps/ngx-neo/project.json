@@ -2,6 +2,13 @@
   "name": "ngx-neo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss",
+      "standalone": true,
+      "changeDetection": "OnPush"
+    }
+  },
   "prefix": "neo",
   "sourceRoot": "apps/ngx-neo/src",
   "tags": [],
@@ -13,7 +20,7 @@
         "outputPath": "dist/apps/ngx-neo/browser",
         "index": "apps/ngx-neo/src/index.html",
         "main": "apps/ngx-neo/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [],
         "tsConfig": "apps/ngx-neo/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/ngx-neo/src/favicon.ico", "apps/ngx-neo/src/assets"],
@@ -94,7 +101,7 @@
       "options": {
         "outputPath": "dist/apps/ngx-neo/server",
         "main": "apps/ngx-neo/server.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [],
         "tsConfig": "apps/ngx-neo/tsconfig.server.json",
         "inlineStyleLanguage": "scss"
       },

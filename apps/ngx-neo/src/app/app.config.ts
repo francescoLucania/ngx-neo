@@ -1,4 +1,8 @@
-import { APP_INITIALIZER, ApplicationConfig } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  ApplicationConfig,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import {
   provideRouter,
   withEnabledBlockingInitialNavigation,
@@ -56,5 +60,6 @@ export const appConfig: ApplicationConfig = {
     provideStore(reducers),
     provideEffects([AppEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: false }),
+    provideExperimentalZonelessChangeDetection(),
   ],
 };

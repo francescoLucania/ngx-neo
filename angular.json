@@ -21,7 +21,7 @@
             "outputPath": "dist/apps/ngx-neo/browser",
             "index": "apps/ngx-neo/src/index.html",
             "main": "apps/ngx-neo/src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [],
             "tsConfig": "apps/ngx-neo/tsconfig.app.json",
             "assets": [
               "apps/ngx-neo/src/favicon.ico",

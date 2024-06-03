@@ -5,6 +5,13 @@
   "prefix": "neo-ui",
   "tags": ["ui"],
   "projectType": "library",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss",
+      "standalone": true,
+      "changeDetection": "OnPush"
+    }
+  },
   "targets": {
     "build": {
       "executor": "@nx/angular:package",

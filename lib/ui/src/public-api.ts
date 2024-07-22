@@ -13,6 +13,7 @@ export * from './lib/components/checkbox';
 export * from './lib/components/header';
 export * from './lib/services/media-query';
 export * from './lib/services/helper';
+export * from './lib/services/destroy';
 
 export * from './lib/components/navigate-list/navigate-list.component';
 export * from './lib/components/navigate-list/models/navigate';

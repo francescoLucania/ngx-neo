@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'neo-ui-button',
@@ -7,7 +8,7 @@ import { NgIf } from '@angular/common';
   styleUrls: ['./button.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf],
+  imports: [NgIf, RouterLink]
 })
 export class ButtonStandaloneComponent {
   @Input() public label: string;

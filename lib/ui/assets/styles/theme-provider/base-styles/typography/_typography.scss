@@ -8,11 +8,9 @@
 
 @mixin heading {
   font-weight: 700;
-  color: var(--colorBase);
 }
 
 @mixin text {
-  color: var(--colorBase);
 
   a,
   button {
@@ -51,34 +49,47 @@
   @include heading;
 }
 
+@mixin heading-h1() {
+  @include font(42px, 48px)
+}
+@mixin heading-h2() {
+  @include font(28px, 32px)
+}
+@mixin heading-h3() {
+  @include font(24px, 32px)
+}
+@mixin heading-h4() {
+  @include font(20px, 28px)
+}
+@mixin heading-h5() {
+  @include font(18px, 26px)
+}
+@mixin heading-h6() {
+  @include font(16px, 24px)
+}
+
 .heading-h1 {
-  font-size: 42px;
-  line-height: 48px;
+  @include heading-h1();
 }
 
 .heading-h2 {
-  font-size: 28px;
-  line-height: 32px;
+  @include heading-h2();
 }
 
 .heading-h3 {
-  font-size: 24px;
-  line-height: 32px;
+  @include heading-h3();
 }
 
 .heading-h4 {
-  font-size: 20px;
-  line-height: 28px;
+  @include heading-h4();
 }
 
 .heading-h5 {
-  font-size: 18px;
-  line-height: 26px;
+  @include heading-h5();
 }
 
 .heading-h6 {
-  font-size: 16px;
-  line-height: 24px;
+  @include heading-h6();
 }
 
 .text-base {

@@ -131,11 +131,10 @@ export class InputStandaloneComponent
   }
 
   public ngAfterViewInit(): void {
-    // this.focusManager.register(this);
     this.check();
   }
 
-  public ngOnChanges(changes: SimpleChanges) {
+  public ngOnChanges() {
     this.check();
   }
 

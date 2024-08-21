@@ -16,7 +16,8 @@
   border-width: var(--buttonBorderWidth);
   border-color: var(--colorBase);
   background-color: var(--buttonBackgroundBase);
-  color: #fff;
+  font-weight: var(--buttonFontWeight);
+  color: var(--buttonColotBase);
   text-decoration: none;
   cursor: pointer;
   transition: all var(--buttonTransition);

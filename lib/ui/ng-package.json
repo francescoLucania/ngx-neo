@@ -4,5 +4,12 @@
   "assets": ["./assets"],
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@maskito/angular",
+    "@maskito/angular",
+    "@maskito/core",
+    "@maskito/phone",
+    "@maskito/kit"
+  ]
 }

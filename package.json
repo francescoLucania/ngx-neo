@@ -6,6 +6,7 @@
     "serve neo": "nx serve ngx-neo",
     "build neo": "nx build ngx-neo",
     "build ui": "nx build lib-ui",
+    "publish ui": "cd dist/ui && npm publish",
     "dev:ssr": "ng run ngx-neo:serve-ssr",
     "serve:ssr": "node dist/ngx-neo/server/main.js",
     "build:ssr": "ng build && ng run ngx-neo:server",

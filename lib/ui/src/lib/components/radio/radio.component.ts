@@ -8,7 +8,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { EMPTY_FUNCTION } from '../../constants';
 
 @Component({
@@ -25,7 +25,7 @@ import { EMPTY_FUNCTION } from '../../constants';
   ],
   standalone: true,
 })
-export class RadioStandaloneComponent implements OnInit {
+export class RadioStandaloneComponent implements ControlValueAccessor, OnInit {
   public static idCounter = 1;
 
   @Input() public radioId: string; // input ID: если не указан, генерируется уникальный ID

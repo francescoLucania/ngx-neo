@@ -18,6 +18,5 @@ export class DestroyService extends ReplaySubject<void> implements OnDestroy {
   ngOnDestroy(): void {
     this.next();
     this.complete();
-    console.log('unsubscribe');
   }
 }

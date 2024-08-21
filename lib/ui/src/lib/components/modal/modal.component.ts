@@ -125,6 +125,10 @@ export class ModalStandaloneComponent implements OnInit {
     if (this.html && this.body) {
       this.html.style.overflow = '';
       this.body.style.overflow = '';
+      (document as any)
+        .querySelector('body').querySelector('body')
+        .setAttribute('aria-hidden', 'false');
+
     }
     this.changeDetector.detectChanges();
   }

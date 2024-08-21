@@ -2,13 +2,17 @@
   "name": "ngx-neo-ui",
   "homepage": "https://francescolucania.com/",
   "author": "<francescolucania@gmail.com> (https://francescolucania.com/)",
-  "version": "3.0.2",
+  "version": "4.0.14",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@maskito/angular": "^2.2.0",
+    "@maskito/core": "^2.2.0",
+    "@maskito/kit": "^2.2.0",
+    "@maskito/phone": "^2.2.0"
   },
   "sideEffects": false
 }

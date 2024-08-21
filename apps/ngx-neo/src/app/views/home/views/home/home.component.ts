@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ModalService, OpenModalTemplateRefDirective } from 'ngx-neo-ui';
-import { ButtonStandaloneComponent } from '@lib/ngx-neo-ui';
+import { ButtonStandaloneComponent, ModalService, OpenModalTemplateRefDirective } from 'ngx-neo-ui';
 import { CodeComponent } from '../../../../components/code/code.component';
 import { RouterLink } from '@angular/router';
 

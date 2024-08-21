@@ -42,49 +42,33 @@
       }
     }
 
-    &::before {
-      display: block;
-      margin-right: 8px;
-      content: counter(item, decimal-leading-zero) ' ';
-      counter-increment: item;
+    &--numeric {
+      &::before {
+        display: block;
+        margin-right: 8px;
+        content: counter(item, decimal-leading-zero) ' ';
+        counter-increment: item;
+      }
     }
 
     > a {
       display: block;
-      color: var(--colorBase);
+      color: var(--navigateListColorBase);
+      font-weight: var(--navigateListFontWeight);
+      transition: all var(--navigateListTransition);
 
       &:hover,
       &.is-active {
+        color: var(--navigateListColorHover);
+
         span::after {
           width: 100%;
         }
       }
 
       &.is-active {
-        pointer-events: none;
         color: var(--colorLightest);
-
-        span::after {
-          width: 100%;
-          background-color: theme.$colorLightest;
-        }
-      }
-
-      span {
-        position: relative;
-
-        &::after {
-          position: absolute;
-          display: block;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          width: 0;
-          height: 3px;
-          background-color: theme.$colorBrand;
-          transition: all 0.2s;
-          content: '';
-        }
+        pointer-events: none;
       }
     }
   }

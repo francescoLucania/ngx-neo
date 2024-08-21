@@ -199,6 +199,7 @@ $inputHeightLarge: auto;
 $buttonBorderWidth: 3px;
 $buttonBorderRadius: 0;
 $buttonBackgroundBase: $colorBase;
+$buttonFontWeight: $colorBase;
 $buttonColorBase: #fff;
 
 $buttonPaddingTopSmall: 10px;
@@ -228,6 +229,8 @@ $buttonPaddingRightLarge: 30px;
   // neo-ui-button
   --buttonBorderWidth: #{$buttonBorderWidth};
   --buttonBorderRadius: #{$buttonBorderRadius};
+  --buttonColotBase: #{$buttonColorBase};
+  --buttonFontWeight: #{$buttonFontWeight};
   --buttonBackgroundBase: #{$buttonBackgroundBase};
   --buttonTransition: #{$transitionSmall};
 
@@ -246,3 +249,44 @@ $buttonPaddingRightLarge: 30px;
   --buttonPaddingLeftLarge: #{$buttonPaddingLeftLarge};
   --buttonPaddingRightLarge: #{$buttonPaddingRightLarge};
 }
+
+// neo-ui-navigate-list
+$navigateListColorBase: $colorBase;
+$navigateListColorHover: $colorBase;
+$navigateListFontWeight: 400;
+$navigateListTransition: $transitionSmall;
+
+:root {
+  --navigateListColorBase: #{$navigateListColorBase};
+  --navigateListColorHover: #{$navigateListColorHover};
+  --navigateListFontWeight: #{$navigateListFontWeight};
+  --navigateListTransition: #{$navigateListTransition};
+}
+
+// neo-ui-modal
+$modalPaddingSm: 16px;
+$modalBorderSm: none;
+$modalBoxShadowSm: none;
+$modalBorderRadiusSm: 0;
+
+$modalPadding: 24px 32px;
+$modalBorder: 4px solid var(--colorBrand);
+$modalBoxShadow: 0 12px 32px rgba(11, 31, 51, 0.18);
+$modalBorderRadius: none;
+$modalBgColor: #fff;
+
+:root {
+
+  --modalPaddingSm: #{$modalPaddingSm};
+  --modalBoxShadowSm: #{$modalBoxShadowSm};
+  --modalBorderSm: #{$modalBorderSm};
+  --modalBorderRadiusSm: #{$modalBorderRadiusSm};
+
+  --modalPadding: #{$modalPaddingSm};
+  --modalBoxShadow: #{$modalBoxShadowSm};
+  --modalBorder: #{$modalBorder};
+  --modalBorderRadius: #{$modalBorderRadiusSm};
+  --modalBgColor: #{$modalBgColor};
+}
+
+

@@ -12,7 +12,7 @@ import {
   InputStandaloneComponent,
   OpenModalTemplateRefDirective,
   RadioStandaloneComponent,
-} from '@lib/ngx-neo-ui';
+} from 'ngx-neo-ui';
 import { ElementFocusDirective } from 'ngx-neo-ui';
 
 interface DemoLoginForm {

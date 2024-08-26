@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CheckboxStandaloneComponent } from '@lib/ngx-neo-ui';
+import { CheckboxStandaloneComponent } from 'ngx-neo-ui';
 import { CodeComponent } from '../../../../components/code/code.component';
 
 interface DemoCheckboxForm {

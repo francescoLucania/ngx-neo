@@ -77,9 +77,9 @@ export class ModalStandaloneComponent implements OnInit {
       setTimeout(() => {
         this.changeDetector.detectChanges();
         this.settingView();
-        (document as any)
-          .querySelector('body')
-          .setAttribute('aria-hidden', 'true');
+        // (document as any)
+        //   .querySelector('body')
+        //   .setAttribute('aria-hidden', 'true');
 
         this.modalBody.nativeElement.focus();
       });
@@ -125,9 +125,9 @@ export class ModalStandaloneComponent implements OnInit {
     if (this.html && this.body) {
       this.html.style.overflow = '';
       this.body.style.overflow = '';
-      (document as any)
-        .querySelector('body').querySelector('body')
-        .setAttribute('aria-hidden', 'false');
+      // (document as any)
+      //   .querySelector('body').querySelector('body')
+      //   .setAttribute('aria-hidden', 'false');
 
     }
     this.changeDetector.detectChanges();

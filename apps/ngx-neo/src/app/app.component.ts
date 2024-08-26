@@ -9,6 +9,7 @@ import {
 } from 'ngx-neo-ui';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { PopoverComponent } from '../../../../lib/ui/src/lib/components/popover';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,7 +23,10 @@ import { RouterOutlet } from '@angular/router';
     ModalStandaloneComponent,
     HeaderStandaloneComponent,
     FooterStandaloneComponent,
-  ],
+    PopoverComponent,
+    ModalStandaloneComponent,
+    FooterStandaloneComponent
+  ]
 })
 export class AppComponent {
   public message = toSignal(this.alertService.message$, { initialValue: null });

@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "nx-neo",
+            "prefix": "neo-ui",
             "style": "kebab-case"
           }
         ]

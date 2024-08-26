@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonStandaloneComponent } from '@lib/ngx-neo-ui';
+import { ButtonStandaloneComponent } from 'ngx-neo-ui';
 import { CodeComponent } from '../../../../components/code/code.component';
 
 @Component({

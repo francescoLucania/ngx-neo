@@ -9,7 +9,7 @@ import {
 import {
   ButtonStandaloneComponent,
   InputStandaloneComponent,
-} from '@lib/ngx-neo-ui';
+} from 'ngx-neo-ui';
 import { MaskitoDirective } from '@maskito/angular';
 import { maskitoPhoneOptionsGenerator } from '@maskito/phone';
 import { MASKITO_DEFAULT_OPTIONS } from '@maskito/core';

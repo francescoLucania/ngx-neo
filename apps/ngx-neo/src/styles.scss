@@ -1,6 +1,6 @@
 // Для кастомизации инструментов шаблона
 
-//@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/config' as config with (
+//@use './lib/ui/assets/styles/theme-provider/config' as config with (
 //
 //  $mq-breakpoints: (
 //    'sm': 500px,
@@ -49,16 +49,16 @@
 //);
 
 @forward 'node_modules/normalize.css/normalize';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/variables/variables';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/fonts/fonts';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/styles';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/accessibility/accessibility';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
+@forward './lib/ui/assets/styles/theme-provider/common/variables/variables';
+@forward './lib/ui/assets/styles/theme-provider/common/fonts/fonts';
+@forward './lib/ui/assets/styles/theme-provider/base-styles/styles';
+@forward './lib/ui/assets/styles/theme-provider/common/accessibility/accessibility';
+@forward './lib/ui/assets/styles/theme-provider/common/offsets/offsets';
+@forward './lib/ui/assets/styles/theme-provider/base-styles/typography/typography';
+@forward './lib/ui/assets/styles/theme-provider/base-styles/container/container';
 @forward './assets/styles/view/view';
 
-@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as
+@use './lib/ui/assets/styles/theme-provider/theme_provider' as
   theme;
 
 *,

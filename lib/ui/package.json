@@ -2,7 +2,7 @@
   "name": "ngx-neo-ui",
   "homepage": "https://francescolucania.com/",
   "author": "<francescolucania@gmail.com> (https://francescolucania.com/)",
-  "version": "4.0.14",
+  "version": "4.0.15",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"

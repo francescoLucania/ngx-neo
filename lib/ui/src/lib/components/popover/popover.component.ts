@@ -63,16 +63,18 @@ export class PopoverComponent {
     if (this.eventRef === popoverData.event) {
       this.close();
     } else {
-      this.buildContext(popoverData.context);
 
       this.popoverComponent = this.popover.createComponent(popoverData.component);
+
+      this.buildContext(popoverData.context);
+
 
       this.isOpen = true;
 
       if (this.browser.isBrowser) {
         document.addEventListener('click', (e) => {
           if (!(
-            (e.target as HTMLElement).closest('.js-neo-ui-popover__body') ||
+            (e.target as HTMLElement).closest('.js-neo-ui-popover-body') ||
             (e.target as HTMLElement).closest('.js-neo-ui-popover-reference-point')
           )) {
             this.close();
@@ -138,9 +140,10 @@ export class PopoverComponent {
   }
 
   private buildContext(context: any): void {
+    console.log('context', context);
     if (context) {
       Object.keys(context).forEach((key) => {
-        this.popoverData.instance[key] = context[key];
+        this.popoverComponent.instance[key] = context[key];
       });
     }
   }

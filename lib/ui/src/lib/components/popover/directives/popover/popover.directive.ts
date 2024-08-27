@@ -34,15 +34,17 @@ export class PopoverDirective {
     element.classList?.add('js-neo-ui-popover-reference-point');
     const popoverData = {
       event: element,
-      content: this.openNeoPopoverFromTemplate,
       closeHandler: () => this?.closeHandler?.(),
       gutter: this.openNeoPopoverGutter,
-      width: this.openNeoPopoverGutter,
-      positionType: this.openNeoPopoverWidth,
-      type: this.openNeoPopoverPositionType,
-      isHide: this.openNeoPopoverType,
+      width: this.openNeoPopoverWidth,
+      positionType: this.openNeoPopoverPositionType,
+      type: this.openNeoPopoverType,
+      isHide: this.openNeoPopoverIsHide,
       component: PopoverBaseComponentComponent,
-      context: this.openNeoPopoverContext
+      context: {
+        content: this.openNeoPopoverFromTemplate,
+        ...this.openNeoPopoverContext
+      }
     } as unknown as PopoverData;
 
     this.popoverService.open(

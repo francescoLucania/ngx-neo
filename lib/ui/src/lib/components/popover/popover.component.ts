@@ -40,12 +40,20 @@ export class PopoverComponent {
   public popoverData!: any;
   public eventRef!: any;
   public positionType!: any;
-  public scrollTransform = '';
+
   public horizontalScrollOffset = 0;
-  public verticalScrollOffset = 0;
+
+  public title: string | null = null;
   public closeButton = true;
 
-  public style: any = { opacity: 0 };
+
+  public style: {
+    opacity?: number;
+    transform?: string;
+    width?: string;
+    marginTop?: string;
+    paddingTop?: string;
+  } = { opacity: 0 };
 
   private html: any | null = null;
   private body: any | null = null;
@@ -71,6 +79,8 @@ export class PopoverComponent {
     if (this.eventRef === popoverData.event) {
       this.close();
     } else {
+
+      this.eventRef = popoverData.event;
 
       this.popoverComponent = this.popover.createComponent(popoverData.component);
 
@@ -147,7 +157,6 @@ export class PopoverComponent {
   }
 
   private buildContext(context: any): void {
-    console.log('context', context);
     if (context) {
       Object.keys(context).forEach((key) => {
         this.popoverComponent.instance[key] = context[key];
@@ -157,6 +166,7 @@ export class PopoverComponent {
 
   private setPopoverParams(popoverData: PopoverData): void {
     if (popoverData) {
+      this.title = popoverData.title ? popoverData.title : null
       this.isHide = popoverData.isHide;
       this.popoverData = popoverData;
 
@@ -195,7 +205,7 @@ export class PopoverComponent {
               window.innerWidth -
               (this.popover.element.nativeElement.getBoundingClientRect()
                   .left +
-                parseInt(this.style.width));
+                parseInt(<string>this.style.width));
             if (offset < 0) {
               offset = offset - 16;
               horizontalOffsetTotal =
@@ -218,16 +228,16 @@ export class PopoverComponent {
         } else {
           let horizontalOffsetTotal =
             referencePointElement.getBoundingClientRect().left -
-            parseInt(this.style.width) / 2 +
+            parseInt(<string>this.style.width) / 2 +
             referencePointElement.offsetWidth / 2 >
             16
               ? referencePointElement.getBoundingClientRect().left -
-              parseInt(this.style.width) / 2 +
+              parseInt(<string>this.style.width) / 2 +
               referencePointElement.offsetWidth / 2
               : 16;
           this.style.transform = `translate(${horizontalOffsetTotal + 'px'}, ${
             referencePointElement.getBoundingClientRect().top +
-            referencePointElement.offsetHeight +
+            this.eventRef.offsetHeight +
             this.popoverData.gutter +
             'px'
           })`;
@@ -237,7 +247,7 @@ export class PopoverComponent {
               window.innerWidth -
               (this.popover.element.nativeElement.getBoundingClientRect()
                   .left +
-                parseInt(this.style.width));
+                parseInt(<string>this.style.width));
             if (offset < 0) {
               offset = offset - 16;
               horizontalOffsetTotal =
@@ -248,7 +258,8 @@ export class PopoverComponent {
                 horizontalOffsetTotal + 'px'
               }, ${
                 this.eventRef.getBoundingClientRect().top +
-                referencePointElement.offsetHeight +
+                (window as any).scrollY +
+                this.eventRef.offsetHeight +
                 this.popoverData.gutter +
                 'px'
               })`;
@@ -281,7 +292,7 @@ export class PopoverComponent {
               window.innerWidth -
               (this.popover.element.nativeElement.getBoundingClientRect()
                   .left +
-                parseInt(this.style.width));
+                parseInt(<string>this.style.width));
             if (offset < 0) {
               offset = offset - 16;
               horizontalOffsetTotal =
@@ -321,7 +332,7 @@ export class PopoverComponent {
               window.innerWidth -
               (this.popover.element.nativeElement.getBoundingClientRect()
                   .left +
-                parseInt(this.style.width));
+                parseInt(<string>this.style.width));
             if (offset < 0) {
               offset = offset - 16;
               horizontalOffsetTotal =
@@ -348,6 +359,7 @@ export class PopoverComponent {
 
       this.style.transform = `translate(${horizontalOffsetTotal + 'px'}, ${
         this.eventRef.getBoundingClientRect().top +
+        (window as any).scrollY +
         this.eventRef.offsetHeight +
         this.popoverData.gutter +
         'px'
@@ -357,7 +369,7 @@ export class PopoverComponent {
           window &&
           window.innerWidth -
           (this.popover.element.nativeElement.getBoundingClientRect().left +
-            parseInt(this.style.width));
+            parseInt(<string>this.style.width));
         if (offset < 0) {
           offset = offset - 16;
           let horizontalOffsetTotal =
@@ -366,6 +378,7 @@ export class PopoverComponent {
               : 16;
           this.style.transform = `translate(${horizontalOffsetTotal + 'px'}, ${
             this.eventRef.getBoundingClientRect().top +
+            (window as any).scrollY +
             this.eventRef.offsetHeight +
             this.popoverData.gutter +
             'px'
@@ -379,7 +392,7 @@ export class PopoverComponent {
   }
 
   @HostListener('window:keyup', ['$event.keyCode'])
-  public close(code: number = 27) {
+  public close(code = 27) {
 
     if (code !== 27) {
       return;
@@ -389,46 +402,47 @@ export class PopoverComponent {
       this.popoverComponent.destroy();
     }
 
-    this.clearState();
 
     try {
-      if (this.eventRef && this.eventRef.closest('.js-neo-ui-popover-button')) {
+      if (this.eventRef) {
+        console.log('this.eventRef', this.eventRef);
         this.eventRef
-          .closest('.js-neo-ui-popover-button')
-          .classList.remove('is-active');
+          ?.classList.remove('is-active')
+          ?.classList.remove('js-neo-ui-popover-button');
       }
 
-      if (
-        this.eventRef &&
-        this.eventRef
-          .closest('button')
-          .classList.contains('js-neo-ui-popover-reference-point-container')
-      ) {
-        this.eventRef
-          .closest('button')
-          .classList.remove('is-active');
-      }
+      // if (
+      //   this.eventRef &&
+      //   this.eventRef
+      //     .closest('button')
+      //     .classList.contains('js-neo-ui-popover-reference-point-container')
+      // ) {
+      //   this.eventRef
+      //     .closest('button')
+      //     .classList.remove('is-active');
+      // }
     } catch (e) {
       console.log('err', e);
     }
+
+    this.clearState();
     this.cdr.detectChanges();
   }
 
-  private offsetService(positionType: 'bottom' | 'top' = 'bottom', ref: any, gutter: number = 8) {
+  private offsetService(positionType: 'bottom' | 'top' = 'bottom', ref: any, gutter= 8) {
     this.style.opacity = 0;
+
+    console.log('positionType', positionType);
 
     try {
       setTimeout(() => {
         if (positionType === 'bottom') {
-          console.log('ref.tagName', ref.tagName)
           const referencePointElement = ref;
-
-          console.log('referencePointElement', referencePointElement);
 
           if (referencePointElement.classList.contains('icon')) {
             this.horizontalScrollOffset =
               referencePointElement.getBoundingClientRect().left -
-              parseInt(this.style.width) / 2;
+              parseInt(<string>this.style.width) / 2;
             let horizontalOffsetTotal =
               this.horizontalScrollOffset +
               referencePointElement.width.baseVal.value / 2 >
@@ -451,12 +465,12 @@ export class PopoverComponent {
                 window.innerWidth -
                 (this.popover.element.nativeElement.getBoundingClientRect()
                     .left +
-                  parseInt(this.style.width));
+                  parseInt(<string>this.style.width));
               if (offset < 0) {
                 offset = offset - 16;
                 this.horizontalScrollOffset =
                   referencePointElement.getBoundingClientRect().left -
-                  parseInt(this.style.width) / 2 +
+                  parseInt(<string>this.style.width) / 2 +
                   offset;
                 horizontalOffsetTotal =
                   this.horizontalScrollOffset +
@@ -476,13 +490,18 @@ export class PopoverComponent {
               }
             }, 10);
           } else {
+            console.log('1', positionType);
+
+            console.log('2', this.style.width);
+
+
             let horizontalOffsetTotal =
               referencePointElement.getBoundingClientRect().left -
-              parseInt(this.style.width) / 2 +
+              parseInt(<string>this.style.width) / 2 +
               referencePointElement.offsetWidth / 2 >
               16
                 ? referencePointElement.getBoundingClientRect().left -
-                parseInt(this.style.width) / 2 +
+                parseInt(<string>this.style.width) / 2 +
                 referencePointElement.offsetWidth / 2
                 : 16;
 
@@ -490,10 +509,21 @@ export class PopoverComponent {
               horizontalOffsetTotal + 29 + 'px'
             }, ${
               ref.getBoundingClientRect().top +
-              referencePointElement.offsetHeight +
+              (window as any).scrollY +
+              this.eventRef.offsetHeight +
               gutter +
               'px'
             })`;
+
+            console.log('ref.scrollTop', ref.scrollTop);
+            console.log('ref.getBoundingClientRect().top', ref.getBoundingClientRect().top);
+            console.log('this.eventRef.offsetHeight', this.eventRef.offsetHeight);
+            console.log('gutter', gutter)
+
+            console.log('6',               ref.getBoundingClientRect().top +
+              this.eventRef.offsetHeight +
+              gutter +
+              'px')
 
             setTimeout(() => {
               let offset =
@@ -501,13 +531,16 @@ export class PopoverComponent {
                 window.innerWidth -
                 (this.popover.element.nativeElement.getBoundingClientRect()
                     .left +
-                  parseInt(this.style.width));
+                  parseInt(<string>this.style.width));
+
+              console.log('3', this.style.width);
+
 
               if (offset < 0) {
                 offset = offset - 16;
                 this.horizontalScrollOffset =
                   referencePointElement.getBoundingClientRect().left -
-                  parseInt(this.style.width) / 2 +
+                  parseInt(<string>this.style.width) / 2 +
                   offset;
                 horizontalOffsetTotal =
                   this.horizontalScrollOffset +
@@ -520,7 +553,8 @@ export class PopoverComponent {
                   horizontalOffsetTotal + 'px'
                 }, ${
                   ref.getBoundingClientRect().top +
-                  referencePointElement.offsetHeight +
+                  (window as any).scrollY +
+                  this.eventRef.offsetHeight +
                   gutter +
                   'px'
                 })`;
@@ -535,7 +569,7 @@ export class PopoverComponent {
           if (referencePointElement.classList.contains('icon')) {
             this.horizontalScrollOffset =
               referencePointElement.getBoundingClientRect().left -
-              parseInt(this.style.width) / 2;
+              parseInt(<string>this.style.width) / 2;
             let horizontalOffsetTotal =
               this.horizontalScrollOffset +
               referencePointElement.width.baseVal.value / 2 +
@@ -562,12 +596,12 @@ export class PopoverComponent {
                 window.innerWidth -
                 (this.popover.element.nativeElement.getBoundingClientRect()
                     .left +
-                  parseInt(this.style.width));
+                  parseInt(<string>this.style.width));
               if (offset < 0) {
                 offset = offset - 16;
                 this.horizontalScrollOffset =
                   referencePointElement.getBoundingClientRect().left -
-                  parseInt(this.style.width) / 2 +
+                  parseInt(<string>this.style.width) / 2 +
                   offset;
                 let horizontalOffsetTotal =
                   this.horizontalScrollOffset +
@@ -589,11 +623,11 @@ export class PopoverComponent {
           } else {
             let horizontalOffsetTotal =
               referencePointElement.getBoundingClientRect().left -
-              parseInt(this.style.width) / 2 +
+              parseInt(<string>this.style.width) / 2 +
               referencePointElement.offsetWidth / 2 >
               16
                 ? referencePointElement.getBoundingClientRect().left -
-                parseInt(this.style.width) / 2 +
+                parseInt(<string>this.style.width) / 2 +
                 referencePointElement.offsetWidth / 2
                 : 16;
 
@@ -612,12 +646,12 @@ export class PopoverComponent {
                 window.innerWidth -
                 (this.popover.element.nativeElement.getBoundingClientRect()
                     .left +
-                  parseInt(this.style.width));
+                  parseInt(<string>this.style.width));
               if (offset < 0) {
                 offset = offset - 16;
                 this.horizontalScrollOffset =
                   referencePointElement.getBoundingClientRect().left -
-                  parseInt(this.style.width) / 2 +
+                  parseInt(<string>this.style.width) / 2 +
                   offset;
 
                 let horizontalOffsetTotal =
@@ -652,7 +686,7 @@ export class PopoverComponent {
             window &&
             window.innerWidth -
             (this.popover.element.nativeElement.getBoundingClientRect().left +
-              parseInt(this.style.width));
+              parseInt(<string>this.style.width));
           if (offset < 0) {
             offset = offset - 16;
             this.horizontalScrollOffset =
@@ -666,6 +700,8 @@ export class PopoverComponent {
             }, ${
               ref.getBoundingClientRect().top + ref.offsetHeight + gutter + 'px'
             })`;
+
+            console.log('4', ref.getBoundingClientRect().top + ref.offsetHeight + gutter + 'px')
           }
         }, 10);
       }, 10);
@@ -680,7 +716,7 @@ export class PopoverComponent {
     }
   }
 
-  private sizeService(type: string = '', ref: any, width = '320') {
+  private sizeService(type = '', ref: any, width = '320') {
     // @ts-ignore
     width = parseInt(width);
     if (type !== 'select' && width === null) {
@@ -705,7 +741,7 @@ export class PopoverComponent {
   onClickOutPopover(event: Event) {
     if (this.isHide) {
       // let parentElement = <HTMLElement>(<HTMLElement>event.target).parentNode;
-      let parentElement = <HTMLElement>event.target;
+      const parentElement = <HTMLElement>event.target;
 
       if (
         !this.container.nativeElement.contains(event.target) &&

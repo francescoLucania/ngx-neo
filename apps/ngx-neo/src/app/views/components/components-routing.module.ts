@@ -4,6 +4,7 @@ import { ButtonComponent } from './views/button/button.component';
 import { InputComponent } from './views/input/input.component';
 import { RadioComponent } from './views/radio/radio.component';
 import { CheckboxComponent } from './views/checkbox/checkbox.component';
+import { PopoverComponent } from './views/popover/popover.component';
 
 export const ROUTES: Routes = [
   {
@@ -25,6 +26,10 @@ export const ROUTES: Routes = [
       {
         path: 'checkbox',
         component: CheckboxComponent,
+      },
+      {
+        path: 'popover',
+        component: PopoverComponent,
       },
     ],
   },

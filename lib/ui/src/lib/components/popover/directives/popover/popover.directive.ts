@@ -10,6 +10,7 @@ import { EMPTY_FUNCTION } from 'ngx-neo-ui';
 export class PopoverDirective {
 
   @Input() public openNeoPopoverFromTemplate: TemplateRef<any>;
+  @Input() public openNeoPopoverTitle: string | null;
   @Input() public openNeoPopoverGutter: string | null;
   @Input() public openNeoPopoverWidth: string | null;
   @Input() public openNeoPopoverPositionType: 'top' | 'bottom' | null;
@@ -33,6 +34,7 @@ export class PopoverDirective {
     const popoverData = {
       event: element,
       closeHandler: () => this?.closeHandler?.(),
+      title: this.openNeoPopoverTitle,
       gutter: this.openNeoPopoverGutter,
       width: this.openNeoPopoverWidth,
       positionType: this.openNeoPopoverPositionType,

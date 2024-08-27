@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 
 export interface PopoverData {
   event?: Event;
+  title?: string | null;
   gutter?: string | null;
   width?:  string | null;
   positionType?: 'top' | 'bottom' | null;

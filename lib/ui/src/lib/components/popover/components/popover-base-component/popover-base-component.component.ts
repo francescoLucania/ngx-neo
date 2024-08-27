@@ -11,12 +11,8 @@ import { NgTemplateOutlet } from '@angular/common';
   styleUrl: './popover-base-component.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PopoverBaseComponentComponent implements OnInit{
+export class PopoverBaseComponentComponent {
 
   public content: TemplateRef<any>;
-
-  public ngOnInit() {
-    console.log('this.content', this)
-  }
 
 }

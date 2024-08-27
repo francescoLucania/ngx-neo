@@ -18,4 +18,9 @@ export class ComponentsComponent {
     { name: 'Radio', uri: 'radio' },
     { name: 'Checkbox', uri: 'checkbox' },
   ];
+
+  public dynamicComponentsMenu: INavigateList[] = [
+    { name: 'Popover(Base Use)', uri: 'popover' },
+  ];
+
 }

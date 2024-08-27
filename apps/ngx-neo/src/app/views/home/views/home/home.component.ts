@@ -16,9 +16,6 @@ import {
     CodeComponent,
     RouterLink,
     OpenModalTemplateRefDirective,
-    ButtonStandaloneComponent,
-    ButtonStandaloneComponent,
-    ButtonStandaloneComponent,
     PopoverDirective
   ],
   standalone: true,

@@ -10,6 +10,7 @@ export interface PopoverData {
   component?: any;
   context?: any;
   isHide?: boolean;
+  closeButton: boolean;
 }
 
 @Injectable({

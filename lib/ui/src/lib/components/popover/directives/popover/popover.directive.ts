@@ -13,6 +13,7 @@ export class PopoverDirective {
   @Input() public openNeoPopoverGutter: string | null;
   @Input() public openNeoPopoverWidth: string | null;
   @Input() public openNeoPopoverPositionType: 'top' | 'bottom' | null;
+  @Input() public openNeoPopoverCloseButton: boolean;
   @Input() public openNeoPopoverType: string;
   @Input() public openNeoPopoverIsHide: boolean;
   @Input() public openNeoPopoverContext: any;
@@ -25,9 +26,6 @@ export class PopoverDirective {
   ) {}
 
   @HostListener('click', ['$event']) private onClick(event: Event): void {
-    console.log('event', event);
-    console.log('this.element?.nativeElement', this.element?.nativeElement);
-
     const element =  this.element?.nativeElement.tagName === 'BUTTON' ? this.element?.nativeElement :
       this.element?.nativeElement?.querySelector('button') ? this.element?.nativeElement?.querySelector('button') : this.element?.nativeElement?.closest('button')
 
@@ -40,6 +38,7 @@ export class PopoverDirective {
       positionType: this.openNeoPopoverPositionType,
       type: this.openNeoPopoverType,
       isHide: this.openNeoPopoverIsHide,
+      closeButton: this.openNeoPopoverCloseButton,
       component: PopoverBaseComponentComponent,
       context: {
         content: this.openNeoPopoverFromTemplate,

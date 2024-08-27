@@ -276,17 +276,36 @@ $modalBorderRadius: none;
 $modalBgColor: #fff;
 
 :root {
-
   --modalPaddingSm: #{$modalPaddingSm};
   --modalBoxShadowSm: #{$modalBoxShadowSm};
   --modalBorderSm: #{$modalBorderSm};
   --modalBorderRadiusSm: #{$modalBorderRadiusSm};
 
-  --modalPadding: #{$modalPaddingSm};
-  --modalBoxShadow: #{$modalBoxShadowSm};
+  --modalPadding: #{$modalPadding};
+  --modalBoxShadow: #{$modalBoxShadow};
   --modalBorder: #{$modalBorder};
-  --modalBorderRadius: #{$modalBorderRadiusSm};
+  --modalBorderRadius: #{$modalBorderRadius};
   --modalBgColor: #{$modalBgColor};
 }
 
+// neo-ui-popover
+// neo-ui-modal
+$popoverPaddingSm: 48px 8px 10px;
+$popoverBorderRadiusSm: 0;
+
+$popoverPadding: 40px 8px 10px;
+$popoverBorder: 1px solid rgba(0,0,0,.07);
+$popoverBoxShadow: 0 12px 12px #0000001f;
+$popoverBorderRadius: none;
+$popoverBgColor: #fff;
+
+:root {
+  --popoverPaddingSm: #{$popoverPaddingSm};
+
+  --popoverPadding: #{$popoverPadding};
+  --popoverBoxShadow: #{$popoverBoxShadow};
+  --popoverBorder: #{$popoverBorder};
+  --popoverBorderRadius: #{$popoverBorderRadius};
+  --popoverBgColor: #{$popoverBgColor};
+}
 

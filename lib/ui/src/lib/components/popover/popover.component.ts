@@ -8,6 +8,8 @@ import {
 import { NgClass, NgStyle } from '@angular/common';
 import { PopoverData, PopoverService } from './services/popover/popover.service';
 import { BrowserService } from '../../services/browser/browser.service';
+import { filter, fromEvent, takeUntil } from 'rxjs';
+import { DestroyService } from 'ngx-neo-ui';
 
 @Component({
   selector: 'neo-ui-popover',
@@ -15,6 +17,9 @@ import { BrowserService } from '../../services/browser/browser.service';
   imports: [
     NgClass,
     NgStyle
+  ],
+  providers: [
+    DestroyService
   ],
   templateUrl: './popover.component.html',
   styleUrl: './popover.component.scss',
@@ -38,6 +43,7 @@ export class PopoverComponent {
   public scrollTransform = '';
   public horizontalScrollOffset = 0;
   public verticalScrollOffset = 0;
+  public closeButton = true;
 
   public style: any = { opacity: 0 };
 
@@ -47,6 +53,7 @@ export class PopoverComponent {
   public constructor(
     private browser: BrowserService,
     private readonly popoverService: PopoverService,
+    private destroy$: DestroyService,
     private cdr: ChangeDetectorRef,
   ) {}
 
@@ -55,8 +62,9 @@ export class PopoverComponent {
       .subscribe(
       (popoverData) => popoverData ? this.initPopover(popoverData) : this.close()
     );
-  }
 
+    this.subscriptionClosingCheck();
+  }
 
   private initPopover(popoverData: PopoverData): void {
 
@@ -67,45 +75,26 @@ export class PopoverComponent {
       this.popoverComponent = this.popover.createComponent(popoverData.component);
 
       this.buildContext(popoverData.context);
-
+      this.setPopoverParams(popoverData);
 
       this.isOpen = true;
-
-      if (this.browser.isBrowser) {
-        document.addEventListener('click', (e) => {
-          if (!(
-            (e.target as HTMLElement).closest('.js-neo-ui-popover-body') ||
-            (e.target as HTMLElement).closest('.js-neo-ui-popover-reference-point')
-          )) {
-            this.close();
-          }
-        })
-      }
 
       (document as any)
         ?.querySelector('.neo-popover__body-scroll-container > div')
         ?.scrollIntoView(); // scroll to top popover
 
-      if (popoverData) {
-        this.isHide = popoverData.isHide;
-      }
-
-      this.html = document.querySelector('html');
-      this.body = document.querySelector('body');
 
       if (popoverData?.event?.target || popoverData.event) {
-        this.popoverData = popoverData;
-
-        this.positionType = popoverData.positionType;
-
-        this.eventRef =
-          this.popoverData.event.target || this.popoverData.event;
 
         if (this.eventRef.closest('.js-neo-ui-popover-button')) {
           this.eventRef
             .closest('.js-neo-ui-popover-button')
             .classList.add('is-active');
         }
+
+      this.html = document.querySelector('html');
+      this.body = document.querySelector('body');
+
 
         if (
           this.eventRef.closest('button')
@@ -139,12 +128,43 @@ export class PopoverComponent {
     }
   }
 
+  private subscriptionClosingCheck(): void {
+    if (this.browser.isBrowser) {
+      fromEvent(document, 'click').pipe(
+        filter(() => this.isOpen),
+        takeUntil(this.destroy$)
+      ).subscribe({
+        next: (e) => {
+          if (!(
+            (e.target as HTMLElement).closest('.js-neo-ui-popover-body') ||
+            (e.target as HTMLElement).closest('.js-neo-ui-popover-reference-point')
+          )) {
+            this.close();
+          }
+        }
+      })
+    }
+  }
+
   private buildContext(context: any): void {
     console.log('context', context);
     if (context) {
       Object.keys(context).forEach((key) => {
         this.popoverComponent.instance[key] = context[key];
       });
+    }
+  }
+
+  private setPopoverParams(popoverData: PopoverData): void {
+    if (popoverData) {
+      this.isHide = popoverData.isHide;
+      this.popoverData = popoverData;
+
+      this.positionType = popoverData.positionType;
+      this.closeButton = popoverData.closeButton;
+
+      this.eventRef =
+        this.popoverData.event.target || this.popoverData.event;
     }
   }
 

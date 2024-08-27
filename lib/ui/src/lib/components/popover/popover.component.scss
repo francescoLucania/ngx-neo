@@ -8,11 +8,16 @@
   z-index: 999999999;
 
   &__body {
-    padding: 10px 8px;
-    border: 1px solid rgba(0,0,0,.07);
-    border-radius: 6px;
+    padding: var(--popoverPaddingSm);
     background: #fff;
-    box-shadow: 0 12px 12px #0000001f;
+
+    @include theme.mq(md) {
+      padding: var(--popoverPadding);
+      border-radius: var(--popoverBorderRadius);
+      border: var(--popoverBorder);
+      box-shadow: var(--popoverBoxShadow);
+      will-change: transform;
+    }
 
     .is-open & {
       @include theme.mq(sm) {
@@ -24,6 +29,51 @@
         width: 100% !important;
         transform: translate(0, 0) !important;
       }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid transparent;
+    cursor: pointer;
+
+    @include theme.mq(md) {
+      top: 0;
+      right: 0;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: 3px solid var(--accessibilityBorder);
+      background: var(--accessibilityBackground);
+    }
+
+    .modal-opened_hide-close-button & {
+      display: none;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 11px;
+      width: 2px;
+      height: 20px;
+      background: var(--colorBrand);
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
     }
   }
 }

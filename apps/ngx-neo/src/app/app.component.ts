@@ -24,8 +24,8 @@ import { RouterOutlet } from '@angular/router';
     FooterStandaloneComponent,
     PopoverComponent,
     ModalStandaloneComponent,
-    FooterStandaloneComponent
-  ]
+    FooterStandaloneComponent,
+  ],
 })
 export class AppComponent {
   public message = toSignal(this.alertService.message$, { initialValue: null });

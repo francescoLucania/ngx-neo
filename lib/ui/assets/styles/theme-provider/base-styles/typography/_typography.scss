@@ -11,7 +11,6 @@
 }
 
 @mixin text {
-
   a,
   button {
     font-weight: inherit;
@@ -50,22 +49,22 @@
 }
 
 @mixin heading-h1() {
-  @include font(42px, 48px)
+  @include font(42px, 48px);
 }
 @mixin heading-h2() {
-  @include font(28px, 32px)
+  @include font(28px, 32px);
 }
 @mixin heading-h3() {
-  @include font(24px, 32px)
+  @include font(24px, 32px);
 }
 @mixin heading-h4() {
-  @include font(20px, 28px)
+  @include font(20px, 28px);
 }
 @mixin heading-h5() {
-  @include font(18px, 26px)
+  @include font(18px, 26px);
 }
 @mixin heading-h6() {
-  @include font(16px, 24px)
+  @include font(16px, 24px);
 }
 
 .heading-h1 {

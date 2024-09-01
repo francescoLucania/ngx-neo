@@ -292,7 +292,7 @@ $modalBgColor: #fff;
 // neo-ui-modal
 $popoverPaddingSm: 10px 8px;
 $popoverPadding: 10px 8px;
-$popoverBorder: 1px solid rgba(0,0,0,.07);
+$popoverBorder: 1px solid rgba(0, 0, 0, 0.07);
 $popoverBoxShadow: 0 12px 12px #0000001f;
 $popoverBorderRadius: 6px;
 $popoverBgColor: #fff;
@@ -306,4 +306,3 @@ $popoverBgColor: #fff;
   --popoverBorderRadius: #{$popoverBorderRadius};
   --popoverBgColor: #{$popoverBgColor};
 }
-

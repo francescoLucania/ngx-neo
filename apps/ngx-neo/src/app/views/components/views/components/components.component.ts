@@ -22,5 +22,4 @@ export class ComponentsComponent {
   public dynamicComponentsMenu: INavigateList[] = [
     { name: 'Popover(Base Use)', uri: 'popover' },
   ];
-
 }

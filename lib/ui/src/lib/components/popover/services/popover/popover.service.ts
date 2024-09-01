@@ -5,9 +5,9 @@ export interface PopoverData {
   event?: Event;
   title?: string | null;
   gutter?: string | null;
-  width?:  string | null;
+  width?: string | null;
   positionType?: 'top' | 'bottom' | null;
-  type?:  string | null;
+  type?: string | null;
   component?: any;
   context?: any;
   isHide?: boolean;
@@ -15,12 +15,11 @@ export interface PopoverData {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PopoverService {
   public popoverSequence$: Subject<PopoverData | null> = new Subject();
   private popoverEvent$$: Subject<any> = new Subject();
-
 
   public open(event: any, popoverData: PopoverData) {
     this.popoverSequence$.next(popoverData);

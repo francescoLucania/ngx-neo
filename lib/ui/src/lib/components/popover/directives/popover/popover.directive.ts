@@ -1,14 +1,20 @@
-import { Directive, ElementRef, HostListener, Input, NgModuleRef, TemplateRef } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  NgModuleRef,
+  TemplateRef,
+} from '@angular/core';
 import { PopoverData, PopoverService } from '../../services';
 import { PopoverBaseComponentComponent } from '../../components';
 import { EMPTY_FUNCTION } from '../../../../constants';
 
 @Directive({
   selector: '[openNeoPopoverFromTemplate]',
-  standalone: true
+  standalone: true,
 })
 export class PopoverDirective {
-
   @Input() public openNeoPopoverFromTemplate: TemplateRef<any>;
   @Input() public openNeoPopoverTitle: string | null;
   @Input() public openNeoPopoverGutter: string | null;
@@ -23,12 +29,16 @@ export class PopoverDirective {
 
   constructor(
     private popoverService: PopoverService,
-    private element: ElementRef,
+    private element: ElementRef
   ) {}
 
   @HostListener('click', ['$event']) private onClick(event: Event): void {
-    const element =  this.element?.nativeElement.tagName === 'BUTTON' ? this.element?.nativeElement :
-      this.element?.nativeElement?.querySelector('button') ? this.element?.nativeElement?.querySelector('button') : this.element?.nativeElement?.closest('button')
+    const element =
+      this.element?.nativeElement.tagName === 'BUTTON'
+        ? this.element?.nativeElement
+        : this.element?.nativeElement?.querySelector('button')
+        ? this.element?.nativeElement?.querySelector('button')
+        : this.element?.nativeElement?.closest('button');
 
     element.classList?.add('js-neo-ui-popover-reference-point');
     const popoverData = {
@@ -44,14 +54,10 @@ export class PopoverDirective {
       component: PopoverBaseComponentComponent,
       context: {
         content: this.openNeoPopoverFromTemplate,
-        ...this.openNeoPopoverContext
-      }
+        ...this.openNeoPopoverContext,
+      },
     } as unknown as PopoverData;
 
-    this.popoverService.open(
-      element,
-      popoverData
-    );
+    this.popoverService.open(element, popoverData);
   }
-
 }

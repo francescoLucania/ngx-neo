@@ -7,19 +7,27 @@
     [ngClass]="{ 'is-hide': isHide }"
     (click)="close()"
   ></div>
-  <div class="neo-ui-popover__body js-neo-ui-popover-body" [ngStyle]="style" #popoverBody>
-<!--    <div class="neo-ui-popover__body-close-fate-emitter" (click)="close()"></div>-->
+  <div
+    class="neo-ui-popover__body js-neo-ui-popover-body"
+    [ngStyle]="style"
+    #popoverBody
+  >
+    <!--    <div class="neo-ui-popover__body-close-fate-emitter" (click)="close()"></div>-->
 
     @if (title) {
-      <h6 class="neo-ui-popover__title mb-8">
-        {{ title }}
-      </h6>
+    <h6 class="neo-ui-popover__title mb-8">
+      {{ title }}
+    </h6>
     }
 
     <div class="neo-ui-popover__body-scroll-container" #containerPopover>
       <div #popoverContent></div>
     </div>
 
-    <button (click)="close()" class="neo-ui-popover__close" aria-label="Закрыть"></button>
+    <button
+      (click)="close()"
+      class="neo-ui-popover__close"
+      aria-label="Закрыть"
+    ></button>
   </div>
 </div>

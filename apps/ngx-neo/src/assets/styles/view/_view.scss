@@ -1,4 +1,4 @@
-@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as
+@use './lib/ui/assets/styles/theme-provider/theme_provider' as
   theme;
 
 .view-container {
@@ -18,7 +18,7 @@
 
   &__navigate-col {
     @include theme.mq(sm) {
-      margin-bottom: 32px;
+      margin-bottom: 48px;
     }
 
     @include theme.mq(md) {

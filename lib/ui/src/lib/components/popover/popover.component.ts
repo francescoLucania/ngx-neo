@@ -6,10 +6,9 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import { NgClass, NgStyle } from '@angular/common';
-import { PopoverData, PopoverService } from './services/popover/popover.service';
-import { BrowserService } from '../../services/browser/browser.service';
+import { PopoverData, PopoverService } from './services';
+import { BrowserService, DestroyService } from '../../services';
 import { filter, fromEvent, takeUntil } from 'rxjs';
-import { DestroyService } from 'ngx-neo-ui';
 
 @Component({
   selector: 'neo-ui-popover',
@@ -716,9 +715,8 @@ export class PopoverComponent {
     }
   }
 
-  private sizeService(type = '', ref: any, width = '320') {
-    // @ts-ignore
-    width = parseInt(width);
+  private sizeService(type = '', ref: any, w = '320') {
+    const width = parseInt(w);
     if (type !== 'select' && width === null) {
       if (ref.closest('button')) {
         this.style.width =

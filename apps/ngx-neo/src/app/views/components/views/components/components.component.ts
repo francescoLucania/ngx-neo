@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
+import { INavigateList } from 'ngx-neo-ui';
 import { RouterOutlet } from '@angular/router';
 import { NavigateListComponent } from 'ngx-neo-ui';
 

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
+import { INavigateList, PopoverComponent } from 'ngx-neo-ui';
 import { AlertService } from './services/alert.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import {
@@ -9,7 +9,6 @@ import {
 } from 'ngx-neo-ui';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { PopoverComponent } from '../../../../lib/ui/src/lib/components/popover';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

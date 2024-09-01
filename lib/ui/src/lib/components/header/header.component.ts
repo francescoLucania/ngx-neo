@@ -7,7 +7,7 @@ import {
   OnInit,
   Renderer2,
 } from '@angular/core';
-import { INavigateList } from '../navigate-list/models/navigate';
+import { INavigateList } from '../navigate-list/models/navigate/navigate';
 import { BrowserService } from '../../services/browser/browser.service';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';

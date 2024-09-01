@@ -1,6 +1,6 @@
 import { Injectable, NgModuleRef, Type } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { IModalDataInterface } from './models';
+import { IModalDataInterface } from '../../models/modal/modal';
 
 @Injectable({
   providedIn: 'root',

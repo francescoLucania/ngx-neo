@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { INavigateList } from './models/navigate';
+import { INavigateList } from './models/navigate/navigate';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NavigateListActiveRouteDisableDirective } from './directives/navigate-list-active-route-disable.directive';
+import { NavigateListActiveRouteDisableDirective } from './directives/navigate-list-active-route-disable/navigate-list-active-route-disable.directive';
 import { NgClass, NgForOf } from '@angular/common';
 
 @Component({

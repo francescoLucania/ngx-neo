@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, TemplateRef } from '@angula
 import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
-  selector: 'neo-popover-base-component',
+  selector: 'neo-ui-popover-base-component',
   standalone: true,
   imports: [
     NgTemplateOutlet

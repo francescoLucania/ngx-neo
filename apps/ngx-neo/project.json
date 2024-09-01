@@ -27,7 +27,7 @@
         "styles": ["apps/ngx-neo/src/styles.scss"],
         "scripts": [],
         "stylePreprocessorOptions": {
-          "includePaths": ["node_modules"]
+          "includePaths": ["node_modules", "lib/ui/assets/"]
         }
       },
       "configurations": {

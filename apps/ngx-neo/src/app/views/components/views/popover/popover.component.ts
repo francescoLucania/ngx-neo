@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CodeComponent } from '../../../../components/code/code.component';
-import { PopoverDirective } from '../../../../../../../../lib/ui/src/lib/components/popover';
+import { PopoverDirective } from 'lib/ui/src/lib/components/popover';
 
 @Component({
   selector: 'neo-popover',
@@ -22,11 +22,11 @@ export class PopoverComponent {
             <span>&nbsp;&nbsp;&nbsp;&nbsp;[openNeoPopoverFromTemplate]="testTemplate"</span><br>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;[openNeoPopoverTitle]="'My Base Popover'"</span><br>
           <span>></span><br>
-          <span>My button for Popover</span><br>
-          <span><</span>/button>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;My button for Popover</span><br>
+          <span><</span>/button><br><br>
 
           <span><</span>ng-template #testTemplate><span>></span><span><</span>/button><br>
-          &nbsp;&nbsp;My test popover<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;My test popover<br>
           <span><</span>/ng-template>
       `,
   };

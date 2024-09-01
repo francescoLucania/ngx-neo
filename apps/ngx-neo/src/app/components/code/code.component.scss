@@ -1,5 +1,5 @@
-@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as
-  theme;
+@use 'lib/ui/assets/styles/theme-provider/theme_provider' as theme;
+@use 'lib/ui/assets/styles/theme-provider/base-styles/typography/typography' as typography;
 
 .code {
   display: block;
@@ -11,7 +11,7 @@
   color: #fff;
 
   @include theme.mq(sm) {
-    overflow-x: auto;
+    @include typography.text-base-small();
   }
 
   @include theme.mq(md) {

@@ -4,27 +4,14 @@
 
     <p class="mt-16">UI components for Angular</p>
     <div class="mt-32">
-<!--      <neo-ui-button-->
-<!--        [theme]="'brand'"-->
-<!--        [size]="'large'"-->
-<!--        [openModalFromTemplate]="ipErrorModal"-->
-<!--        >-->
-<!--        <span>Get started</span>-->
-<!--      </neo-ui-button>-->
 
       <neo-ui-button
         [theme]="'brand'"
         [size]="'large'"
-        [openNeoPopoverFromTemplate]="test"
-        [openNeoPopoverTitle]="'test'"
-        [openNeoPopoverPositionType]="'top'"
-      >
+        [openModalFromTemplate]="ipErrorModal"
+        >
         <span>Get started</span>
       </neo-ui-button>
-
-      <ng-template #test>
-        test popover
-      </ng-template>
 
       <ng-template #ipErrorModal>
         <h3 class="heading-h3 mb-32">Get started</h3>

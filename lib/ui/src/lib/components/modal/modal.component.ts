@@ -8,8 +8,8 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { ModalService } from './services/modal.service';
-import { IModalDataInterface } from './services/models';
+import { ModalService } from './services/modal/modal.service';
+import { IModalDataInterface } from './models';
 import { MediaQueriesService } from '../../services';
 import { NgClass, NgIf } from '@angular/common';
 import { ElementFocusDirective, TrapFocusDirective } from '../../a11y';
@@ -29,6 +29,7 @@ export class ModalStandaloneComponent implements OnInit {
   public modalContainer: ElementRef;
   @ViewChild('modalBody', { read: ElementRef })
   public modalBody: ElementRef;
+
   public modalState = this.modalService.modalState$;
   public modalContext: any;
 
@@ -77,10 +78,6 @@ export class ModalStandaloneComponent implements OnInit {
       setTimeout(() => {
         this.changeDetector.detectChanges();
         this.settingView();
-        // (document as any)
-        //   .querySelector('body')
-        //   .setAttribute('aria-hidden', 'true');
-
         this.modalBody.nativeElement.focus();
       });
     });
@@ -125,10 +122,6 @@ export class ModalStandaloneComponent implements OnInit {
     if (this.html && this.body) {
       this.html.style.overflow = '';
       this.body.style.overflow = '';
-      // (document as any)
-      //   .querySelector('body').querySelector('body')
-      //   .setAttribute('aria-hidden', 'false');
-
     }
     this.changeDetector.detectChanges();
   }

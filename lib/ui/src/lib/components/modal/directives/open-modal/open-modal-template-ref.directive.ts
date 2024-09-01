@@ -5,7 +5,7 @@ import {
   Input,
   TemplateRef,
 } from '@angular/core';
-import { ModalService } from '../modal.service';
+import { ModalService } from '../../services';
 import { BaseModalStandaloneComponent } from '../../components/base-modal/base-modal.component';
 import { EMPTY_FUNCTION } from '../../../../constants';
 

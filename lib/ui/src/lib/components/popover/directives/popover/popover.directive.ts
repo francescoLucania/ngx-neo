@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, Input, NgModuleRef, TemplateRef } from '@angular/core';
 import { PopoverData, PopoverService } from '../../services';
 import { PopoverBaseComponentComponent } from '../../components';
-import { EMPTY_FUNCTION } from 'ngx-neo-ui';
+import { EMPTY_FUNCTION } from '../../../../constants';
 
 @Directive({
   selector: '[openNeoPopoverFromTemplate]',

@@ -1,5 +1,5 @@
 {
-  "name": "@angular-monorepo/source",
+  "name": "ngx-neo",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,6 @@
     "publish ui": "cd dist/ui && npm publish",
     "dev:ssr": "ng run ngx-neo:serve-ssr",
     "serve:ssr": "node dist/ngx-neo/server/main.js",
-    "build:ssr": "ng build && ng run ngx-neo:server",
     "prerender": "ng run ngx-neo:prerender",
     "prepare": "husky install",
     "lint": "ng lint",

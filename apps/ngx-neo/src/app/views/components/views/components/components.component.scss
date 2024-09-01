@@ -1,5 +1,4 @@
-@use './lib/ui/assets/styles/theme-provider/theme_provider' as
-  theme;
+@use 'lib/ui/assets/styles/theme-provider/theme_provider' as theme;
 
 .components {
   &__grid {

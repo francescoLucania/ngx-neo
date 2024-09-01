@@ -1,5 +1,4 @@
-@use './lib/ui/assets/styles/theme-provider/theme_provider' as
-  theme;
+@use 'lib/ui/assets/styles/theme-provider/theme_provider' as theme;
 
 .view-container {
   padding: 32px 0;

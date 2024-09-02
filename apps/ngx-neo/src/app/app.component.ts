@@ -37,5 +37,7 @@ export class AppComponent {
     { name: 'Contacts', uri: 'Contacts' },
   ];
 
-  constructor(private alertService: AlertService) {}
+  constructor(private alertService: AlertService) {
+    console.log('test')
+  }
 }

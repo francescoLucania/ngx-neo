@@ -3,7 +3,11 @@ import {
   CheckboxStandaloneComponent,
   InputStandaloneComponent,
 } from 'ngx-neo-ui';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  UntypedFormControl,
+  UntypedFormGroup,
+} from '@angular/forms';
 import { FArticleItemComponent } from '../../components/f-article-item/f-article-item.component';
 import { NgForOf } from '@angular/common';
 
@@ -21,6 +25,15 @@ import { NgForOf } from '@angular/common';
   ],
 })
 export class UiComponent {
+  public form = new UntypedFormGroup({
+    name: new UntypedFormControl(),
+    family: new UntypedFormControl(),
+    surname: new UntypedFormControl(),
+    snils: new UntypedFormControl(),
+    checkbox1: new UntypedFormControl(),
+    checkbox2: new UntypedFormControl(),
+    checkbox3: new UntypedFormControl(),
+  });
   public news = [
     {
       title:

@@ -1,4 +1,4 @@
-<div class="ui">
+<div class="ui" [formGroup]="form">
   <div class="ui__item">
     <h3 class="ui__item-title heading-h3">Components</h3>
 
@@ -23,7 +23,7 @@
           </div>
           <div class="mt-24">
             <neo-ui-input
-              [formControlName]="'Отчество'"
+              [formControlName]="'surname'"
               [size]="'large'"
               [placeholder]="'Имя'"
               #surnameInput

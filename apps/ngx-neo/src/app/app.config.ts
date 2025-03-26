@@ -2,7 +2,6 @@ import {
   APP_INITIALIZER,
   ApplicationConfig,
   provideExperimentalZonelessChangeDetection,
-  provideZoneChangeDetection,
 } from '@angular/core';
 import {
   provideRouter,
@@ -58,7 +57,6 @@ export const appConfig: ApplicationConfig = {
     },
     // TODO: гидрация без zone.js может доставлять проблемы
     provideExperimentalZonelessChangeDetection(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),
     //ngrx
     provideStore(reducers),

@@ -11,7 +11,7 @@ import { INavigateList } from '../navigate-list/models/navigate/navigate';
 import { BrowserService } from '../../services/browser/browser.service';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
-import { NgOptimizedImage, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { ElementFocusDirective, TrapFocusDirective } from '../../a11y';
 import { NavigateListComponent } from '../navigate-list/navigate-list.component';
 
@@ -23,7 +23,6 @@ import { NavigateListComponent } from '../navigate-list/navigate-list.component'
   standalone: true,
   imports: [
     RouterLink,
-    NgOptimizedImage,
     NgTemplateOutlet,
     ElementFocusDirective,
     TrapFocusDirective,

@@ -18,7 +18,6 @@ import { PopoverDirective } from 'lib/ui/src/lib/components/popover/directives/p
     CodeComponent,
     RouterLink,
     OpenModalTemplateRefDirective,
-    PopoverDirective,
   ],
   standalone: true,
 })

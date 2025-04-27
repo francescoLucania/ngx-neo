@@ -10,7 +10,7 @@ export default function Index() {
     <div className="section">
       <section>
         <div className="container">
-          <h1 className='heading-h1'>Hello World</h1>
+          <h1 className="heading-h1">Hello World</h1>
         </div>
       </section>
     </div>

@@ -9,6 +9,39 @@
 
 @use 'lib/ui/assets/styles/theme-provider/theme_provider' as theme;
 
+.app {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vw;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  width: 100%;
+
+  > *:not(router-outlet) {
+    flex-grow: 1;
+  }
+}
+
+.account-header,
+.account-footer {
+  padding: 32px 0;
+}
+
+.account-header {
+  grid-area: header;
+}
+
+.account-footer {
+  grid-area: footer;
+}
+
 .section {
   padding: 32px 0;
 

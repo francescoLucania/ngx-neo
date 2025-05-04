@@ -1,4 +1,7 @@
 import styles from './page.module.scss';
+import { HeaderMenu } from './mocks/menu/menu';
+
+
 
 export default function Index() {
   /*
@@ -6,13 +9,12 @@ export default function Index() {
    *
    * Note: The corresponding styles are in the ./index.scss file.
    */
+
   return (
-    <div className="section">
-      <section>
-        <div className="container">
-          <h1 className="heading-h1">Hello World</h1>
-        </div>
-      </section>
-    </div>
+    <section className="section">
+      <div className="container">
+        <h1 className="heading-h1">Hello World</h1>
+      </div>
+    </section>
   );
 }

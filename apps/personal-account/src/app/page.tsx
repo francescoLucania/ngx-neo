@@ -1,8 +1,6 @@
 import styles from './page.module.scss';
 import { HeaderMenu } from './mocks/menu/menu';
 
-
-
 export default function Index() {
   /*
    * Replace the elements below with your own.

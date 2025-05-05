@@ -9,11 +9,13 @@ export function Header() {
       <div className="container">
         <nav>
           <ul>
-            {headerMenu.common.map((item, i) => <li key={i}>
-              <a href={'/' + item.route}>{item.name}</a>
-            </li>)}
+            {headerMenu.common.map((item, i) => (
+              <li key={i}>
+                <a href={'/' + item.route}>{item.name}</a>
+              </li>
+            ))}
 
-            <PersonalCabinetButton/>
+            <PersonalCabinetButton />
           </ul>
         </nav>
       </div>

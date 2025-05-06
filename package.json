@@ -11,8 +11,9 @@
     "dev:ssr": "ng run ngx-neo:serve-ssr",
     "serve:ssr": "node dist/ngx-neo/server/main.js",
     "prerender": "ng run ngx-neo:prerender",
-    "serve backend": "nx serve personal-account-api",
-    "serve personal-account": "nx dev personal-account",
+    "serve backend": "nx serve my-pages-api",
+    "build my-pages": "nx build my-pages",
+    "serve my-pages": "nx dev my-pages",
     "prepare": "husky install",
     "lint": "ng lint",
     "prettier": "prettier --write ./src"

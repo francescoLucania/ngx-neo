@@ -1,7 +1,7 @@
 {
-  "name": "personal-account-api",
+  "name": "my-pages-api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/personal-account-api/src",
+  "sourceRoot": "apps/my-pages-api/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -22,15 +22,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "personal-account-api:build",
+        "buildTarget": "my-pages-api:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "personal-account-api:build:development"
+          "buildTarget": "my-pages-api:build:development"
         },
         "production": {
-          "buildTarget": "personal-account-api:build:production"
+          "buildTarget": "my-pages-api:build:production"
         }
       }
     },

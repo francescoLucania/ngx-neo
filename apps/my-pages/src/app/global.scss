@@ -16,7 +16,7 @@
     'main'
     'footer';
   grid-template-rows: auto 1fr auto;
-  min-height: 100vw;
+  min-height: 100vh;
 }
 
 main {
@@ -29,12 +29,12 @@ main {
   }
 }
 
-.account-header,
+.pages-header,
 .account-footer {
   padding: 32px 0;
 }
 
-.account-header {
+.pages-header {
   grid-area: header;
 }
 

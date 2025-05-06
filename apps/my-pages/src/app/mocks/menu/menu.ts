@@ -5,7 +5,11 @@ export const HeaderMenu = {
       route: 'events',
     },
     {
-      name: 'Рецепты',
+      name: 'Статьи',
+      route: 'recipes',
+    },
+    {
+      name: 'Заметки',
       route: 'recipes',
     },
   ],

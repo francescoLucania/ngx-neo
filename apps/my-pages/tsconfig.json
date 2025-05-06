@@ -27,10 +27,11 @@
     "**/*.jsx",
     "**/*.ts",
     "**/*.tsx",
-    "../../apps/personal-account/.next/types/**/*.ts",
-    "../../dist/apps/personal-account/.next/types/**/*.ts",
+    "../../apps/my-pages/.next/types/**/*.ts",
+    "../../dist/apps/my-pages/.next/types/**/*.ts",
+    ".next/types/**/*.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    "../../dist/apps/.next/types/**/*.ts"
   ],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

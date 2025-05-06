@@ -1,10 +1,10 @@
 export default {
-  displayName: 'personal-account-api',
+  displayName: 'my-pages-api',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/personal-account-api',
+  coverageDirectory: '../../coverage/apps/my-pages-api',
 };

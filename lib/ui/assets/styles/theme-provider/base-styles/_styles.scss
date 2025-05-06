@@ -42,13 +42,16 @@ a {
   text-decoration: none;
   color: var(--colorBrand);
 
-  &:visited {
-    color: var(--accessibilityColor);
-  }
+  //&:visited {
+  //  color: var(--accessibilityColor);
+  //}
 }
 
 button {
   @include button.reset-buttons-styles;
+
+  text-decoration: none;
+  color: var(--colorBrand);
 }
 
 strong,

@@ -2,8 +2,10 @@ import styles from './page.module.scss';
 
 export default function Page() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to Page!</h1>
+    <div className="section">
+      <div className="container">
+        <h1>Ближайшие события!</h1>
+      </div>
     </div>
   );
 }

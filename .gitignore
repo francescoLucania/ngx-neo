@@ -45,4 +45,5 @@ Thumbs.db
 .next
 out
 
-apps/personal-account-api/.env
+.eslintcache
+apps/my-pages-api/.env

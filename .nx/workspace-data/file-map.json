@@ -1,0 +1,2161 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.8.1",
+  "pathMappings": {
+    "ngx-neo-ui": [
+      "lib/ui/src/public-api.ts"
+    ],
+    "@nx-neo-models": [
+      "models/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
+      }
+    },
+    {
+      "name": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11383733598380155707"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "13469207043343598078"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "18085261541358865259"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "235626400633494639"
+      },
+      {
+        "file": "README.md",
+        "hash": "1490183972356561561"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "models/index.ts",
+        "hash": "3439037254559107346"
+      },
+      {
+        "file": "models/user/index.ts",
+        "hash": "16522864531807762117"
+      },
+      {
+        "file": "models/user/login.ts",
+        "hash": "1534608066612083515"
+      },
+      {
+        "file": "models/user/logout.ts",
+        "hash": "13607274519463090777"
+      },
+      {
+        "file": "models/user/registration.ts",
+        "hash": "642344209117600167"
+      },
+      {
+        "file": "models/user/user-profile.ts",
+        "hash": "9313614583863198063"
+      },
+      {
+        "file": "nx.json",
+        "hash": "16173801402358548136"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "17736481540820738175"
+      },
+      {
+        "file": "package.json",
+        "hash": "2664215291405921093"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "15292899472911844161"
+      }
+    ],
+    "projectFileMap": {
+      "ngx-neo": [
+        {
+          "file": "apps/ngx-neo/.eslintrc.json",
+          "hash": "6468331324873619950"
+        },
+        {
+          "file": "apps/ngx-neo/jest.config.ts",
+          "hash": "18076222891817720081"
+        },
+        {
+          "file": "apps/ngx-neo/project.json",
+          "hash": "14478837195141025849"
+        },
+        {
+          "file": "apps/ngx-neo/server.ts",
+          "hash": "15376913861058520652",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/ssr",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.component.html",
+          "hash": "10305446301876647331"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.component.spec.ts",
+          "hash": "10722046680414990510",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.component.ts",
+          "hash": "15488322046883969495",
+          "deps": [
+            "npm:@angular/core",
+            "lib-ui",
+            "npm:@angular/common",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.config.server.ts",
+          "hash": "472700109066692288",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-server"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.config.ts",
+          "hash": "11866370616916658638",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@angular/platform-browser",
+            "lib-ui",
+            "npm:@angular/common",
+            "npm:@ngrx/store",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store-devtools"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.effects.ts",
+          "hash": "4148425087048411737",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.module.server.ts",
+          "hash": "4720506439029351649",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/app.routes.ts",
+          "hash": "18133482230767059138",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/components/code/code.component.html",
+          "hash": "10595621988702508562"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/components/code/code.component.scss",
+          "hash": "11735985128554895228"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/components/code/code.component.spec.ts",
+          "hash": "1576830403206313520",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/components/code/code.component.ts",
+          "hash": "7268575111072272049",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/img.png",
+          "hash": "13856508870481542883"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/interceptors/auth/authorized-request.interceptor.ts",
+          "hash": "10734540598228751468",
+          "deps": [
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/interceptors/index.ts",
+          "hash": "10516968700862721772"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/reducers/counter.ts",
+          "hash": "6164001330887814118",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/reducers/index.ts",
+          "hash": "1052063537812053029",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/services/alert.service.ts",
+          "hash": "3832917095762430188",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/services/user/user.service.spec.ts",
+          "hash": "5664179134821074798",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/services/user/user.service.ts",
+          "hash": "16676591869820466894",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/accessibility-routing.module.ts",
+          "hash": "12238583412556453144",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/components/f-article-item/f-article-item.component.html",
+          "hash": "6877702005155182187"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/components/f-article-item/f-article-item.component.scss",
+          "hash": "13712618521222559758"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/components/f-article-item/f-article-item.component.spec.ts",
+          "hash": "8959214696198392240",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/components/f-article-item/f-article-item.component.ts",
+          "hash": "6291280198357610102",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/accessibility/accessibility.component.html",
+          "hash": "6693280639257000699"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/accessibility/accessibility.component.scss",
+          "hash": "1999762822765981134"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/accessibility/accessibility.component.spec.ts",
+          "hash": "6686586151364399983",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/accessibility/accessibility.component.ts",
+          "hash": "6498509818256885991",
+          "deps": [
+            "npm:@angular/core",
+            "lib-ui",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/login-a11y/login-a11y.component.html",
+          "hash": "10265185016035910554"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/login-a11y/login-a11y.component.scss",
+          "hash": "2499260179792637413"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/login-a11y/login-a11y.component.ts",
+          "hash": "12671299010053521579",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/common",
+            "lib-ui"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/ui/ui.component.html",
+          "hash": "4974591918784639531"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/ui/ui.component.scss",
+          "hash": "16472503138140115938"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/ui/ui.component.spec.ts",
+          "hash": "7917129550666682504",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/accessibility/views/ui/ui.component.ts",
+          "hash": "9379980620068394799",
+          "deps": [
+            "npm:@angular/core",
+            "lib-ui",
+            "npm:@angular/forms",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/components-routing.module.ts",
+          "hash": "9772783181757338538",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/button/button.component.html",
+          "hash": "3592652511865479447"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/button/button.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/button/button.component.spec.ts",
+          "hash": "13195685163216482858",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/button/button.component.ts",
+          "hash": "17743724283799197345",
+          "deps": [
+            "npm:@angular/core",
+            "lib-ui"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/checkbox/checkbox.component.html",
+          "hash": "8920875168069075606"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/checkbox/checkbox.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/checkbox/checkbox.component.spec.ts",
+          "hash": "14944734133490971180",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/checkbox/checkbox.component.ts",
+          "hash": "5329530383393834201",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "lib-ui"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/components/components.component.html",
+          "hash": "220975492002778330"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/components/components.component.scss",
+          "hash": "11862076388006958813"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/components/components.component.spec.ts",
+          "hash": "16903361232986781740",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/components/components.component.ts",
+          "hash": "17258620784509999694",
+          "deps": [
+            "npm:@angular/core",
+            "lib-ui",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/input/input.component.html",
+          "hash": "3644174345322330449"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/input/input.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/input/input.component.spec.ts",
+          "hash": "1051917733419957978",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/input/input.component.ts",
+          "hash": "6290172248534992334",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "lib-ui",
+            "npm:@maskito/phone",
+            "npm:@maskito/core",
+            [
+              "npm:libphonenumber-js",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/popover/popover.component.html",
+          "hash": "17257366642724236157"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/popover/popover.component.scss",
+          "hash": "2975820757738776974"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/popover/popover.component.spec.ts",
+          "hash": "16698871232094704565",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/popover/popover.component.ts",
+          "hash": "1620061165647200006",
+          "deps": [
+            "npm:@angular/core",
+            "ngx-neo-lib"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/radio/radio.component.html",
+          "hash": "8773744071494003460"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/radio/radio.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/radio/radio.component.spec.ts",
+          "hash": "9198046623660813917",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/components/views/radio/radio.component.ts",
+          "hash": "16086075695122951584",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "lib-ui"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/counter/views/counter/counter.component.html",
+          "hash": "5692826159721220969"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/counter/views/counter/counter.component.scss",
+          "hash": "16158490363208922457"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/counter/views/counter/counter.component.spec.ts",
+          "hash": "1035090379234897281",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/counter/views/counter/counter.component.ts",
+          "hash": "5724860491707109463",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/store",
+            "npm:rxjs",
+            "lib-ui",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/home/views/home/home.component.html",
+          "hash": "16385030979894126559"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/home/views/home/home.component.scss",
+          "hash": "12876074431009591213"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/home/views/home/home.component.spec.ts",
+          "hash": "16867291543595312190",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/home/views/home/home.component.ts",
+          "hash": "10178145943778225623",
+          "deps": [
+            "npm:@angular/core",
+            "lib-ui",
+            "npm:@angular/router",
+            "ngx-neo-lib"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/styles-routing.module.ts",
+          "hash": "9109708985596614419",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/global/global.component.html",
+          "hash": "11246719716284653764"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/global/global.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/global/global.component.spec.ts",
+          "hash": "8939015733288854374",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/global/global.component.ts",
+          "hash": "1954374365837370938",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/styles/styles.component.html",
+          "hash": "14148812016416959385"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/styles/styles.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/styles/styles.component.spec.ts",
+          "hash": "4591102482677694637",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/app/views/styles/views/styles/styles.component.ts",
+          "hash": "11353918297920507844",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/router",
+            "lib-ui"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Black.eot",
+          "hash": "7482402760931551442"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Black.ttf",
+          "hash": "18356891845599835023"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Black.woff",
+          "hash": "16370073857787031162"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Black.woff2",
+          "hash": "16028968458413622341"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BlackItalic.eot",
+          "hash": "12573864204448660469"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BlackItalic.ttf",
+          "hash": "7692396027368062264"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BlackItalic.woff",
+          "hash": "4597266204111899056"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BlackItalic.woff2",
+          "hash": "2455866654222356193"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Bold.eot",
+          "hash": "6189939659546149062"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Bold.ttf",
+          "hash": "17806731948860262326"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Bold.woff",
+          "hash": "15132716232541327975"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Bold.woff2",
+          "hash": "9302058066597927960"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BoldItalic.eot",
+          "hash": "3741957866484284425"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BoldItalic.ttf",
+          "hash": "14896785333493084027"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BoldItalic.woff",
+          "hash": "8646255175065220276"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-BoldItalic.woff2",
+          "hash": "10796376041876350379"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Heavy.eot",
+          "hash": "2920446287255926315"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Heavy.ttf",
+          "hash": "10678010916989596279"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Heavy.woff",
+          "hash": "15691564530499440646"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Heavy.woff2",
+          "hash": "5473566477426932681"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-HeavyItalic.eot",
+          "hash": "2539660940910759344"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-HeavyItalic.ttf",
+          "hash": "12906276454557936093"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-HeavyItalic.woff",
+          "hash": "8509763926825998169"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-HeavyItalic.woff2",
+          "hash": "11289164585624344692"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Light.eot",
+          "hash": "13398478524722132933"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Light.ttf",
+          "hash": "14761442740160761696"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Light.woff",
+          "hash": "14562578368375145687"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Light.woff2",
+          "hash": "10680895322035514526"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-LightItalic.eot",
+          "hash": "723936912697689085"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-LightItalic.ttf",
+          "hash": "6622826981554404258"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-LightItalic.woff",
+          "hash": "5309765181322822869"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-LightItalic.woff2",
+          "hash": "17654395108145268601"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Medium.eot",
+          "hash": "14854755146217498340"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Medium.ttf",
+          "hash": "11385621506843164475"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Medium.woff",
+          "hash": "4323251529203030984"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Medium.woff2",
+          "hash": "15136238921346932043"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-MediumItalic.eot",
+          "hash": "16145649718263154307"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-MediumItalic.ttf",
+          "hash": "8569707236643231028"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-MediumItalic.woff",
+          "hash": "1845365200860898290"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-MediumItalic.woff2",
+          "hash": "16561210893497075938"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Regular.eot",
+          "hash": "7173136934642778966"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Regular.ttf",
+          "hash": "8031436049473381093"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Regular.woff",
+          "hash": "17490522136483325404"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Regular.woff2",
+          "hash": "5695457018126003468"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-RegularItalic.eot",
+          "hash": "14525191767448089044"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-RegularItalic.ttf",
+          "hash": "7775193740651095056"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-RegularItalic.woff",
+          "hash": "16286193721016263551"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-RegularItalic.woff2",
+          "hash": "18118212414242883090"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Semibold.eot",
+          "hash": "17554948905305605919"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Semibold.ttf",
+          "hash": "13160306039966432089"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Semibold.woff",
+          "hash": "5810798266160863262"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Semibold.woff2",
+          "hash": "9783305577148614442"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-SemiboldItalic.eot",
+          "hash": "8731460046676757520"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-SemiboldItalic.ttf",
+          "hash": "14033733616671967603"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-SemiboldItalic.woff",
+          "hash": "17656293925725354982"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-SemiboldItalic.woff2",
+          "hash": "7305105055450036072"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Thin.eot",
+          "hash": "16377959806581609460"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Thin.ttf",
+          "hash": "5927901248223358930"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Thin.woff",
+          "hash": "12236144213193281582"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Thin.woff2",
+          "hash": "13513476328714615233"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-ThinItalic.eot",
+          "hash": "13468281622728389574"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-ThinItalic.ttf",
+          "hash": "11039109231007340581"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-ThinItalic.woff",
+          "hash": "396726925423162737"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-ThinItalic.woff2",
+          "hash": "4146840678891141999"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Ultralight.eot",
+          "hash": "17482925556346276818"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Ultralight.ttf",
+          "hash": "2474259551964265310"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Ultralight.woff",
+          "hash": "9573882938262631828"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-Ultralight.woff2",
+          "hash": "8365532401623665394"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-UltralightItalic.eot",
+          "hash": "6700392868584845205"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-UltralightItalic.ttf",
+          "hash": "1601522126405885839"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-UltralightItalic.woff",
+          "hash": "14362817726260495890"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/fonts/SFPro/SFProDisplay-UltralightItalic.woff2",
+          "hash": "1566943127731722463"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/img/logo.jpg",
+          "hash": "13826107009650534686"
+        },
+        {
+          "file": "apps/ngx-neo/src/assets/styles/view/_view.scss",
+          "hash": "881816270588234401"
+        },
+        {
+          "file": "apps/ngx-neo/src/environments/environment.dev.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/environments/environment.prod.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ngx-neo/src/favicon.ico",
+          "hash": "7971939442613867592"
+        },
+        {
+          "file": "apps/ngx-neo/src/index.html",
+          "hash": "1063354297354350383"
+        },
+        {
+          "file": "apps/ngx-neo/src/main.server.ts",
+          "hash": "11653607448136507287",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/main.ts",
+          "hash": "5906630930338547675",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/src/styles.scss",
+          "hash": "15000257809437703756"
+        },
+        {
+          "file": "apps/ngx-neo/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/ngx-neo/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "apps/ngx-neo/tsconfig.editor.json",
+          "hash": "17511610827034788226"
+        },
+        {
+          "file": "apps/ngx-neo/tsconfig.json",
+          "hash": "10975147308922344542"
+        },
+        {
+          "file": "apps/ngx-neo/tsconfig.server.json",
+          "hash": "17451721184880152901"
+        },
+        {
+          "file": "apps/ngx-neo/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "my-pages": [
+        {
+          "file": "apps/my-pages/.eslintrc.json",
+          "hash": "11787713287411690504"
+        },
+        {
+          "file": "apps/my-pages/.swcrc",
+          "hash": "2742566327615098680"
+        },
+        {
+          "file": "apps/my-pages/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "apps/my-pages/jest.config.ts",
+          "hash": "8298916425473527958"
+        },
+        {
+          "file": "apps/my-pages/next-env.d.ts",
+          "hash": "1320675027584673186"
+        },
+        {
+          "file": "apps/my-pages/next.config.js",
+          "hash": "17252635002163063865",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "apps/my-pages/project.json",
+          "hash": "1395303651792252752"
+        },
+        {
+          "file": "apps/my-pages/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/my-pages/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/my-pages/public/logo.jpg",
+          "hash": "13826107009650534686"
+        },
+        {
+          "file": "apps/my-pages/specs/index.spec.tsx",
+          "hash": "2873936096691223229",
+          "deps": [
+            "npm:react",
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/my-pages/src/app/components/header/components/personal-cabinet-button/personal-cabinet-button.module.css",
+          "hash": "125145030238681982"
+        },
+        {
+          "file": "apps/my-pages/src/app/components/header/components/personal-cabinet-button/personal-cabinet-button.spec.tsx",
+          "hash": "7532978806202876537",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/my-pages/src/app/components/header/components/personal-cabinet-button/personal-cabinet-button.tsx",
+          "hash": "10704600447484799782",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/my-pages/src/app/components/header/header.module.scss",
+          "hash": "7426105877731627864"
+        },
+        {
+          "file": "apps/my-pages/src/app/components/header/header.spec.tsx",
+          "hash": "1572678573011016875",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/my-pages/src/app/components/header/header.tsx",
+          "hash": "9126417637569797323",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/my-pages/src/app/events/page.module.scss",
+          "hash": "125145030238681982"
+        },
+        {
+          "file": "apps/my-pages/src/app/events/page.tsx",
+          "hash": "14122041584745566056"
+        },
+        {
+          "file": "apps/my-pages/src/app/global.scss",
+          "hash": "11197561898257307080"
+        },
+        {
+          "file": "apps/my-pages/src/app/layout.tsx",
+          "hash": "11404390943169378754"
+        },
+        {
+          "file": "apps/my-pages/src/app/mocks/menu/menu.ts",
+          "hash": "11716544590474011920"
+        },
+        {
+          "file": "apps/my-pages/src/app/mocks/user/user.json",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/my-pages/src/app/page.module.scss",
+          "hash": "3273749276961719423"
+        },
+        {
+          "file": "apps/my-pages/src/app/page.tsx",
+          "hash": "10150696282306278434"
+        },
+        {
+          "file": "apps/my-pages/tsconfig.json",
+          "hash": "7592980770229150597"
+        },
+        {
+          "file": "apps/my-pages/tsconfig.spec.json",
+          "hash": "13752930008724566565"
+        }
+      ],
+      "ngx-neo-lib": [
+        {
+          "file": "lib/ui/src/lib/a11y/directives/element-focus/element-focus.directive.ts",
+          "hash": "16079657159017651539",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/a11y/directives/element-focus/index.ts",
+          "hash": "11492281792835334359"
+        },
+        {
+          "file": "lib/ui/src/lib/a11y/directives/index.ts",
+          "hash": "13922086346018600298"
+        },
+        {
+          "file": "lib/ui/src/lib/a11y/directives/trap-focus/index.ts",
+          "hash": "13548249959294741796"
+        },
+        {
+          "file": "lib/ui/src/lib/a11y/directives/trap-focus/trap-focus.directive.ts",
+          "hash": "11396916304085431496",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/a11y/index.ts",
+          "hash": "11134470106348937697"
+        },
+        {
+          "file": "lib/ui/src/lib/components/button/button.component.html",
+          "hash": "10571916967402844604"
+        },
+        {
+          "file": "lib/ui/src/lib/components/button/button.component.scss",
+          "hash": "17199360478297954747"
+        },
+        {
+          "file": "lib/ui/src/lib/components/button/button.component.spec.ts",
+          "hash": "13195685163216482858",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/button/button.component.ts",
+          "hash": "15589790388026784971",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/button/button.stories.ts",
+          "hash": "11815242581162486549",
+          "deps": [
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/button/index.ts",
+          "hash": "7899223903687169740"
+        },
+        {
+          "file": "lib/ui/src/lib/components/checkbox/checkbox.component.html",
+          "hash": "1120308926404195936"
+        },
+        {
+          "file": "lib/ui/src/lib/components/checkbox/checkbox.component.scss",
+          "hash": "2564879714478396965"
+        },
+        {
+          "file": "lib/ui/src/lib/components/checkbox/checkbox.component.spec.ts",
+          "hash": "14944734133490971180",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/checkbox/checkbox.component.ts",
+          "hash": "2230975213031542711",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/checkbox/checkbox.module.ts",
+          "hash": "2995281993652088178",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/checkbox/index.ts",
+          "hash": "5802415263398038748"
+        },
+        {
+          "file": "lib/ui/src/lib/components/footer/footer.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "lib/ui/src/lib/components/footer/footer.component.html",
+          "hash": "3280228167733484906"
+        },
+        {
+          "file": "lib/ui/src/lib/components/footer/footer.component.scss",
+          "hash": "11143250927400375376"
+        },
+        {
+          "file": "lib/ui/src/lib/components/footer/footer.component.spec.ts",
+          "hash": "5999637913167128263",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/footer/footer.component.ts",
+          "hash": "12969916980378885505",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/footer/index.ts",
+          "hash": "3431716135328408191"
+        },
+        {
+          "file": "lib/ui/src/lib/components/header/header.component.html",
+          "hash": "14454753612477770487"
+        },
+        {
+          "file": "lib/ui/src/lib/components/header/header.component.scss",
+          "hash": "14846966380387406840"
+        },
+        {
+          "file": "lib/ui/src/lib/components/header/header.component.spec.ts",
+          "hash": "6153927307393670060",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/header/header.component.ts",
+          "hash": "12675437951928642194",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/header/header.stories.ts",
+          "hash": "16360648082310015410",
+          "deps": [
+            "npm:@angular/common",
+            "lib-ui"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/header/index.ts",
+          "hash": "12541423769449981273"
+        },
+        {
+          "file": "lib/ui/src/lib/components/index.ts",
+          "hash": "16273374167660176615"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/img/password-hidden-error.svg",
+          "hash": "3012834998738818584"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/img/password-hidden.svg",
+          "hash": "16870621570802083494"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/img/password-shown-error.svg",
+          "hash": "7209358554720447736"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/img/password-shown.svg",
+          "hash": "10446979299818235052"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/index.ts",
+          "hash": "9156664217773015077"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/input.component.html",
+          "hash": "3430432391088176914"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/input.component.scss",
+          "hash": "677003369755926655"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/input.component.spec.ts",
+          "hash": "1051917733419957978",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/input.component.ts",
+          "hash": "14877250530351427199",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/common",
+            "npm:@maskito/angular",
+            "npm:@maskito/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/input.module.ts",
+          "hash": "307571833501545370",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/models/index.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "lib/ui/src/lib/components/input/models/suggest.ts",
+          "hash": "265902744314764011"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/components/base-modal/base-modal.component.html",
+          "hash": "17874543741815526969"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/components/base-modal/base-modal.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/components/base-modal/base-modal.component.ts",
+          "hash": "1880135017612847586",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/components/index.ts",
+          "hash": "11222260856280997875"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/directives/index.ts",
+          "hash": "2471336694936997233"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/directives/open-modal/open-modal-template-ref.directive.ts",
+          "hash": "4593378697859419689",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/index.ts",
+          "hash": "13054405264460978875"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/modal.component.html",
+          "hash": "4325688038319807123"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/modal.component.scss",
+          "hash": "15721844621664042779"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/modal.component.ts",
+          "hash": "13032395526129388797",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/models/index.ts",
+          "hash": "4214512931955288678"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/models/modal/modal.ts",
+          "hash": "15523568895152360555",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/services/index.ts",
+          "hash": "6526053148914487275"
+        },
+        {
+          "file": "lib/ui/src/lib/components/modal/services/modal/modal.service.ts",
+          "hash": "18172067371499386072",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/directives/index.ts",
+          "hash": "5562259180478414402"
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/directives/navigate-list-active-route-disable/navigate-list-active-route-disable.directive.ts",
+          "hash": "18209225926500469749",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/index.ts",
+          "hash": "8674489460973822135"
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/models/index.ts",
+          "hash": "3964813929854933129"
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/models/navigate/navigate.ts",
+          "hash": "17984605891065366602"
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/navigate-list.component.html",
+          "hash": "18142173256374908636"
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/navigate-list.component.scss",
+          "hash": "13631610301344892547"
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/navigate-list.component.spec.ts",
+          "hash": "15454938125633047700",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/navigate-list/navigate-list.component.ts",
+          "hash": "15863428296248181281",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/components/index.ts",
+          "hash": "7466558732783581474"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/components/popover-base-component/popover-base-component.component.html",
+          "hash": "16636944277655338914"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/components/popover-base-component/popover-base-component.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/components/popover-base-component/popover-base-component.component.ts",
+          "hash": "11689647074172195991",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/directives/index.ts",
+          "hash": "7821191029795082949"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/directives/popover/popover.directive.ts",
+          "hash": "11160767576350141447",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/index.ts",
+          "hash": "1523357209306564182"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/popover.component.html",
+          "hash": "3115908102600169399"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/popover.component.scss",
+          "hash": "14688330864340410859"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/popover.component.ts",
+          "hash": "18107572225392047041",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/services/index.ts",
+          "hash": "13727106581108583628"
+        },
+        {
+          "file": "lib/ui/src/lib/components/popover/services/popover/popover.service.ts",
+          "hash": "1504270091405970942",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/radio/index.ts",
+          "hash": "12891819585971623109"
+        },
+        {
+          "file": "lib/ui/src/lib/components/radio/radio.component.html",
+          "hash": "8353651259885940274"
+        },
+        {
+          "file": "lib/ui/src/lib/components/radio/radio.component.scss",
+          "hash": "7075189537355982202"
+        },
+        {
+          "file": "lib/ui/src/lib/components/radio/radio.component.spec.ts",
+          "hash": "9198046623660813917",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/radio/radio.component.ts",
+          "hash": "14280313553313103178",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/components/radio/radio.module.ts",
+          "hash": "10625550101897801069",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/constants/empty/empty.ts",
+          "hash": "3761883565112542893",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/constants/index.ts",
+          "hash": "5064732927194002343"
+        },
+        {
+          "file": "lib/ui/src/lib/models/index.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "lib/ui/src/lib/package.json",
+          "hash": "3809994922934450835"
+        },
+        {
+          "file": "lib/ui/src/lib/services/browser/browser.service.spec.ts",
+          "hash": "16234788442954263424",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/services/browser/browser.service.ts",
+          "hash": "14737116747841651058",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/services/browser/index.ts",
+          "hash": "7239141143542382553"
+        },
+        {
+          "file": "lib/ui/src/lib/services/destroy/destroy.service.ts",
+          "hash": "7696964374126480661",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/services/destroy/index.ts",
+          "hash": "11847484656712953083"
+        },
+        {
+          "file": "lib/ui/src/lib/services/helper/helper.service.ts",
+          "hash": "1221714087313289028",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/forms",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/services/helper/index.ts",
+          "hash": "17234613351662291297"
+        },
+        {
+          "file": "lib/ui/src/lib/services/index.ts",
+          "hash": "5170274675397526459"
+        },
+        {
+          "file": "lib/ui/src/lib/services/media-query/index.ts",
+          "hash": "15349126502365527838"
+        },
+        {
+          "file": "lib/ui/src/lib/services/media-query/media-queries.service.ts",
+          "hash": "12016076374730314986",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/services/media-query/models/index.ts",
+          "hash": "11264538664844366120"
+        },
+        {
+          "file": "lib/ui/src/lib/services/media-query/models/media-queries.interface.ts",
+          "hash": "495610634543422730",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/types/index.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "lib/ui/src/lib/ui.component.spec.ts",
+          "hash": "7917129550666682504",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/ui.component.ts",
+          "hash": "13052368452520142923",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/ui.module.ts",
+          "hash": "3553344809527479756",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/ui.service.spec.ts",
+          "hash": "14407827061398115777",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/ui.service.ts",
+          "hash": "9528436326888955845",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/ui/ui.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "lib/ui/src/lib/ui/ui.component.html",
+          "hash": "13709680680123278056"
+        },
+        {
+          "file": "lib/ui/src/lib/ui/ui.component.spec.ts",
+          "hash": "2887951508933850500",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "lib/ui/src/lib/ui/ui.component.ts",
+          "hash": "12773911661151653558",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        }
+      ],
+      "lib-ui": [
+        {
+          "file": "lib/ui/.eslintrc.json",
+          "hash": "1866185909582566883"
+        },
+        {
+          "file": "lib/ui/README.md",
+          "hash": "3098996868279451883"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-Bold.ttf",
+          "hash": "11197395343795725637"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-BoldItalic.ttf",
+          "hash": "4207304861991961087"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-ExtraLight.ttf",
+          "hash": "6595741779042131442"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-ExtraLightItalic.ttf",
+          "hash": "11817191639278768744"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-Italic.ttf",
+          "hash": "15844807826388352983"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-Light.ttf",
+          "hash": "13241509798225231588"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-LightItalic.ttf",
+          "hash": "16669633095995377894"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-Medium.ttf",
+          "hash": "2119801648992435223"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-MediumItalic.ttf",
+          "hash": "13613673150811426005"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-Regular.ttf",
+          "hash": "16817811632279566310"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-SemiBold.ttf",
+          "hash": "8402884219539702362"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-SemiBoldItalic.ttf",
+          "hash": "1843507195110100176"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-Thin.ttf",
+          "hash": "16004733920813353366"
+        },
+        {
+          "file": "lib/ui/assets/fonts/RobotoMono-ThinItalic.ttf",
+          "hash": "8467846150022507030"
+        },
+        {
+          "file": "lib/ui/assets/img/logo.jpg",
+          "hash": "13826107009650534686"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/_theme_provider.scss",
+          "hash": "7243434790932296295"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/base-styles/_styles.scss",
+          "hash": "12411999436459150349"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/base-styles/container/_container.scss",
+          "hash": "12446726532035358311"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/base-styles/resets/_button.scss",
+          "hash": "4191494911597230242"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/base-styles/resets/_form.scss",
+          "hash": "13815304857472550373"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/base-styles/typography/_typography.scss",
+          "hash": "3969190211224666796"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/common/accessibility/_accessibility.scss",
+          "hash": "6425794777074443522"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/common/accessibility/mixins/_actions.scss",
+          "hash": "4243538438621437754"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/common/fonts/_fonts.scss",
+          "hash": "4372799233259686854"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/common/offsets/_offsets.scss",
+          "hash": "5601133527061203720"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/common/palette/_palette.scss",
+          "hash": "160067015632381282"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/common/variables/_variables.scss",
+          "hash": "228385330768046518"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/config.scss",
+          "hash": "10468040809300660247"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/core/functions/_functions.scss",
+          "hash": "15550720626642924521"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/core/mixins/_mixins.scss",
+          "hash": "13932693041720077039"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/core/mixins/grid/_grid.scss",
+          "hash": "1524493060651735522"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/core/mixins/iterators/_iterators.scss",
+          "hash": "7113265381413819354"
+        },
+        {
+          "file": "lib/ui/assets/styles/theme-provider/core/mixins/media/_media.scss",
+          "hash": "18406576326042254916"
+        },
+        {
+          "file": "lib/ui/jest.config.ts",
+          "hash": "16406803739677386541"
+        },
+        {
+          "file": "lib/ui/ng-package.json",
+          "hash": "3117822250116780516"
+        },
+        {
+          "file": "lib/ui/package.json",
+          "hash": "11137087071079558971",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib",
+            "npm:@maskito/angular",
+            "npm:@maskito/core",
+            "npm:@maskito/kit",
+            "npm:@maskito/phone"
+          ]
+        },
+        {
+          "file": "lib/ui/project.json",
+          "hash": "12819412625160011167"
+        },
+        {
+          "file": "lib/ui/src/public-api.ts",
+          "hash": "3625980236164146033",
+          "deps": [
+            "ngx-neo-lib"
+          ]
+        },
+        {
+          "file": "lib/ui/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "lib/ui/tsconfig.json",
+          "hash": "3541956393923019303"
+        },
+        {
+          "file": "lib/ui/tsconfig.lib.json",
+          "hash": "4766185256741444917"
+        },
+        {
+          "file": "lib/ui/tsconfig.lib.prod.json",
+          "hash": "174503844014784742"
+        },
+        {
+          "file": "lib/ui/tsconfig.spec.json",
+          "hash": "2129196202529263968"
+        }
+      ],
+      "my-pages-api": [
+        {
+          "file": "apps/my-pages-api/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/my-pages-api/jest.config.ts",
+          "hash": "12009596614353965718"
+        },
+        {
+          "file": "apps/my-pages-api/project.json",
+          "hash": "16078024954854344105"
+        },
+        {
+          "file": "apps/my-pages-api/src/app/app.controller.spec.ts",
+          "hash": "9499997688052526633",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/app.controller.ts",
+          "hash": "9005150069945785676",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/app.module.ts",
+          "hash": "16057474683089347365",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/serve-static"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/app.service.spec.ts",
+          "hash": "8587461140686713758",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/app.service.ts",
+          "hash": "9967902337593410053",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/exception/unauthorized/unauthorized.ts",
+          "hash": "17644035524105699560",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/exception/validation/validation.ts",
+          "hash": "2738528810824294761",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/guards/auth/auth.ts",
+          "hash": "10595314082544736394",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/pipes/validation/validation.ts",
+          "hash": "16256568960744578230",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:class-transformer",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/services/mail/mail.service.ts",
+          "hash": "6227614735360028632",
+          "deps": [
+            "npm:@nestjs/config",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/dto/create-user.dto.ts",
+          "hash": "2004228490496321222",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/dto/user-login.dto.ts",
+          "hash": "11931440050674041933",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/dto/user-public.dto.ts",
+          "hash": "1475754885965671056"
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/file/file.module.ts",
+          "hash": "11192416581237888757",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/file/file.service.ts",
+          "hash": "3475566338052569808",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:uuid"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/schemas/token.schema.ts",
+          "hash": "5606282972818339613"
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/schemas/user.schema.ts",
+          "hash": "6268582852416540741"
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/services/token/token.service.ts",
+          "hash": "7041297076000169473",
+          "deps": [
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/user.controller.ts",
+          "hash": "17579480146699837775",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/platform-express"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/user.module.ts",
+          "hash": "6194645052489264498",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/app/user/user.service.ts",
+          "hash": "6193888154134009630",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:uuid",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/my-pages-api/src/main.ts",
+          "hash": "10021783840381426380",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/config",
+            "npm:cookie-parser"
+          ]
+        },
+        {
+          "file": "apps/my-pages-api/tsconfig.app.json",
+          "hash": "11728618664080294556"
+        },
+        {
+          "file": "apps/my-pages-api/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/my-pages-api/tsconfig.spec.json",
+          "hash": "6622138706846345436"
+        },
+        {
+          "file": "apps/my-pages-api/webpack.config.js",
+          "hash": "16365808948010176492",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ]
+    }
+  }
+}

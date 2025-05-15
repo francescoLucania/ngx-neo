@@ -2,6 +2,9 @@
   "name": "ngx-neo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "prefix": "neo",
+  "sourceRoot": "apps/ngx-neo/src",
+  "tags": [],
   "generators": {
     "@schematics/angular:component": {
       "style": "scss",
@@ -9,9 +12,6 @@
       "changeDetection": "OnPush"
     }
   },
-  "prefix": "neo",
-  "sourceRoot": "apps/ngx-neo/src",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -66,7 +66,8 @@
           "buildTarget": "ngx-neo:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -129,7 +130,8 @@
           "serverTarget": "ngx-neo:server:production"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "prerender": {
       "executor": "@angular-devkit/build-angular:prerender",

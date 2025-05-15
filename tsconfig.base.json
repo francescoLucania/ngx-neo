@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "ngx-neo-ui": ["lib/ui/src/public-api.ts"],
-      "@nx-neo-models": ["models/index.ts"]
+      "@nx-neo-models": ["models/index.ts"],
+      "ngx-neo-ui": ["lib/ui/src/public-api.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

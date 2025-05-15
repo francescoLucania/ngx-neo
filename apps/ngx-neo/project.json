@@ -20,7 +20,6 @@
         "outputPath": "dist/apps/ngx-neo/browser",
         "index": "apps/ngx-neo/src/index.html",
         "main": "apps/ngx-neo/src/main.ts",
-        "polyfills": [],
         "tsConfig": "apps/ngx-neo/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/ngx-neo/src/favicon.ico", "apps/ngx-neo/src/assets"],
@@ -101,7 +100,6 @@
       "options": {
         "outputPath": "dist/apps/ngx-neo/server",
         "main": "apps/ngx-neo/server.ts",
-        "polyfills": [],
         "tsConfig": "apps/ngx-neo/tsconfig.server.json",
         "inlineStyleLanguage": "scss"
       },

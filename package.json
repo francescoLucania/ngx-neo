@@ -5,7 +5,7 @@
   "scripts": {
     "update": "nx migrate latest",
     "serve neo": "nx serve ngx-neo",
-    "build neo": "nx build ngx-neo",
+    "build neo:ssr": "nx build ngx-neo",
     "build ui": "nx build lib-ui",
     "publish ui": "cd dist/ui && npm publish",
     "dev:ssr": "ng run ngx-neo:serve-ssr",

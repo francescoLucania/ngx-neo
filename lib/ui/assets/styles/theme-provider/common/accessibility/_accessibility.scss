@@ -1,12 +1,12 @@
 @use '../../theme_provider' as theme;
 @use 'mixins/actions' as actions;
 
-a {
+a,
+button {
   &:not([class]) {
     @include actions.accessibilityLinkStyles;
   }
 }
-
 .focus-visible-none {
   outline: none;
 }

@@ -1,17 +1,19 @@
-import styles from './page.module.scss';
-import { HeaderMenu } from './mocks/menu/menu';
+"use client"
+import Input from './components/input/input';
+import { useState } from 'react';
 
 export default function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.scss file.
-   */
+  const [myName, setMyNameState] = useState('My Name')
+
+  const changeName = (name: string) => setMyNameState(name)
 
   return (
     <section className="section">
       <div className="container">
-        <h1 className="heading-h1">Hello World</h1>
+        <h1 className="heading-h1">Hello {myName}</h1>
+        <div className="mt-40" style={{ maxWidth: '450px' }}>
+          <Input autofocus={true} value={myName} inputChange={changeName}/>
+        </div>
       </div>
     </section>
   );

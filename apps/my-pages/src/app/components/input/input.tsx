@@ -27,7 +27,7 @@ export const Input: FC<InputProps> = function ({
   }, [value]);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    inputChange(e.target?.value); // Parameter 'e' implicitly has an 'any' type.
+    inputChange(e.target?.value);
 
   return (
     <div className={styles['neo-ui-input']}>

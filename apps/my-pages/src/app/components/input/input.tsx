@@ -2,12 +2,16 @@ import styles from './input.module.scss';
 import React, { FC, useEffect, useRef } from 'react';
 
 type InputProps = {
-  autofocus?: boolean,
+  autofocus?: boolean;
   value: string;
   inputChange: (value: string) => void;
-}
+};
 
-export const Input: FC<InputProps> = function({ autofocus = false, value, inputChange })  {
+export const Input: FC<InputProps> = function ({
+  autofocus = false,
+  value,
+  inputChange,
+}) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -19,10 +23,11 @@ export const Input: FC<InputProps> = function({ autofocus = false, value, inputC
         textInput.setSelectionRange(len, len);
         textInput.focus();
       }
-    })
+    });
   }, [value]);
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => inputChange(e.target?.value); // Parameter 'e' implicitly has an 'any' type.
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    inputChange(e.target?.value); // Parameter 'e' implicitly has an 'any' type.
 
   return (
     <div className={styles['neo-ui-input']}>
@@ -34,6 +39,6 @@ export const Input: FC<InputProps> = function({ autofocus = false, value, inputC
       />
     </div>
   );
-}
+};
 
 export default Input;

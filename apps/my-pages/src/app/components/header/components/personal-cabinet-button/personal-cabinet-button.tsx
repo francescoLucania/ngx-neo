@@ -1,15 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export function PersonalCabinetButton() {
   const [authState, setAuthState] = useState(false);
 
   const cabinetButton = () => {
     if (authState) {
-      return <a href="/persona-account">Личный кабинет</a>;
+      return <Link href="/persona-account">Личный кабинет</Link>;
     } else {
-      return <button onClick={() => openCabinet()}>Войти</button>;
+      return <Link href={'login'}>Войти / Зарегистрироваться</Link>;
     }
   };
 

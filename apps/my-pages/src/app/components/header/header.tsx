@@ -2,6 +2,7 @@ import { HeaderMenu } from '../../mocks/menu/menu';
 import PersonalCabinetButton from './components/personal-cabinet-button/personal-cabinet-button';
 import styles from './header.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Header() {
   const headerMenu = HeaderMenu;
@@ -10,9 +11,9 @@ export function Header() {
     <header className={styles.header + ' ' + 'pages-header'}>
       <div className="container">
         <nav className={styles.header__navigate}>
-          <a href="/" className={styles.header__navigate__logo}>
+          <Link href="/" className={styles.header__navigate__logo}>
             <img src="/logo.jpg" alt="" />
-          </a>
+          </Link>
 
           <ul>
             {headerMenu.common.map((item, i) => (

@@ -15,16 +15,16 @@ export const Input: FC<InputProps> = function ({
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (autofocus && inputRef.current) {
-        const textInput = inputRef.current;
-        const len = value.length;
 
-        textInput.setSelectionRange(len, len);
-        textInput.focus();
-      }
-    });
-  }, [value]);
+    if (autofocus && inputRef.current) {
+
+      const textInput = inputRef.current;
+      const len = value.length;
+
+      textInput.setSelectionRange(len, len);
+      textInput.focus();
+    }
+  }, [inputRef]);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     inputChange(e.target?.value);

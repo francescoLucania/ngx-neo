@@ -16,9 +16,11 @@ export default function RootLayout({
       <body>
         <div className="app">
           <Header />
-          <main>{children}</main>
+          <main>
+            <div className="container">{children}</div>
+            </main>
           <footer className="footer-header">
-            <div className="container">footer</div>
+          <div className="container">footer</div>
           </footer>
         </div>
       </body>

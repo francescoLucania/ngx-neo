@@ -13,7 +13,7 @@ import { NavigateListComponent } from 'ngx-neo-ui';
 export class AccessibilityComponent {
   public formsMenu: INavigateList[] = [
     { name: 'UI demo', uri: 'ui' },
-    { name: 'Login a11y demo', uri: 'login-a11y' },
+    { name: 'Page a11y demo', uri: 'login-a11y' },
   ];
 
   public directivesMenu: INavigateList[] = [

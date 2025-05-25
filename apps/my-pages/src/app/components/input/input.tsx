@@ -15,9 +15,7 @@ export const Input: FC<InputProps> = function ({
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-
     if (autofocus && inputRef.current) {
-
       const textInput = inputRef.current;
       const len = value.length;
 

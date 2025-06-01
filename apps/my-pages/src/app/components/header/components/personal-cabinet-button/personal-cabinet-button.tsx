@@ -1,22 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from '../../../../store/features/user/user.store';
+import { getUserSelector } from '../../../../store/features/user/user.selectors';
 
 export function PersonalCabinetButton() {
-  const [authState, setAuthState] = useState(false);
+  const user = useSelector(getUserSelector)
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
 
   const cabinetButton = () => {
-    if (authState) {
+    if (user) {
       return <Link href="/persona-account">Личный кабинет</Link>;
     } else {
       return <Link href={'login'}>Войти / Зарегистрироваться</Link>;
     }
   };
 
-  const openCabinet = () => {
-    setAuthState(true);
-  };
 
   return cabinetButton();
 }

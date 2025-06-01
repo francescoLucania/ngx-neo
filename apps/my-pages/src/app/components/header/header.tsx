@@ -1,8 +1,7 @@
 import { HeaderMenu } from '../../mocks/menu/menu';
-import PersonalCabinetButton from './components/personal-cabinet-button/personal-cabinet-button';
 import styles from './header.module.scss';
-import Image from 'next/image';
 import Link from 'next/link';
+import UserMenu from './components/user-menu/user-menu';
 
 export function Header() {
   const headerMenu = HeaderMenu;
@@ -22,7 +21,7 @@ export function Header() {
               </li>
             ))}
             <li>
-              <PersonalCabinetButton />
+              <UserMenu/>
             </li>
           </ul>
         </nav>

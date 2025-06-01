@@ -38,6 +38,11 @@ p {
   margin: 0;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
   color: var(--colorBrand);
@@ -57,6 +62,7 @@ button {
 strong,
 b {
   font-weight: bold;
+  vertical-align: top;
 }
 
 @include theme.mq(lg) {

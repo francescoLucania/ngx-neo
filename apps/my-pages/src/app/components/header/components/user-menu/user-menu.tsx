@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Provider } from 'react-redux';
 import { store } from '../../../../store/store';
 import PersonalCabinetButton from '../personal-cabinet-button/personal-cabinet-button';
@@ -6,7 +6,7 @@ import PersonalCabinetButton from '../personal-cabinet-button/personal-cabinet-b
 export function UserMenu() {
   return (
     <Provider store={store}>
-      <PersonalCabinetButton/>
+      <PersonalCabinetButton />
     </Provider>
   );
 }

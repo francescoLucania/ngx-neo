@@ -5,11 +5,10 @@ import { store } from '../store/store';
 import AuthForm from './components/auth-form/auth-form';
 
 export function Page() {
-
   return (
     <section className={'section'}>
       <Provider store={store}>
-        <AuthForm/>
+        <AuthForm />
       </Provider>
     </section>
   );

@@ -21,7 +21,7 @@ export function Header() {
               </li>
             ))}
             <li>
-              <UserMenu/>
+              <UserMenu />
             </li>
           </ul>
         </nav>

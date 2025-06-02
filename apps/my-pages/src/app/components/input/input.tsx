@@ -33,7 +33,11 @@ export const Input: FC<InputProps> = function ({
 
   return (
     <div
-      className={styles['neo-ui-input'] + ' ' + (invalid ? styles['neo-ui-input--invalid'] : '')}
+      className={
+        styles['neo-ui-input'] +
+        ' ' +
+        (invalid ? styles['neo-ui-input--invalid'] : '')
+      }
     >
       <input
         className={styles['neo-ui-input__tag']}

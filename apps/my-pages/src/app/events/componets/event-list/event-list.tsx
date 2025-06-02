@@ -1,11 +1,13 @@
-'use client'
+'use client';
 
 import styles from './event-list.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 
-
 import { useEffect, useState } from 'react';
-import { createEvent, getEvents } from '../../../store/features/events/events.store';
+import {
+  createEvent,
+  getEvents,
+} from '../../../store/features/events/events.store';
 import Input from '../../../components/input/input';
 import { getEventsSelector } from '../../../store/features/events/events.selectors';
 
@@ -17,16 +19,15 @@ export function EventList() {
 
   useEffect(() => {
     dispatch(getEvents());
-    console.log('events', events)
+    console.log('events', events);
   }, []);
 
   return (
     <div>
-
       <div className={'mt-32'}>
-        {
-          events?.map((item: { id: number }, i: number) => <article key={i}>{item.id}</article>)
-        }
+        {events?.map((item: { id: number }, i: number) => (
+          <article key={i}>{item.id}</article>
+        ))}
       </div>
 
       <div className={'mt-32'}>
@@ -35,7 +36,10 @@ export function EventList() {
           <Input autofocus={true} value={myName} inputChange={changeName} />
         </div>
         <div className={'mt-8'}>
-          <button type="button" onClick={() => dispatch(createEvent({ id: myName }))}>
+          <button
+            type="button"
+            onClick={() => dispatch(createEvent({ id: myName }))}
+          >
             Добавить событие
           </button>
         </div>

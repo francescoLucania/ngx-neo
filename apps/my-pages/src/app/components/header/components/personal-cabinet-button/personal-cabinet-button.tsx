@@ -7,9 +7,8 @@ import { getUser } from '../../../../store/features/user/user.store';
 import { getUserSelector } from '../../../../store/features/user/user.selectors';
 
 export function PersonalCabinetButton() {
-  const user = useSelector(getUserSelector)
+  const user = useSelector(getUserSelector);
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     dispatch(getUser());
@@ -22,7 +21,6 @@ export function PersonalCabinetButton() {
       return <Link href={'login'}>Войти / Зарегистрироваться</Link>;
     }
   };
-
 
   return cabinetButton();
 }

@@ -128,7 +128,7 @@ export class UserService {
       };
     }
 
-    return { accessToken: tokens.accessToken, ...user };
+    return { ...user };
   }
 
   private async loginPasswordEquals(

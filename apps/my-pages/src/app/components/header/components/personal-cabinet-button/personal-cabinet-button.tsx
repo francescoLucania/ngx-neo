@@ -15,7 +15,7 @@ export function PersonalCabinetButton() {
   }, []);
 
   const cabinetButton = () => {
-    if (user) {
+    if (user.accessToken) {
       return <Link href="/persona-account">Личный кабинет</Link>;
     } else {
       return <Link href={'login'}>Войти / Зарегистрироваться</Link>;

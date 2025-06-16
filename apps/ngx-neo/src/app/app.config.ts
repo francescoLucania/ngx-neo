@@ -18,6 +18,9 @@ import { provideEffects } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
+import { Test1Service } from './services/test/test1.service';
+import { Test3Service } from './services/test/test3.service';
+import { Test2Service } from './services/test/test2.service';
 
 export function initializerFactory(userService: UserService) {
   console.log('run initializer');
@@ -54,6 +57,9 @@ export const appConfig: ApplicationConfig = {
       useFactory: initializerFactory,
       deps: [UserService],
       multi: true,
+    },
+    {
+      provide: Test1Service, useClass: Test2Service
     },
     // TODO: гидрация без zone.js может доставлять проблемы
     provideExperimentalZonelessChangeDetection(),

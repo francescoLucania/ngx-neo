@@ -1,19 +1,13 @@
 import styles from './auth-form.module.scss';
-import { Fragment, useReducer, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createUser } from '../../../store/features/user/user.store';
+import { useEffect, useReducer, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../../components/input/input';
 import { RegistrationBody } from '@nx-neo-models';
+import { createUser } from '../../../store/features/user/thunk/create-user';
+import { getEventsSelector } from '../../../store/features/events/events.selectors';
+import { getEvents } from '../../../store/features/events/events.store';
+import { getUserSelector, userErrors } from '../../../store/features/user/user.selectors';
 
-// const RegistrationFormInitialState: RegistrationBody = {
-//   email: '',
-//   phone: '',
-//   name: '',
-//   fullName: '',
-//   gender: '',
-//   dateIssue: '',
-//   password: '',
-// };
 
 const RegistrationFormInitialState: Map<keyof RegistrationBody, string> =
   new Map([
@@ -52,9 +46,7 @@ function reducer(
 }
 
 export function AuthForm() {
-  const [loginState, setLoginState] = useState<'login' | 'registration'>(
-    'login'
-  );
+  const [loginState, setLoginState] = useState<'login' | 'registration' | 'registered'>('login');
   const [registrationFormState, registrationFormDispatch] = useReducer(
     reducer,
     RegistrationFormInitialState
@@ -62,6 +54,18 @@ export function AuthForm() {
 
   const [registrationFormPristine, updateRegistrationFormPristine] =
     useState(true);
+
+  const user = useSelector(getUserSelector);
+
+  useEffect(() => {
+    console.log('auth-form: user', user);
+
+    if (!user.accessToken && user.email) {
+      setLoginState('registered')
+    }
+  }, [user]);
+
+
 
   const dispatch = useDispatch();
 
@@ -107,10 +111,12 @@ export function AuthForm() {
     }
 
     updateRegistrationFormPristine(false);
+
     const result = Object.fromEntries(
       registrationFormState
     ) as Required<RegistrationBody>;
-    return dispatch(createUser(result));
+
+    dispatch(createUser(result))
   };
 
   const form = () => {
@@ -134,6 +140,8 @@ export function AuthForm() {
       );
     } else if (loginState === 'registration') {
       return registrationView();
+    } else if (loginState === 'registered') {
+      return `На почту <b>${user.email}</b> отправлено письмо с кодом активации`
     }
   };
 

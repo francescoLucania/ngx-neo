@@ -13,6 +13,7 @@ import {
 import { maskitoPhoneOptionsGenerator } from '@maskito/phone';
 import { MASKITO_DEFAULT_OPTIONS } from '@maskito/core';
 import { CodeComponent } from '../../../../components/code/code.component';
+import { Test1Service } from '../../../../services/test/test1.service';
 
 interface DemoLoginForm {
   login: FormControl<string>;
@@ -29,6 +30,9 @@ interface DemoLoginForm {
     ReactiveFormsModule,
     CodeComponent,
   ],
+  providers: [
+    {provide: Test1Service, useClass: Test1Service}
+  ],
   standalone: true,
 })
 export class InputComponent implements OnInit {
@@ -42,6 +46,10 @@ export class InputComponent implements OnInit {
   public form: FormGroup<DemoLoginForm>;
 
   protected phoneMask = MASKITO_DEFAULT_OPTIONS;
+
+  constructor(private test1Service: Test1Service) {
+    this.test1Service.getVersion();
+  }
 
   public async ngOnInit(): Promise<void> {
     this.form = new FormGroup<DemoLoginForm>({

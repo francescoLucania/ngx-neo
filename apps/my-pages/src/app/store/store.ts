@@ -7,7 +7,7 @@ export const store = configureStore({
     user: userReducer,
     events: eventsReducer,
   },
-  middleware: () => new Tuple(loggerMiddleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(loggerMiddleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

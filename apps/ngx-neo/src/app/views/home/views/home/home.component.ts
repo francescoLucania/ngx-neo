@@ -6,7 +6,7 @@ import {
 } from 'ngx-neo-ui';
 import { CodeComponent } from '../../../../components/code/code.component';
 import { RouterLink } from '@angular/router';
-import { PopoverDirective } from 'lib/ui/src/lib/components/popover/directives/popover/popover.directive';
+import { Test1Service } from '../../../../services/test/test1.service';
 
 @Component({
   selector: 'neo-home',
@@ -18,9 +18,12 @@ import { PopoverDirective } from 'lib/ui/src/lib/components/popover/directives/p
     CodeComponent,
     RouterLink,
     OpenModalTemplateRefDirective,
+
   ],
   standalone: true,
 })
 export class HomeComponent {
-  constructor(public readonly modalService: ModalService) {}
+  constructor(public readonly modalService: ModalService, private test1Service: Test1Service) {
+    this.test1Service.getVersion()
+  }
 }

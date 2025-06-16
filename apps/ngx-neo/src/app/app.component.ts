@@ -9,6 +9,8 @@ import {
 } from 'ngx-neo-ui';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Test1Service } from './services/test/test1.service';
+import { Test3Service } from './services/test/test3.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -37,5 +39,6 @@ export class AppComponent {
     { name: 'Contacts', uri: 'Contacts' },
   ];
 
-  constructor(private alertService: AlertService) {}
+  constructor(private alertService: AlertService) {
+  }
 }

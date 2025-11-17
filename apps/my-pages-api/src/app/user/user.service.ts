@@ -13,6 +13,7 @@ import { ConfigService } from '@nestjs/config';
 import ValidationException from '../exception/validation/validation';
 import UnauthorizedException from '../exception/unauthorized/unauthorized';
 import { LoginBody, LoginType, UserProfile } from '@nx-neo-models';
+import { UserLoginDto } from './dto/user-login.dto';
 
 @Injectable()
 export class UserService {
@@ -62,8 +63,10 @@ export class UserService {
     const picturePath = this.fileService.createFile(FileType.IMAGE, picture);
   }
 
-  async login(body: LoginBody): Promise<UserDto> {
+  async login(body: UserLoginDto): Promise<UserDto> {
     const { login, password, loginType } = body;
+
+    console.log('login body', body)
 
     const user =
       loginType === 'email'
@@ -147,7 +150,7 @@ export class UserService {
     if (refreshToken) {
       const user = await this.getUserByToken('REFRESH_TOKEN', refreshToken);
       if (user) {
-        return this.buildUserAuthData(new UserDto(user));
+        return this.buildUserAuthData(new UserDto(user), true);
       }
     }
     throw new UnauthorizedException('BAD_TOKEN');
@@ -189,6 +192,8 @@ export class UserService {
       }
 
       const user = await this.userModel.findById(validToken.id);
+
+      console.log('user => ', user)
 
       return user ? user : null;
     }

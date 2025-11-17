@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../../../../store/features/user/user.store';
 import { getUserSelector } from '../../../../store/features/user/user.selectors';
+import { refreshToken } from '../../../../store/features/user/thunk/refresh-token';
 
 export function PersonalCabinetButton() {
   const user = useSelector(getUserSelector);
@@ -12,6 +13,18 @@ export function PersonalCabinetButton() {
 
   useEffect(() => {
     dispatch(getUser());
+
+    if (!user.accessToken) {
+      dispatch(refreshToken())
+    }
+
+    console.log('user', user)
+
+    if (user) {
+      console.log('user', user)
+    }
+
+
   }, []);
 
   const cabinetButton = () => {

@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../../components/input/input';
 import { RegistrationBody } from '@nx-neo-models';
 import { createUser } from '../../../store/features/user/thunk/create-user';
-import { getEventsSelector } from '../../../store/features/events/events.selectors';
-import { getEvents } from '../../../store/features/events/events.store';
-import { getUserSelector, userErrors } from '../../../store/features/user/user.selectors';
-
+import { getUserSelector } from '../../../store/features/user/user.selectors';
+import LoginForm from '../../../components/login/login-form';
 
 const RegistrationFormInitialState: Map<keyof RegistrationBody, string> =
   new Map([
@@ -60,8 +58,8 @@ export function AuthForm() {
   useEffect(() => {
     console.log('auth-form: user', user);
 
-    if (!user.accessToken && user.email) {
-      setLoginState('registered')
+    if (user.accessToken && user.email) {
+      window.location.href = '/personal-account';
     }
   }, [user]);
 
@@ -102,6 +100,7 @@ export function AuthForm() {
   const changeRegistrationForm = ({ type, payload }) =>
     registrationFormDispatch({ type, payload });
 
+
   const registration = () => {
     for (const item of registrationFormState.values()) {
       if (!item.length) {
@@ -122,21 +121,7 @@ export function AuthForm() {
   const form = () => {
     if (loginState === 'login') {
       return (
-        <div>
-          <div>
-            <div className={'mb-4'}>Логин</div>
-            <Input
-              autofocus={true}
-              value={''}
-              key={'0'}
-              inputChange={changeLogin}
-            />
-          </div>
-          <div className={'mt-24'}>
-            <div className={'mb-4'}>Пароль</div>
-            <Input value={''} key={'1'} inputChange={changeLogin} />
-          </div>
-        </div>
+        <LoginForm/>
       );
     } else if (loginState === 'registration') {
       return registrationView();

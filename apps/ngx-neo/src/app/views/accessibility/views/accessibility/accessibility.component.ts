@@ -17,7 +17,7 @@ export class AccessibilityComponent {
   }
   public formsMenu: INavigateList[] = [
     { name: 'UI demo', uri: 'ui' },
-    { name: 'Page a11y demo', uri: 'login-a11y' },
+    { name: 'UserInformation a11y demo', uri: 'login-a11y' },
   ];
 
   public directivesMenu: INavigateList[] = [

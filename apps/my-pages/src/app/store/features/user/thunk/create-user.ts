@@ -3,7 +3,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const createUser = createAsyncThunk(
     'user/create',
-    async (user) => {
+    async (user, { getState }) => {
+      const state = getState();
+
+      console.log('state', state);
+
       const response = await fetch('http://localhost:5000/api/user/create', {
         method: 'POST',
         headers: {

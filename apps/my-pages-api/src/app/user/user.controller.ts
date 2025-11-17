@@ -21,6 +21,7 @@ import { ValidationPipe } from '../pipes/validation/validation';
 import { UserDto } from './dto/user-public.dto';
 import { AuthGuard } from '../guards/auth/auth';
 import { LoginBody } from '@nx-neo-models';
+import { UserLoginDto } from './dto/user-login.dto';
 
 @Controller('/user')
 export class UserController {
@@ -79,7 +80,7 @@ export class UserController {
 
   @UsePipes(ValidationPipe)
   @Post('/login')
-  public async login(@Body() body: LoginBody, @Response() response: UserDto) {
+  public async login(@Body() body: UserLoginDto, @Response() response: UserDto) {
     const user = await this.userService.login(body);
 
     this.setRefreshToken(response, user).send(user);
@@ -98,7 +99,7 @@ export class UserController {
 
     this.setRefreshToken(response, user).send(user);
   }
-  1231231232;
+
   @UseGuards(AuthGuard)
   @Get('/getUserData')
   public async getUserData(@Req() request, @Response() response) {
@@ -108,6 +109,8 @@ export class UserController {
   }
 
   private setRefreshToken(response: any, user: UserDto): any {
+    // console.log('response', response);
+    // console.log('user', user);
     if (user?.refreshToken) {
       return response.cookie('refreshToken', user.refreshToken, {
         maxAge: 30 * 24 * 60 * 100,

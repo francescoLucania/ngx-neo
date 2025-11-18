@@ -8,7 +8,8 @@ export const store = configureStore({
     user: userReducer,
     events: eventsReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(authMiddleware, loggerMiddleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(authMiddleware, loggerMiddleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

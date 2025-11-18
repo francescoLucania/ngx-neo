@@ -66,7 +66,7 @@ export class UserService {
   async login(body: UserLoginDto): Promise<UserDto> {
     const { login, password, loginType } = body;
 
-    console.log('login body', body)
+    console.log('login body', body);
 
     const user =
       loginType === 'email'
@@ -193,7 +193,7 @@ export class UserService {
 
       const user = await this.userModel.findById(validToken.id);
 
-      console.log('user => ', user)
+      console.log('user => ', user);
 
       return user ? user : null;
     }

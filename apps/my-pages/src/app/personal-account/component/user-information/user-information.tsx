@@ -4,7 +4,6 @@ import { getUserSelector } from '../../../store/features/user/user.selectors';
 import { useEffect } from 'react';
 
 export function UserInformation() {
-
   const user = useSelector(getUserSelector);
 
   useEffect(() => {
@@ -16,12 +15,8 @@ export function UserInformation() {
 
   return (
     <div>
-      <div>
-        Почта: {user.email}
-      </div>
-      <div>
-        ФИО: {user.fullName}
-      </div>
+      <div>Почта: {user.email}</div>
+      <div>ФИО: {user.fullName}</div>
     </div>
   );
 }

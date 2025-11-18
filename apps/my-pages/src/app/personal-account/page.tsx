@@ -5,10 +5,9 @@ import { store } from '../store/store';
 import UserInformation from './component/user-information/user-information';
 
 export function PersonalCabinet() {
-
   return (
     <section className="section">
-      <h1 className='heading-h1'>Личный кабинет</h1>
+      <h1 className="heading-h1">Личный кабинет</h1>
       <Provider store={store}>
         <UserInformation></UserInformation>
       </Provider>

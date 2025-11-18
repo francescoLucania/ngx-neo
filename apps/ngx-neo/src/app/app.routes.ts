@@ -28,9 +28,10 @@ export const appRoutes: Route[] = [
       (await import('./views/components/components-routing.module')).ROUTES,
     providers: [
       {
-        provide: Test1Service, useClass: Test3Service
-      }
-    ]
+        provide: Test1Service,
+        useClass: Test3Service,
+      },
+    ],
   },
   {
     path: 'accessibility',

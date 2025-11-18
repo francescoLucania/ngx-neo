@@ -13,6 +13,6 @@ import { Test2Service } from '../../../../services/test/test2.service';
 })
 export class ButtonComponent {
   constructor(private test1Service: Test1Service) {
-    this.test1Service.getVersion()
+    this.test1Service.getVersion();
   }
 }

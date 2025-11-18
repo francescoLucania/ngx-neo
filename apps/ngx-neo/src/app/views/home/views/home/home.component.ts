@@ -18,12 +18,14 @@ import { Test1Service } from '../../../../services/test/test1.service';
     CodeComponent,
     RouterLink,
     OpenModalTemplateRefDirective,
-
   ],
   standalone: true,
 })
 export class HomeComponent {
-  constructor(public readonly modalService: ModalService, private test1Service: Test1Service) {
-    this.test1Service.getVersion()
+  constructor(
+    public readonly modalService: ModalService,
+    private test1Service: Test1Service
+  ) {
+    this.test1Service.getVersion();
   }
 }

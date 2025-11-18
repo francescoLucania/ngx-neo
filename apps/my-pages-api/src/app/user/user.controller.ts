@@ -80,7 +80,10 @@ export class UserController {
 
   @UsePipes(ValidationPipe)
   @Post('/login')
-  public async login(@Body() body: UserLoginDto, @Response() response: UserDto) {
+  public async login(
+    @Body() body: UserLoginDto,
+    @Response() response: UserDto
+  ) {
     const user = await this.userService.login(body);
 
     this.setRefreshToken(response, user).send(user);

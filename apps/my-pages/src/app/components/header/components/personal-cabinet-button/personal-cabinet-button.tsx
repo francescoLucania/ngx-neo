@@ -15,16 +15,14 @@ export function PersonalCabinetButton() {
     dispatch(getUser());
 
     if (!user.accessToken) {
-      dispatch(refreshToken())
+      dispatch(refreshToken());
     }
 
-    console.log('user', user)
+    console.log('user', user);
 
     if (user) {
-      console.log('user', user)
+      console.log('user', user);
     }
-
-
   }, []);
 
   const cabinetButton = () => {

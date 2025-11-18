@@ -4,11 +4,10 @@ import { useReducer } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../store/features/user/thunk/login-in';
 
-const LoginFormInitialState: Map<keyof LoginBody, string> =
-  new Map([
-    ['login', ''],
-    ['password', ''],
-  ]);
+const LoginFormInitialState: Map<keyof LoginBody, string> = new Map([
+  ['login', ''],
+  ['password', ''],
+]);
 
 function loginFormReducer(
   state: Map<keyof LoginBody, string>,
@@ -25,7 +24,6 @@ function loginFormReducer(
   return newState;
 }
 
-
 export function LoginForm() {
   const dispatch = useDispatch();
 
@@ -34,36 +32,38 @@ export function LoginForm() {
     LoginFormInitialState
   );
 
-
   const loginIn = () => {
+    const result = Object.fromEntries(loginFormState) as Required<LoginBody>;
 
-    const result = Object.fromEntries(
-      loginFormState
-    ) as Required<LoginBody>;
+    dispatch(loginUser(result));
+  };
 
-    dispatch(loginUser(result))
-  }
-
-  const changeLogin = ({ type, payload }) => loginFormDispatch({ type, payload });
+  const changeLogin = ({ type, payload }) =>
+    loginFormDispatch({ type, payload });
 
   return (
     <div>
       <div>
         <div className={'mb-4'}>Логин</div>
         <Input
-          type='text'
+          type="text"
           autofocus={true}
           value={loginFormState.get('login')}
           key={'0'}
-          inputChange={(value) => changeLogin({type: 'login', payload: value} )}
+          inputChange={(value) =>
+            changeLogin({ type: 'login', payload: value })
+          }
         />
       </div>
       <div className={'mt-24'}>
         <div className={'mb-4'}>Пароль</div>
-        <Input type='text'
-               value={loginFormState.get('password')}
-               key={'1'}
-               inputChange={(value) => changeLogin({type: 'password', payload: value} )}
+        <Input
+          type="text"
+          value={loginFormState.get('password')}
+          key={'1'}
+          inputChange={(value) =>
+            changeLogin({ type: 'password', payload: value })
+          }
         />
       </div>
 

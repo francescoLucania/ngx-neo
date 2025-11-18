@@ -13,7 +13,7 @@ import { Test1Service } from '../../../../services/test/test1.service';
 })
 export class AccessibilityComponent {
   constructor(private test1Service: Test1Service) {
-    this.test1Service.getVersion()
+    this.test1Service.getVersion();
   }
   public formsMenu: INavigateList[] = [
     { name: 'UI demo', uri: 'ui' },

@@ -30,9 +30,7 @@ interface DemoLoginForm {
     ReactiveFormsModule,
     CodeComponent,
   ],
-  providers: [
-    {provide: Test1Service, useClass: Test1Service}
-  ],
+  providers: [{ provide: Test1Service, useClass: Test1Service }],
   standalone: true,
 })
 export class InputComponent implements OnInit {

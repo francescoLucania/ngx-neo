@@ -1,5 +1,5 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import {  UserProfile } from '@nx-neo-models';
+import { UserProfile } from '@nx-neo-models';
 import { createUser } from './thunk/create-user';
 import { loginUser } from './thunk/login-in';
 import { ApiService } from '../../api/api';
@@ -15,13 +15,13 @@ export type User = {
 } & Partial<UserProfile>;
 
 export type Response = {
-  payload:   {
+  payload: {
     message?: string;
-    statusCode?: number
-  } & Partial<User>
-}
+    statusCode?: number;
+  } & Partial<User>;
+};
 
-const userAdapter = createEntityAdapter()
+const userAdapter = createEntityAdapter();
 
 const userSlice = createSlice({
   extraReducers: (builder) => {
@@ -68,7 +68,6 @@ const userSlice = createSlice({
         if (action?.payload?.statusCode && action?.payload?.statusCode > 299) {
           state.error = action?.payload;
         } else {
-
           state.error = null;
           Object.assign(state, action?.payload);
 
@@ -88,7 +87,6 @@ const userSlice = createSlice({
         console.log('user rejected', action.payload);
       })
 
-
       // user/login
       .addCase(loginUser.pending, (state) => {
         state.loadingStatus = 'loading';
@@ -102,7 +100,6 @@ const userSlice = createSlice({
         if (action?.payload?.statusCode && action?.payload?.statusCode > 299) {
           state.error = action?.payload;
         } else {
-
           state.error = null;
           Object.assign(state, action?.payload);
 
@@ -120,20 +117,17 @@ const userSlice = createSlice({
         }
 
         console.log('user rejected', action.payload);
-      })
-    ;
+      });
   },
-  initialState: userAdapter.getInitialState<User>(
-    {
-      loadingStatus: 'idle'
-    }
-  ),
+  initialState: userAdapter.getInitialState<User>({
+    loadingStatus: 'idle',
+  }),
   name: 'events',
   reducers: {
     getUser: (state) => {
       return state;
-    }
-  }
+    },
+  },
 });
 
 export const { getUser } = userSlice.actions;

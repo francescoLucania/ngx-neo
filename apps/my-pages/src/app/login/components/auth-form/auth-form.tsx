@@ -44,7 +44,9 @@ function reducer(
 }
 
 export function AuthForm() {
-  const [loginState, setLoginState] = useState<'login' | 'registration' | 'registered'>('login');
+  const [loginState, setLoginState] = useState<
+    'login' | 'registration' | 'registered'
+  >('login');
   const [registrationFormState, registrationFormDispatch] = useReducer(
     reducer,
     RegistrationFormInitialState
@@ -62,8 +64,6 @@ export function AuthForm() {
       window.location.href = '/personal-account';
     }
   }, [user]);
-
-
 
   const dispatch = useDispatch();
 
@@ -100,7 +100,6 @@ export function AuthForm() {
   const changeRegistrationForm = ({ type, payload }) =>
     registrationFormDispatch({ type, payload });
 
-
   const registration = () => {
     for (const item of registrationFormState.values()) {
       if (!item.length) {
@@ -115,18 +114,16 @@ export function AuthForm() {
       registrationFormState
     ) as Required<RegistrationBody>;
 
-    dispatch(createUser(result))
+    dispatch(createUser(result));
   };
 
   const form = () => {
     if (loginState === 'login') {
-      return (
-        <LoginForm/>
-      );
+      return <LoginForm />;
     } else if (loginState === 'registration') {
       return registrationView();
     } else if (loginState === 'registered') {
-      return `На почту <b>${user.email}</b> отправлено письмо с кодом активации`
+      return `На почту <b>${user.email}</b> отправлено письмо с кодом активации`;
     }
   };
 

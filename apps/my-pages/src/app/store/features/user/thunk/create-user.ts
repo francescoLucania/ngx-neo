@@ -1,21 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-
 export const createUser = createAsyncThunk(
-    'user/create',
-    async (user, { getState }) => {
-      const state = getState();
+  'user/create',
+  async (user, { getState }) => {
+    const state = getState();
 
-      console.log('state', state);
+    console.log('state', state);
 
-      const response = await fetch('http://localhost:5000/api/user/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(user)
-      });
+    const response = await fetch('http://localhost:5000/api/user/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(user),
+    });
 
-      return await response.json()
-    },
-)
+    return await response.json();
+  }
+);

@@ -4,8 +4,8 @@
     [navigate]="navigate"
   ></neo-ui-header>
   <main>
+    @if (message(); as alertMessage) {
     <section
-      *ngIf="message() as alertMessage"
       role="alert"
       aria-live="assertive"
       style="position: fixed; top: -5000px; left: -5000px"
@@ -13,6 +13,7 @@
       >
       <span>{{ alertMessage }}</span>
     </section>
+    }
     <router-outlet></router-outlet>
   </main>
   <neo-ui-footer></neo-ui-footer>

@@ -7,12 +7,16 @@
     <h3 class="f-article-item__header-title heading-h5">
       <a href="#">{{ title }}</a>
     </h3>
-    <ul class="f-article-item__topics" *ngIf="topics?.length">
-      <li class="f-article-item__topics-item" *ngFor="let item of topics">
+    @if (topics?.length) {
+    <ul class="f-article-item__topics">
+      @for (item of topics; track item) {
+      <li class="f-article-item__topics-item">
         <a [href]="item.uri">
           {{ item.value }}
         </a>
       </li>
+      }
     </ul>
+    }
   </header>
 </article>

@@ -16,13 +16,14 @@
     #modalBody
   >
     <div #modalContent></div>
+    @if (closeButton) {
     <button
       type="button"
       class="modal-body__close"
       tabindex="0"
       aria-label="Закрыть модальное окно"
-      *ngIf="closeButton"
       (click)="close()"
     ></button>
+    }
   </div>
 </div>

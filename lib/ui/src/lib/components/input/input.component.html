@@ -7,10 +7,10 @@
   }"
 >
   <ng-container *ngTemplateOutlet="passwordButton"></ng-container>
+  @if (!multiline) {
   <input
     class="neo-ui-input__tag"
     #input
-    *ngIf="!multiline"
     [attr.name]="name"
     [attr.type]="showPassword ? 'text' : type || 'text'"
     [attr.tabIndex]="tabIndex"
@@ -34,11 +34,12 @@
     (focus)="notifyFocusEvent($event)"
     (keyup.enter)="forceChange()"
   />
+  }
   <ng-container *ngTemplateOutlet="passwordButton"></ng-container>
   <ng-template #passwordButton>
+    @if (type === 'password' && value.length > 0) {
     <button
       type="button"
-      *ngIf="type === 'password' && value.length > 0"
       class="neo-ui-input__show-hide"
       [attr.tabIndex]="tabIndex"
       [class.show]="showPassword"
@@ -52,5 +53,6 @@
           : 'Поле пароль заполнено. Нажмите, чтобы посмотреть пароль'
       }}
     </button>
+    }
   </ng-template>
 </div>

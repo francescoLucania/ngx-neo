@@ -28,7 +28,7 @@ import {
 } from '@angular/forms';
 import { Suggest, SuggestItem } from './models/suggest';
 import { HelperService } from '../../services';
-import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 import { MaskitoDirective } from '@maskito/angular';
 import { MaskitoOptions } from '@maskito/core';
 
@@ -45,7 +45,7 @@ import { MaskitoOptions } from '@maskito/core';
       multi: true,
     },
   ],
-  imports: [NgIf, NgClass, FormsModule, MaskitoDirective, NgTemplateOutlet],
+  imports: [NgClass, FormsModule, MaskitoDirective, NgTemplateOutlet],
 })
 export class InputStandaloneComponent
   implements

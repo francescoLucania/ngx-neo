@@ -93,7 +93,8 @@
 
     <div class="ui__item-content">
       <ul class="blog-list">
-        <li class="blog-list__item" *ngFor="let item of news">
+        @for (item of news; track item) {
+        <li class="blog-list__item">
           <neo-f-article-item
             [title]="item.title"
             [image]="item.image"
@@ -101,6 +102,7 @@
             [topics]="item.topics"
           ></neo-f-article-item>
         </li>
+        }
       </ul>
     </div>
   </div>

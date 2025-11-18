@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./button.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, RouterLink],
+  imports: [RouterLink],
 })
 export class ButtonStandaloneComponent {
   @Input() public label: string;

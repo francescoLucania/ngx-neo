@@ -11,7 +11,7 @@ import {
 import { ModalService } from './services/modal/modal.service';
 import { IModalDataInterface } from './models';
 import { MediaQueriesService } from '../../services';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { ElementFocusDirective, TrapFocusDirective } from '../../a11y';
 
 @Component({
@@ -19,7 +19,7 @@ import { ElementFocusDirective, TrapFocusDirective } from '../../a11y';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, NgIf, ElementFocusDirective, TrapFocusDirective],
+  imports: [NgClass, ElementFocusDirective, TrapFocusDirective],
   standalone: true,
 })
 export class ModalStandaloneComponent implements OnInit {

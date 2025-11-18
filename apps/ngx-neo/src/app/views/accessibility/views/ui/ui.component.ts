@@ -9,7 +9,6 @@ import {
   UntypedFormGroup,
 } from '@angular/forms';
 import { FArticleItemComponent } from '../../components/f-article-item/f-article-item.component';
-import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'neo-ui',
@@ -21,7 +20,6 @@ import { NgForOf } from '@angular/common';
     CheckboxStandaloneComponent,
     ReactiveFormsModule,
     FArticleItemComponent,
-    NgForOf,
   ],
 })
 export class UiComponent {

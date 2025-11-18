@@ -1,87 +1,84 @@
 <div class="login-container">
   <div
-    [ngSwitch]="state"
     class="login-form"
     [neoElementFocus]="state"
     [neoElementFocusContextClass]="'outline-base'"
   >
-    <form *ngSwitchCase="'login'" [formGroup]="form" (submit)="submit()">
-      <ng-container *ngSwitchCase="'login'">
-        <div class="login-form__logo"></div>
-        <div class="mt-16">
-          <neo-ui-input
-            [formControlName]="'login'"
-            [size]="'large'"
-            [placeholder]="'Телефон / Email / CНИЛС'"
-            [ariaLabel]="'Введите телефон, Email или СНИЛС'"
-            #loginInput
-          ></neo-ui-input>
-        </div>
-        <div class="mt-16">
-          <neo-ui-input
-            [formControlName]="'password'"
-            [type]="'password'"
-            [size]="'large'"
-            [placeholder]="'Пароль'"
-            [ariaLabel]="'Пароль'"
-            #passwordInput
-          ></neo-ui-input>
-        </div>
-        <div
-          *ngIf="!loginControl?.pristine && loginControl?.errors"
-          class="mt-8 text-base-small color-error"
-          [attr.aria-hidden]="
-            !(!loginControl?.pristine && loginControl?.errors)
-          "
+    @switch (state) { @case ('login') {
+    <form [formGroup]="form" (submit)="submit()">
+      @case ('login') {
+      <div class="login-form__logo"></div>
+      <div class="mt-16">
+        <neo-ui-input
+          [formControlName]="'login'"
+          [size]="'large'"
+          [placeholder]="'Телефон / Email / CНИЛС'"
+          [ariaLabel]="'Введите телефон, Email или СНИЛС'"
+          #loginInput
+        ></neo-ui-input>
+      </div>
+      <div class="mt-16">
+        <neo-ui-input
+          [formControlName]="'password'"
+          [type]="'password'"
+          [size]="'large'"
+          [placeholder]="'Пароль'"
+          [ariaLabel]="'Пароль'"
+          #passwordInput
+        ></neo-ui-input>
+      </div>
+      @if (!loginControl?.pristine && loginControl?.errors) {
+      <div
+        class="mt-8 text-base-small color-error"
+        [attr.aria-hidden]="!(!loginControl?.pristine && loginControl?.errors)"
+      >
+        Неверный логин или пароль
+      </div>
+      }
+      <div class="mt-12">
+        <button class="login-form__inline-button focus-visible">
+          Восстановить
+        </button>
+      </div>
+      <div class="mt-12">
+        <neo-ui-button
+          [buttonType]="'submit'"
+          [fullWidth]="true"
+          [disabled]="form.invalid"
+          >Войти</neo-ui-button
         >
-          Неверный логин или пароль
+      </div>
+      <div class="mt-24">
+        <div>
+          <neo-ui-radio
+            [formControlName]="'scenario'"
+            [value]="'captcha'"
+            [label]="'Captcha'"
+            [name]="'scenario'"
+          ></neo-ui-radio>
         </div>
-        <div class="mt-12">
-          <button class="login-form__inline-button focus-visible">
-            Восстановить
-          </button>
+        <div class="mt-16">
+          <neo-ui-radio
+            [formControlName]="'scenario'"
+            [value]="'login-error'"
+            [label]="'Ошибка входа'"
+            [name]="'scenario'"
+          ></neo-ui-radio>
         </div>
-        <div class="mt-12">
-          <neo-ui-button
-            [buttonType]="'submit'"
-            [fullWidth]="true"
-            [disabled]="form.invalid"
-            >Войти</neo-ui-button
-          >
-        </div>
-
-        <div class="mt-24">
-          <div>
-            <neo-ui-radio
-              [formControlName]="'scenario'"
-              [value]="'captcha'"
-              [label]="'Captcha'"
-              [name]="'scenario'"
-            ></neo-ui-radio>
-          </div>
-          <div class="mt-16">
-            <neo-ui-radio
-              [formControlName]="'scenario'"
-              [value]="'login-error'"
-              [label]="'Ошибка входа'"
-              [name]="'scenario'"
-            ></neo-ui-radio>
-          </div>
-        </div>
-
-        <div class="mt-24 text-center">
-          <button
-            class="login-form__inline-button focus-visible"
-            aria-haspopup="true"
-            [openModalFromTemplate]="faqTemplate"
-          >
-            Не удается войти?
-          </button>
-        </div>
-      </ng-container>
+      </div>
+      <div class="mt-24 text-center">
+        <button
+          class="login-form__inline-button focus-visible"
+          aria-haspopup="true"
+          [openModalFromTemplate]="faqTemplate"
+        >
+          Не удается войти?
+        </button>
+      </div>
+      }
     </form>
-
-    <form *ngSwitchCase="'captcha'" [formGroup]="captchaForm">
+    } @case ('captcha') {
+    <form [formGroup]="captchaForm">
       <h3 class="text-center heading-h3">Введите код с картинки:</h3>
       <div class="login-form__captcha-code mt-16"></div>
       <div class="mt-24">
@@ -103,6 +100,7 @@
         >
       </div>
     </form>
+    } }
   </div>
 
   <ng-template #faqTemplate>

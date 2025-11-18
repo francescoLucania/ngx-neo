@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { INavigateList } from './models/navigate/navigate';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavigateListActiveRouteDisableDirective } from './directives/navigate-list-active-route-disable/navigate-list-active-route-disable.directive';
-import { NgClass, NgForOf } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'neo-ui-navigate-list',
@@ -13,7 +13,6 @@ import { NgClass, NgForOf } from '@angular/common';
     RouterLink,
     RouterLinkActive,
     NavigateListActiveRouteDisableDirective,
-    NgForOf,
     NgClass,
   ],
 })

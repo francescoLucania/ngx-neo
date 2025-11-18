@@ -7,7 +7,7 @@ import {
   HeaderStandaloneComponent,
   ModalStandaloneComponent,
 } from 'ngx-neo-ui';
-import { CommonModule } from '@angular/common';
+
 import { RouterOutlet } from '@angular/router';
 import { Test1Service } from './services/test/test1.service';
 import { Test3Service } from './services/test/test3.service';
@@ -19,7 +19,6 @@ import { Test3Service } from './services/test/test3.service';
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     RouterOutlet,
     ModalStandaloneComponent,
     HeaderStandaloneComponent,
@@ -39,6 +38,5 @@ export class AppComponent {
     { name: 'Contacts', uri: 'Contacts' },
   ];
 
-  constructor(private alertService: AlertService) {
-  }
+  constructor(private alertService: AlertService) {}
 }

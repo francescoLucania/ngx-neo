@@ -8,8 +8,10 @@
     >
 
     <div class="mt-32">Итого = {{ count$ | async }}</div>
-    <div class="mt-16" *ngIf="updatedAt$ | async as updatedAt">
+    @if (updatedAt$ | async; as updatedAt) {
+    <div class="mt-16">
       Последнее обновление = {{ updatedAt | date : 'HH:mm:ss dd/MM/yyyy' }}
     </div>
+    }
   </div>
 </div>

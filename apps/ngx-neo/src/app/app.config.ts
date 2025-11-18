@@ -1,7 +1,9 @@
 import {
   APP_INITIALIZER,
   ApplicationConfig,
-  provideExperimentalZonelessChangeDetection,
+  inject,
+  provideAppInitializer,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import {
   provideRouter,
@@ -52,22 +54,16 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([authInterceptor])),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     provideHttpClient(),
+    provideAppInitializer(async () => initializerFactory(inject(UserService))),
     {
-      provide: APP_INITIALIZER,
-      useFactory: initializerFactory,
-      deps: [UserService],
-      multi: true,
+      provide: Test1Service,
+      useClass: Test2Service,
     },
-    {
-      provide: Test1Service, useClass: Test2Service
-    },
-    // TODO: гидрация без zone.js может доставлять проблемы
-    provideExperimentalZonelessChangeDetection(),
     provideClientHydration(),
     //ngrx
     provideStore(reducers),
     provideEffects([AppEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: false }),
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
   ],
 };

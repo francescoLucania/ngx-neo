@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AlertService } from '../../../../services/alert.service';
-import { NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
+
 import {
   ButtonStandaloneComponent,
   InputStandaloneComponent,
@@ -33,14 +33,11 @@ interface CaptchaForm {
   styleUrls: ['./login-a11y.component.scss'],
   standalone: true,
   imports: [
-    NgSwitch,
     ReactiveFormsModule,
-    NgSwitchCase,
     InputStandaloneComponent,
     RadioStandaloneComponent,
     ButtonStandaloneComponent,
     OpenModalTemplateRefDirective,
-    NgIf,
     ElementFocusDirective,
   ],
 })

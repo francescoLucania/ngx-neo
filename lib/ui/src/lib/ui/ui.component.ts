@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'nx-neo-ui',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './ui.component.html',
   styleUrls: ['./ui.component.css'],
 })
